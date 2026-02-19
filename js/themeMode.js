@@ -16,13 +16,12 @@ function setLogoBasedOnMode(currentMode) {
     const headerLogoImg = document.getElementById('header-logo-img');
     const footerLogoImg = document.getElementById('footer-logo-img');
 
-    if (currentMode === 'dark') {
-        headerLogoImg.src = 'assets/img/logo-darkmode.png';
-        footerLogoImg.src = 'assets/img/logo-darkmode.png';
-    } else {
-        headerLogoImg.src = 'assets/img/logo.svg';
-        footerLogoImg.src = 'assets/img/logo.svg';
-    }
+    const logoLight = 'assents/img/logo.png';
+    const logoDark = 'assents/img/logo-escura.png';
+    const src = currentMode === 'dark' ? logoDark : logoLight;
+
+    if (headerLogoImg) headerLogoImg.src = src;
+    if (footerLogoImg) footerLogoImg.src = src;
 }
 
 const colorToggle = document.getElementById('color-toggle');

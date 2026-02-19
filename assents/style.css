@@ -323,8 +323,17 @@ header.sticky {
     content: "JB || DEV";
   }
 }
+.header__logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
 .header__logo img {
-  width: 150px;
+  width: 120px;
+  max-width: 120px;
+  height: auto;
+  max-height: 48px;
+  object-fit: contain;
 }
 
 .header__menu {
@@ -549,7 +558,8 @@ header .right {
   align-items: center;
 }
 
-.project:nth-child(2) {
+/* Alternância: 1º texto|imagem, 2º imagem|texto, 3º texto|imagem... */
+.project:nth-child(even) {
   flex-direction: row-reverse;
 }
 
@@ -974,6 +984,17 @@ footer {
   }
 
   /* HEADER */
+  header .container.flex-row {
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .header__logo img {
+    width: 100px;
+    max-width: 100px;
+    max-height: 44px;
+    object-fit: contain;
+  }
   .header__menu {
     position: fixed;
     top: 0;
@@ -1005,6 +1026,8 @@ footer {
   #hero {
     flex-direction: column;
     justify-content: center;
+    padding-top: 5rem;
+    min-height: auto;
   }
 
   .hero__content {
