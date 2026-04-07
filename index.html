@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assents/style.css">
     <link rel="stylesheet" href="assents/fontawesome.min.css">
      <!-- AOS -->
      <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-      <!--Particulas-->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
     <!--EmailJS-->
     <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
@@ -21,7 +22,8 @@
     <meta name="keywords" content="desenvolvedor web, React, Node.js, TypeScript, sites responsivos, e-commerce, landing pages, desenvolvimento web, programador">
     <meta name="author" content="Jonathan Balieiro">
     <meta name="robots" content="index, follow">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://jonathanbalieiro.dev/">
+    <meta name="theme-color" content="#493eda">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -42,8 +44,46 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://jonathanbalieiro.dev/#website",
+          "url": "https://jonathanbalieiro.dev/",
+          "name": "Jonathan Balieiro - Desenvolvedor Web Full Stack",
+          "description": "Desenvolvedor Web Full Stack especializado em React, Node.js, TypeScript. Sites responsivos, e-commerce e landing pages.",
+          "inLanguage": "pt-BR",
+          "publisher": { "@id": "https://jonathanbalieiro.dev/#person" }
+        },
+        {
+          "@type": "Person",
+          "@id": "https://jonathanbalieiro.dev/#person",
+          "name": "Jonathan Vinicius Balieiro de Oliveira",
+          "url": "https://jonathanbalieiro.dev/",
+          "image": "https://jonathanbalieiro.dev/assents/img/1716911104056.jpeg",
+          "jobTitle": "Desenvolvedor Web Full Stack",
+          "email": "jonathantotini@gmail.com",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Indaiatuba",
+            "addressRegion": "SP",
+            "addressCountry": "BR"
+          },
+          "sameAs": [
+            "https://www.instagram.com/jonathan_desenvolvedor/",
+            "https://github.com/Jonathanfullstack",
+            "https://www.linkedin.com/in/jonathan-balieiro-b83230298/"
+          ]
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
+  <a href="#hero" class="skip-link">Pular para o conteúdo</a>
     <!-- Botão do tema -->
   <button id="color-toggle" class="color-toggle-button">
     <i id="theme-icon" class="fas fa-lightbulb"></i>
@@ -103,18 +143,28 @@
     </div>
   </header>
   <!-- INÍCIO -->
-  <section id="hero" class="container flex-row">
+  <section id="hero" class="hero-section">
+    <div class="hero-section__glow" aria-hidden="true"></div>
     <div id="particles-js"></div>
+    <div class="container flex-row hero-section__inner">
     <div class="hero__content">
-      <h1 class="title">Materialize suas ideias digitais</h1>
-      <p class="text">
-        Inicie seu sucesso online . Aqui, seu site ganha vida, destacando o melhor do seu negócio e
+      <p class="hero__badge"><span class="hero__badge-dot" aria-hidden="true"></span> Full Stack · React · Node · TypeScript</p>
+      <h1 class="title hero__title">Materialize suas <span class="hero__title-accent">ideias digitais</span></h1>
+      <p class="text hero__lead">
+        Inicie seu sucesso online. Aqui, seu site ganha vida, destacando o melhor do seu negócio e
         ajudando-o a crescer na internet.
       </p>
-      <a href="#contact" class="btn btn-primary">Vamos Inovar Juntos!</a>
+      <div class="hero__actions">
+        <a href="#contact" class="btn btn-primary">Vamos inovar juntos</a>
+        <a href="#projects" class="btn btn-ghost">Ver projetos</a>
+      </div>
     </div>
     <div class="hero__img">
-      <img src="assents/img/hero.png" alt="Desenvolvedor Web trabalhando em projetos digitais">
+      <div class="hero__img-frame">
+        <div class="hero__img-ring" aria-hidden="true"></div>
+        <img src="assents/img/hero.png" alt="Desenvolvedor Web trabalhando em projetos digitais">
+      </div>
+    </div>
     </div>
   </section>
 
@@ -620,27 +670,28 @@
       <div class="footer__bottom">
         <div class="footer__bottom-icons">
           <p>Siga-me</p>
-          <a href="https://www.instagram.com/jonathan_desenvolvedor/" class="instagram" target="_blank">
+          <a href="https://www.instagram.com/jonathan_desenvolvedor/" class="instagram" target="_blank" rel="noopener noreferrer">
             <i class="fab fa-instagram"></i>
           </a>
-          </a>
-          <a href="https://github.com/Jonathanfullstack" class="github" target="_blank">
+          <a href="https://github.com/Jonathanfullstack" class="github" target="_blank" rel="noopener noreferrer">
             <i class="fab fa-github"></i>
           </a>
-          <a href="https://www.linkedin.com/in/jonathan-balieiro-b83230298/" class="linkedin" target="_blank">
+          <a href="https://www.linkedin.com/in/jonathan-balieiro-b83230298/" class="linkedin" target="_blank" rel="noopener noreferrer">
             <i class="fab fa-linkedin"></i>
           </a>
         </div>
-        <p>&copy; 2024 JB│DEVELOPER. Todos os direitos reservados.</p>
+        <p>&copy; 2026 JB│DEVELOPER. Todos os direitos reservados.</p>
       </div>
     </div>
   </footer>
 
   <!-- FONTAWESOME -->
+  <script src="js/site-config.js"></script>
   <script src="js/fontawesome.min.js"></script>
 
-  <!-- SCRIPTS -->
-  <script src="js/particles.js"></script>
+  <!-- SCRIPTS (partículas só no fim — não bloqueia o primeiro paint) -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" defer></script>
+  <script src="js/particles.js" defer></script>
   <script src="js/script.js"></script>
   <script src="js/themeMode.js"></script>
   <script src="js/emailForm.js"></script>
@@ -649,12 +700,17 @@
   <!-- AOS -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-  <!-- Inicialização do AOS -->
+  <!-- Inicialização do AOS (respeita prefers-reduced-motion) -->
   <script>
-    AOS.init();
+    AOS.init({
+      disable:
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
+        window.matchMedia("(max-width: 768px)").matches,
+      once: true,
+      duration: 480,
+      offset: 40,
+    });
   </script>
 </body>
 
-</html>
-</body>
 </html>
