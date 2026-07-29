@@ -5,6 +5,7 @@
   var backToTop = document.getElementById("backToTop");
   var menuLinks = menu ? Array.from(menu.querySelectorAll('a[href^="#"]')) : [];
   var lastFocusedElement = null;
+  var menuFocusTimer = null;
   var scrollFrame = null;
 
   function isMenuOpen() {
@@ -25,7 +26,12 @@
     menuButton.setAttribute("aria-label", "Fechar menu");
     document.body.classList.add("menu-open");
     var firstItem = getFocusableMenuItems()[0];
-    if (firstItem) firstItem.focus();
+    if (firstItem) {
+      clearTimeout(menuFocusTimer);
+      menuFocusTimer = window.setTimeout(function () {
+        if (isMenuOpen()) firstItem.focus();
+      }, 240);
+    }
   }
 
   function closeMenu(options) {
@@ -35,6 +41,7 @@
     menuButton.setAttribute("aria-expanded", "false");
     menuButton.setAttribute("aria-label", "Abrir menu");
     document.body.classList.remove("menu-open");
+    clearTimeout(menuFocusTimer);
     if (!options || options.restoreFocus !== false) {
       if (lastFocusedElement && typeof lastFocusedElement.focus === "function") {
         lastFocusedElement.focus();
