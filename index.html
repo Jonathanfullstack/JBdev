@@ -1,716 +1,271 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assents/style.css">
-    <link rel="stylesheet" href="assents/fontawesome.min.css">
-     <!-- AOS -->
-     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-
-    <!--EmailJS-->
-    <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
-
-    <title>Jonathan Balieiro - Desenvolvedor Web Full Stack</title>
-    <meta name="description"
-    content="Desenvolvedor Web Full Stack especializado em React, Node.js, TypeScript. Criação de sites responsivos, e-commerce e landing pages. Transforme suas ideias digitais em realidade com soluções personalizadas.">
-    
-    <!-- Meta Tags SEO -->
-    <meta name="keywords" content="desenvolvedor web, React, Node.js, TypeScript, sites responsivos, e-commerce, landing pages, desenvolvimento web, programador">
-    <meta name="author" content="Jonathan Balieiro">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://jonathanbalieiro.dev/">
-    <meta name="theme-color" content="#493eda">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://jonathanbalieiro.dev/">
-    <meta property="og:title" content="Jonathan Balieiro - Desenvolvedor Web Full Stack">
-    <meta property="og:description" content="Desenvolvedor Web Full Stack especializado em React, Node.js, TypeScript. Criação de sites responsivos, e-commerce e landing pages.">
-    <meta property="og:image" content="https://jonathanbalieiro.dev/assents/img/1716911104056.jpeg">
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://jonathanbalieiro.dev/">
-    <meta property="twitter:title" content="Jonathan Balieiro - Desenvolvedor Web Full Stack">
-    <meta property="twitter:description" content="Desenvolvedor Web Full Stack especializado em React, Node.js, TypeScript. Criação de sites responsivos, e-commerce e landing pages.">
-    <meta property="twitter:image" content="https://jonathanbalieiro.dev/assents/img/1716911104056.jpeg">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "WebSite",
-          "@id": "https://jonathanbalieiro.dev/#website",
-          "url": "https://jonathanbalieiro.dev/",
-          "name": "Jonathan Balieiro - Desenvolvedor Web Full Stack",
-          "description": "Desenvolvedor Web Full Stack especializado em React, Node.js, TypeScript. Sites responsivos, e-commerce e landing pages.",
-          "inLanguage": "pt-BR",
-          "publisher": { "@id": "https://jonathanbalieiro.dev/#person" }
-        },
-        {
-          "@type": "Person",
-          "@id": "https://jonathanbalieiro.dev/#person",
-          "name": "Jonathan Vinicius Balieiro de Oliveira",
-          "url": "https://jonathanbalieiro.dev/",
-          "image": "https://jonathanbalieiro.dev/assents/img/1716911104056.jpeg",
-          "jobTitle": "Desenvolvedor Web Full Stack",
-          "email": "jonathantotini@gmail.com",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Indaiatuba",
-            "addressRegion": "SP",
-            "addressCountry": "BR"
-          },
-          "sameAs": [
-            "https://www.instagram.com/jonathan_desenvolvedor/",
-            "https://github.com/Jonathanfullstack",
-            "https://www.linkedin.com/in/jonathan-balieiro-b83230298/"
-          ]
-        }
-      ]
-    }
-    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#493eda">
+  <title>JB DEV | Sites, sistemas e soluções digitais</title>
+  <meta name="description" content="A JB DEV desenvolve sites, sistemas e soluções digitais sob medida para empresas e profissionais. Atendimento em Indaiatuba/SP e remoto.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assents/style.css">
+  <link rel="stylesheet" href="assents/fontawesome.min.css">
+  <script src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js" defer></script>
 </head>
 <body>
-  <a href="#hero" class="skip-link">Pular para o conteúdo</a>
-    <!-- Botão do tema -->
-  <button id="color-toggle" class="color-toggle-button">
-    <i id="theme-icon" class="fas fa-lightbulb"></i>
-  </button>
+  <a class="skip-link" href="#main-content">Pular para o conteúdo</a>
 
-  <!-- Botão do WhatsApp -->
-  <div class="whatsapp-button">
-    <a href="https://api.whatsapp.com/send?phone=5519997495985" target="_blank"   >
-      <i class="fab fa-whatsapp"></i>
-    </a>
-  </div>
+  <header class="site-header" id="site-header">
+    <div class="container header__inner">
+      <a href="#hero" class="header__logo" aria-label="JB DEV — página inicial">
+        <img id="header-logo-img" src="assents/img/logo.png" alt="JB DEV">
+      </a>
 
-  <!-- Botão "Voltar ao Topo" -->
-  <div class="back-to-top" id="backToTop">
-    <i class="fas fa-chevron-up"></i>
-  </div>
-    
-
-  <header>
-    <div class="container flex-row">
-        <a href="#hero" class="header__logo">
-          <img id="header-logo-img" src="assents/img/logo.png" alt="JB Developer - Desenvolvedor Web">
-        </a>
-      <nav>
-        <ul class="header__menu flex-row">
-          <li>
-            <a href="#hero">Início</a>
-          </li>
-          <li>
-            <a href="#about">Sobre</a>
-          </li>
-          <li>
-            <a href="#services">Serviços</a>
-          </li>
-          <li>
-            <a href="#projects">Projetos</a>
-          </li> 
-          <li>
-            <a href="#team">Profissional</a>
-          </li>
-          <li>
-            <a href="#testimonials">Depoimentos</a>
-          </li>
-          <li>
-            <a href="#contact">Contato</a>
-          </li>
+      <nav aria-label="Navegação principal">
+        <ul class="header__menu" id="primary-menu">
+          <li><a href="#hero">Início</a></li>
+          <li><a href="#services">Serviços</a></li>
+          <li><a href="#process">Processo</a></li>
+          <li><a href="#projects">Projetos</a></li>
+          <li><a href="#about">Sobre</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contato</a></li>
         </ul>
       </nav>
-      <div class="right flex-center">
-        <a href="#contact" class="btn btn-secondary">Fale comigo</a>
-        <div class="menu-btn">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+
+      <div class="header__actions">
+        <button class="icon-button theme-toggle" id="color-toggle" type="button" aria-label="Ativar tema escuro" aria-pressed="false">
+          <i id="theme-icon" class="fas fa-moon" aria-hidden="true"></i>
+        </button>
+        <a href="#" class="btn btn-primary header__cta" data-whatsapp data-whatsapp-context="header">Falar no WhatsApp</a>
+        <button class="menu-btn" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="primary-menu">
+          <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+        </button>
       </div>
     </div>
   </header>
-  <!-- INÍCIO -->
-  <section id="hero" class="hero-section">
-    <div class="hero-section__glow" aria-hidden="true"></div>
-    <div id="particles-js"></div>
-    <div class="container flex-row hero-section__inner">
-    <div class="hero__content">
-      <p class="hero__badge"><span class="hero__badge-dot" aria-hidden="true"></span> Full Stack · React · Node · TypeScript</p>
-      <h1 class="title hero__title">Materialize suas <span class="hero__title-accent">ideias digitais</span></h1>
-      <p class="text hero__lead">
-        Inicie seu sucesso online. Aqui, seu site ganha vida, destacando o melhor do seu negócio e
-        ajudando-o a crescer na internet.
-      </p>
-      <div class="hero__actions">
-        <a href="#contact" class="btn btn-primary">Vamos inovar juntos</a>
-        <a href="#projects" class="btn btn-ghost">Ver projetos</a>
-      </div>
-    </div>
-    <div class="hero__img">
-      <div class="hero__img-frame">
-        <div class="hero__img-ring" aria-hidden="true"></div>
-        <img src="assents/img/hero.png" alt="Desenvolvedor Web trabalhando em projetos digitais">
-      </div>
-    </div>
-    </div>
-  </section>
 
-  <!-- SOBRE -->
-  <section id="about" class="container flex-center flex-column" data-aos="fade-up">
-    <h5 class="section-subheading" data-aos="fade-right">Soluções Digitais Sob Medida</h5>
-    <h2 class="section-heading text-center" data-aos="fade-left">Defina sua presença digital </h2>
-
-    <div class="features text-center">
-      <!-- Primeiro Card: Sites Entregues -->
-      <div class="feature" data-aos="fade-up-right">
-        <div class="feature__counter">
-          + de <span id="sitesCounter">10</span>
+  <main id="main-content">
+    <section id="hero" class="hero-section">
+      <div class="hero-section__glow" aria-hidden="true"></div>
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Indaiatuba/SP e atendimento remoto</p>
+          <h1>Sites e sistemas que fazem o seu negócio <span>avançar.</span></h1>
+          <p class="hero__lead">A JB DEV transforma objetivos de negócio em experiências digitais claras, rápidas e preparadas para gerar oportunidades.</p>
+          <div class="hero__actions">
+            <a href="#" class="btn btn-primary btn-lg" data-whatsapp data-whatsapp-context="hero">Solicitar uma proposta</a>
+            <a href="#projects" class="btn btn-secondary btn-lg">Ver projetos</a>
+          </div>
+          <ul class="hero__assurances" aria-label="Compromissos da JB DEV">
+            <li><i class="fas fa-check" aria-hidden="true"></i> Solução sob medida</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Comunicação direta</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Foco no seu objetivo</li>
+          </ul>
         </div>
-        <h3 class="feature__title">Sites criados do ZERO</h3>
-        <div class="feature__text">
-          <p>Soluções web feitas sob medida, cada uma delas uma vitrine digital do seu negócio.</p>
-        </div>
-      </div>
-
-      <!-- Segundo Card: Projetos Concluídos -->
-      <div class="feature" data-aos="zoom-in">
-        <div class="feature__counter">
-          + de <span id="projectsCounter">7</span>
-        </div>
-        <h3 class="feature__title">Projetos Concluídos</h3>
-        <div class="feature__text">
-          <p>Executados com maestria em diversas tecnologias e plataformas.</p>
-        </div>
-      </div>
-
-      <!-- Terceiro Card: Clientes Satisfeitos -->
-      <div class="feature" data-aos="fade-up-left">
-        <div class="feature__counter">
-          + de <span id="clientsCounter">10</span>
-        </div>
-        <h3 class="feature__title">Clientes Satisfeitos</h3>
-        <div class="feature__text">
-          <p>Pelo mundo com suas expectativas superadas e suas marcas fortalecidas.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="about__details flex-center" data-aos="flip-left">
-      <div class="about__details-content">
-        <h1>Personalizando o amanhã digital</h1>
-        <p>Em 2024, emergimos com uma missão singular: elevar negócios em todo o Brasil ao patamar digital com
-          sites que não só apresentam, mas performam. Especialista em e-commerce, websites corporativos e landing pages
-          que não apenas atraem, mas convertem, somos a força criativa por trás de soluções web que refletem a
-          individualidade e as aspirações de cada marca, empresa ou profissional. Aqui, cada projeto é mais que uma
-          entrega; é a materialização da sua visão digital, esculpida com precisão técnica e uma estética inovadora.</p>
-        <a href="https://api.whatsapp.com/send?phone=5519997495985" target="_blank" class="btn btn-primary">Vamos Criar o Seu?</a>
-      </div>
-      <div class="about__details-img">
-        <img src="assents/img/typing-animate.svg" alt="Animação de digitação representando desenvolvimento web">
-      </div>
-    </div>
-  </section>
-
-  <!-- SERVIÇOS -->
-  <section id="services">
-    <div class="container">
-      <h5 class="section-subheading" data-aos="fade-up" data-aos-duration="100">Serviços Integrados para Impulsionar
-        seu Negócio</h5>
-      <h2 class="section-heading right" data-aos="fade-up" data-aos-delay="100" data-aos-duration="700">
-        Soluções completas para seu negócio
-      </h2>
-
-      <div class="services">
-        <!-- Cada serviço com uma animação mais suave e duração maior -->
-        <div class="service" data-aos="fade-right" data-aos-delay="100" data-aos-duration="700"
-          data-aos-easing="ease-out-quart">
-          <div class="service__icon">
-            <img src="./assents/img/sites.png" alt="Ícone representando criação de sites personalizados">
-          </div>
-          <h3 class="services__title">Criação de Sites Personalizados</h3>
-          <p class="service__text">
-            Desenvolvimento de sites sob medida para atender às suas necessidades exclusivas.
-          </p>
-        </div>
-
-        <div class="service" data-aos="fade-left" data-aos-delay="200" data-aos-duration="700"
-          data-aos-easing="ease-out-quart">
-          <div class="service__icon">
-            <img src="./assents/img/otimizacao.png" alt="Ícone representando otimização de sites">
-          </div>
-          <h3 class="services__title">Otimização de Sites</h3>
-          <p class="service__text">
-            Melhoria do desempenho e velocidade do seu site para uma experiência melhor do usuário.
-          </p>
-        </div>
-
-        <div class="service" data-aos="fade-right" data-aos-delay="300" data-aos-duration="700"
-          data-aos-easing="ease-out-quart">
-          <div class="service__icon">
-            <img src="./assents/img/customizacao.png" alt="Ícone representando customizações avançadas">
-          </div>
-          <h3 class="services__title">Customizações Avançadas</h3>
-          <p class="service__text">
-            Personalizações avançadas para atender às suas necessidades específicas.
-          </p>
-        </div>
-
-        <div class="service" data-aos="fade-left" data-aos-delay="400" data-aos-duration="700"
-          data-aos-easing="ease-out-quart">
-          <div class="service__icon">
-            <img src="./assents/img/suporte.png" alt="Ícone representando suporte técnico">
-          </div>
-          <h3 class="services__title">Suporte Técnico</h3>
-          <p class="service__text">
-            Suporte técnico especializado para manter seu site funcionando sem problemas.
-          </p>
-        </div>
-
-        <div class="service" data-aos="fade-right" data-aos-delay="500" data-aos-duration="700"
-          data-aos-easing="ease-out-quart">
-          <div class="service__icon">
-            <img src="./assents/img/seo.png" alt="Ícone representando SEO personalizado">
-          </div>
-          <h3 class="services__title">SEO Personalizado</h3>
-          <p class="service__text">
-            Estratégias de SEO adaptadas para melhorar a visibilidade do seu site.
-          </p>
-        </div>
-
-        <div class="service" data-aos="fade-left" data-aos-delay="600" data-aos-duration="700"
-          data-aos-easing="ease-out-quart">
-          <div class="service__icon">
-            <img src="assents/img/ecommerce.png" alt="Ícone representando desenvolvimento de e-commerce">
-          </div>
-          <h3 class="services__title">Desenvolvimento de E-commerce</h3>
-          <p class="service__text">
-            Criação de lojas online personalizadas para seus produtos ou serviços.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROJETOS -->
-  <section id="projects">
-    <div class="container">
-      <h5 class="section-subheading" data-aos="fade-up">Projetos</h5>
-      <h2 class="section-heading" data-aos="fade-up" data-aos-delay="100">
-        Descubra a inovação autêntica em soluções de problemas
-      </h2>
-      <div class="projects">
-        
-        <div class="project">
-          <div class="project__content" data-aos="fade-up" data-aos-delay="120">
-            <h3 class="project__category">WEBSITE</h3>
-            <h3 class="project__title">
-              Agência de Marketing   
-            </h3>
-            <p class="project__text">
-              Site completo para agência de marketing digital com design moderno e funcional. Inclui página inicial com banner principal, seções sobre serviços, portfólio de projetos, depoimentos de clientes e blog informativo. Design responsivo e intuitivo para proporcionar uma experiência excepcional ao usuário.
-            </p>
-            <a href="https://agenciamarkenting.netlify.app/" target="_blank" class="btn btn-secondary">VER SITE</a>
-          </div>
-          <div class="project__img" data-aos="fade-up" data-aos-delay="100">
-            <img class="img1" src="./assents/img/agecia-markenting.jpeg" alt="Agência de Marketing - Website" loading="lazy">
-          </div>
-        </div>
-
-        
-        <div class="project">
-          <div class="project__content" data-aos="fade-up" data-aos-delay="220">
-            <h3 class="project__category">CARDÁPIO VIRTUAL</h3>
-            <h3 class="project__title">
-              Menu Online 
-            </h3>
-            <p class="project__text">
-              Cardápio virtual com funcionalidades ágeis e navegação intuitiva. Interface responsiva com categorias claras, barra de pesquisa, detalhes dos pratos com fotos e preços, opções de personalização de pedidos e processo de finalização simplificado com pagamento seguro.
-            </p>
-            <a href="https://menu-cardapio-jonathan.netlify.app/" target="_blank" class="btn btn-secondary">VER SITE</a>
-          </div>
-          <div class="project__img" data-aos="fade-up" data-aos-delay="200">
-            <img class="img1" src="./assents/img/menu-online.jpeg" alt="Menu Online - Cardápio Virtual" loading="lazy">
-          </div>
-        </div>
-
-       
-        <div class="project">
-          <div class="project__content" data-aos="fade-up" data-aos-delay="320">
-            <h3 class="project__category">LANDING PAGE</h3>
-            <h3 class="project__title">
-               Headphone Store
-            </h3>
-            <p class="project__text">
-              Landing page moderna e elegante para loja de fones de ouvido, desenvolvida com foco na conversão e experiência do usuário. Design apresenta produtos de forma atrativa, com navegação intuitiva e call-to-actions estratégicos para maximizar as vendas online.
-            </p>
-            <a href="https://headhphone-menu.netlify.app/" target="_blank" class="btn btn-secondary">VER SITE</a>
-          </div>
-          <div class="project__img" data-aos="fade-up" data-aos-delay="300">
-            <img class="img1" src="./assents/img/headphone.jpeg" alt="Headphone Store - Landing Page" loading="lazy">
-          </div>
-        </div>
-
-        <div class="project">
-          <div class="project__content" data-aos="fade-up" data-aos-delay="420">
-            <h3 class="project__category">LANDING PAGE</h3>
-            <h3 class="project__title">
-               Valarine Beauty
-            </h3>
-            <p class="project__text">
-              Landing page especializada para estúdio de extensão de cílios, desenvolvida para destacar os serviços de beleza oferecidos pela Valarine Beauty. Design elegante e feminino com galeria de trabalhos, informações sobre procedimentos e sistema de agendamento integrado.
-            </p>
-            <a href="https://valarine-carla.vercel.app/" target="_blank" class="btn btn-secondary">VER SITE</a>
-          </div>
-          <div class="project__img" data-aos="fade-up" data-aos-delay="400">
-            <img class="img1" src="./assents/img/Valarine-carla.jpg" alt="Valarine Beauty - Site de Extensão de Cílios" loading="lazy">
-          </div>
-        </div>
-
-        <div class="project">
-          <div class="project__content" data-aos="fade-up" data-aos-delay="520">
-            <h3 class="project__category">LANDING PAGE</h3>
-            <h3 class="project__title">
-               Julia Rosa Estética Facial
-            </h3>
-            <p class="project__text">
-              Site profissional para clínica de estética facial especializada em extensão de cílios e tratamentos faciais. Landing page desenvolvida com foco na apresentação dos serviços oferecidos pela Julia Rosa, incluindo galeria de resultados e sistema de contato direto.
-            </p>
-            <a href="https://juliarosacaroline.vercel.app/" target="_blank" class="btn btn-secondary">VER SITE</a>
-          </div>
-          <div class="project__img" data-aos="fade-up" data-aos-delay="500">
-            <img class="img1" src="./assents/img/Julia-rosa.jpg" alt="Julia Rosa Estética Facial - Site de Tratamentos Faciais" loading="lazy">
-          </div>
-        </div>
-
-        <div class="project">
-          <div class="project__content" data-aos="fade-up" data-aos-delay="620">
-            <h3 class="project__category">SISTEMA DE AGENDAMENTOS</h3>
-            <h3 class="project__title">
-               Izabella Nail Designer
-            </h3>
-            <p class="project__text">
-              Sistema completo de agendamento online para empreendedora de unhas. Inclui apresentação do salão, portfólio de trabalhos (fibra de vidro, francesinhas, alongamento em gel, esmaltação e blindagem), lista de serviços com preços e duração, calendário para escolha de data e horário, e painel administrativo para gestão dos agendamentos.
-            </p>
-            <a href="https://izabellafernandez.up.railway.app/" target="_blank" class="btn btn-secondary">VER SITE</a>
-          </div>
-          <div class="project__img" data-aos="fade-up" data-aos-delay="600">
-            <img class="img1" src="./assents/img/Empreededora-unha.png" alt="Izabella Nail Designer - Sistema de Agendamentos" loading="lazy">
-          </div>
-        </div>
-
-        <div class="project">
-          <div class="project__content" data-aos="fade-up" data-aos-delay="720">
-            <h3 class="project__category">WEBSITE / PORTFÓLIO</h3>
-            <h3 class="project__title">
-               Victoria — Fotografia do Sagrado e da Ancestralidade
-            </h3>
-            <p class="project__text">
-              Site institucional e portfólio para fotógrafa profissional, com foco em registros do sagrado e da ancestralidade. Design imersivo com vídeo em destaque, apresentação do trabalho com respeito aos terreiros e à espiritualidade ancestral, seção de portfólio e contato via WhatsApp, com identidade visual forte e profissional.
-            </p>
-            <a href="https://victoriacfilms.vercel.app/" target="_blank" class="btn btn-secondary">VER SITE</a>
-          </div>
-          <div class="project__img" data-aos="fade-up" data-aos-delay="700">
-            <img class="img1" src="./assents/img/fotografa-site.png" alt="Victoria - Fotografia do Sagrado e da Ancestralidade" loading="lazy">
-          </div>
-        </div>
-
-        <div class="project">
-          <div class="project__content" data-aos="fade-up" data-aos-delay="820">
-            <h3 class="project__category">APLICAÇÃO WEB</h3>
-            <h3 class="project__title">
-               finance.ai - Gestão Financeira Pessoal
-            </h3>
-            <p class="project__text">
-              Aplicação web completa para gerenciamento de finanças pessoais e domésticas. Sistema desenvolvido com inteligência artificial para análise e controle de receitas, despesas e orçamentos. Interface intuitiva com dashboard em tempo real, categorização automática de transações, relatórios detalhados e gráficos interativos para visualização financeira. Ideal para controle financeiro familiar e pessoal.
-            </p>
-            <a href="https://finance-ia.up.railway.app/" target="_blank" class="btn btn-secondary">VER SITE</a>
-          </div>
-          <div class="project__img" data-aos="fade-up" data-aos-delay="800">
-            <img class="img1" src="./assents/img/finance.ai.png" alt="finance.ai - App de Gestão Financeira" loading="lazy">
-          </div>
-        </div>
-
-        <div class="project">
-          <div class="project__content" data-aos="fade-up" data-aos-delay="920">
-            <h3 class="project__category">SISTEMA DE AGENDAMENTOS</h3>
-            <h3 class="project__title">
-               JB Barber - Sistema de agendamentos de Barbeiros
-            </h3>
-            <p class="project__text">
-              Sistema de agendamentos de barbeiros para barbearia. Permite ao cliente escolher o serviço (corte, barba, bigode, pézinho, sobrancelha, relaxamento, hidratação, combos e coloração), o barbeiro e o horário. Inclui apresentação da equipe, localização, contato, horário de funcionamento e painel administrativo para gestão dos agendamentos.
-            </p>
-            <a href="https://barber-jb-production.up.railway.app/" target="_blank" class="btn btn-secondary">VER SITE</a>
-          </div>
-          <div class="project__img" data-aos="fade-up" data-aos-delay="900">
-            <img class="img1" src="./assents/img/barber-jb.png" alt="JB Barber - Sistema de Agendamento para Barbearia" loading="lazy">
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROFISSIONAL -->
-  <section id="team" class="container">
-    <h5 class="section-subheading text-center" data-aos="fade-up">Conheça o Profissional</h5>
-    <h2 class="section-heading left right text-center" data-aos="fade-up" data-aos-delay="100">Experiência e Dedicação
-      em Desenvolvimento Web</h2>
-
-    <div class="members">
-      <div class="member">
-        <div class="member__img" data-aos="fade-right" data-aos-delay="200">
-          <img src="./assents/img/1716911104056.jpeg" alt="Jonathan Balieiro - Desenvolvedor Web Full Stack">
-        </div>
-        <div class="member__content" data-aos="fade-left" data-aos-delay="300">
-          <h1>Jonathan Vinicius Balieiro de Oliveira </h1>
-          <span>Desenvolvedor Web</span>
-          <p>Com início em 2022, me dedico ao desenvolvimento de soluções web inovadoras. Como estudante de Engenharia
-            de Software, combino conhecimento técnico com estética para criar sites excepcionais, focando na excelência
-            e satisfação do cliente.</p>
-          <div class="member__skills">
-            <h3 class="skills-title">Tecnologias & Ferramentas</h3>
-            <div class="skills-list">
-              <ul>
-                <li>React & Next.js</li>
-                <li>TypeScript & JavaScript</li>
-                <li>Node.js & Express</li>
-                <li>Tailwind CSS & Styled Components</li>
-              </ul>
-              <ul>
-                <li>MongoDB & PostgreSQL</li>
-                <li>Git & GitHub</li>
-                <li>Docker & AWS</li>
-                <li>Figma & Adobe Creative</li>
-              </ul>
+        <div class="hero__visual" aria-hidden="true">
+          <div class="hero__panel">
+            <div class="hero__panel-bar"><span></span><span></span><span></span></div>
+            <div class="hero__panel-content">
+              <span class="code-line w-70"></span><span class="code-line w-45"></span>
+              <div class="hero__panel-card"><i class="fas fa-code"></i><strong>Estratégia + tecnologia</strong></div>
+              <span class="code-line w-85"></span><span class="code-line w-55"></span>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-
-
-  <!-- DEPOIMENTOS -->
-  <section id="testimonials">
-    <div class="container flex-row">
-      <div class="testimonials-wrapper">
-        <p class="quotes" data-aos="zoom-in">
-          <i class="fas fa-quote-left"></i>
-        </p>
-        <p class="section-subheading" data-aos="fade-up" data-aos-delay="100">depoimentos</p>
-        <div class="testimonials">
-          <div class="testimonial" data-aos="fade-up" data-aos-delay="200">
-            <h1 class="testimonial__title">
-              O melhor que eu já fiz foi esse investimento!
-            </h1>
-            <p class="testimonial__text">
-              Simplesmente transformador! Uma nova vida ao meu e-commerce com soluções criativas e uma
-              execução impecável. A atenção aos detalhes e a agilidade no atendimento superaram todas as expectativas. É
-              a inovação e a personalização que qualquer marca precisa para se destacar no mercado digital.
-            </p>
-            <div class="testimonial__author">
-              <h3>Gabriel Silva</h3>
-              <p>Empreendedor</p>
-            </div>
-          </div>
-          
-          <div class="testimonial" data-aos="fade-up" data-aos-delay="300" style="display: none;">
-            <h1 class="testimonial__title">
-              Profissionalismo e qualidade excepcionais!
-            </h1>
-            <p class="testimonial__text">
-              O Jonathan desenvolveu meu site de estética com muito cuidado e atenção aos detalhes. O resultado superou minhas expectativas e meus clientes adoram a facilidade de navegação. Recomendo de olhos fechados!
-            </p>
-            <div class="testimonial__author">
-              <h3>Carla Valarine</h3>
-              <p>Valarine Beauty</p>
-            </div>
-          </div>
-          
-          <div class="testimonial" data-aos="fade-up" data-aos-delay="400" style="display: none;">
-            <h1 class="testimonial__title">
-              Site moderno e funcional!
-            </h1>
-            <p class="testimonial__text">
-              Trabalho impecável! O Jonathan criou um site que realmente representa minha marca e facilita o contato com meus clientes. Design moderno, responsivo e muito profissional. Estou muito satisfeita!
-            </p>
-            <div class="testimonial__author">
-              <h3>Julia Rosa</h3>
-              <p>Julia Rosa Estética Facial</p>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-navigation">
-          <span class="active"></span>
-          <span></span>
-          <span></span>
+    <section class="trust-section" aria-labelledby="trust-title">
+      <div class="container">
+        <p class="section-kicker" id="trust-title">Confiança construída no processo</p>
+        <div class="trust-grid">
+          <article><i class="fas fa-comments" aria-hidden="true"></i><div><h2>Atendimento próximo</h2><p>Você conversa diretamente com quem desenvolve sua solução.</p></div></article>
+          <article><i class="fas fa-layer-group" aria-hidden="true"></i><div><h2>Projeto sob medida</h2><p>Decisões alinhadas ao seu negócio, sem pacotes genéricos.</p></div></article>
+          <article><i class="fas fa-location-dot" aria-hidden="true"></i><div><h2>Local e remoto</h2><p>Atendimento em Indaiatuba/SP e para clientes de outras regiões.</p></div></article>
         </div>
       </div>
+    </section>
 
-    </div>
-  </section>
+    <section id="services" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <div><p class="section-kicker">Serviços</p><h2>Tecnologia aplicada ao que o seu negócio precisa agora</h2></div>
+          <p>Da presença digital à automação de processos, construímos soluções claras, confiáveis e prontas para evoluir.</p>
+        </div>
+        <div class="services-grid">
+          <article class="service-card"><span>01</span><i class="fas fa-window-maximize" aria-hidden="true"></i><h3>Sites institucionais</h3><p>Apresente sua empresa com clareza, credibilidade e uma jornada pensada para gerar contatos.</p></article>
+          <article class="service-card"><span>02</span><i class="fas fa-bullseye" aria-hidden="true"></i><h3>Landing pages</h3><p>Páginas focadas em campanhas, lançamentos e ofertas com uma mensagem direta e comercial.</p></article>
+          <article class="service-card"><span>03</span><i class="fas fa-gears" aria-hidden="true"></i><h3>Sistemas web</h3><p>Ferramentas sob medida para organizar rotinas, atendimentos, dados e processos internos.</p></article>
+          <article class="service-card"><span>04</span><i class="fas fa-cart-shopping" aria-hidden="true"></i><h3>Lojas virtuais</h3><p>Experiências de compra simples, confiáveis e preparadas para apresentar seus produtos.</p></article>
+          <article class="service-card"><span>05</span><i class="fas fa-gauge-high" aria-hidden="true"></i><h3>Otimização</h3><p>Melhorias de desempenho, usabilidade e estrutura para sites que precisam entregar mais.</p></article>
+          <article class="service-card"><span>06</span><i class="fas fa-headset" aria-hidden="true"></i><h3>Suporte e evolução</h3><p>Acompanhamento técnico para manter sua solução atualizada e alinhada ao crescimento do negócio.</p></article>
+        </div>
+        <div class="section-cta"><p>Não sabe qual solução faz mais sentido?</p><a href="#" class="btn btn-primary" data-whatsapp data-whatsapp-context="services">Conversar sobre minha necessidade</a></div>
+      </div>
+    </section>
 
+    <section id="process" class="section section-dark">
+      <div class="container">
+        <div class="section-heading">
+          <div><p class="section-kicker">Como trabalhamos</p><h2>Um processo simples, com clareza em cada etapa</h2></div>
+          <p>Você acompanha as decisões e entende o caminho do projeto do início à entrega.</p>
+        </div>
+        <ol class="process-grid">
+          <li><span>01</span><h3>Descoberta</h3><p>Entendemos seu negócio, público, desafio e prioridade.</p></li>
+          <li><span>02</span><h3>Direção</h3><p>Definimos escopo, conteúdo e a solução mais adequada.</p></li>
+          <li><span>03</span><h3>Construção</h3><p>Design e desenvolvimento avançam com validações objetivas.</p></li>
+          <li><span>04</span><h3>Entrega</h3><p>Testamos, publicamos e orientamos você sobre os próximos passos.</p></li>
+        </ol>
+      </div>
+    </section>
 
-  <!-- CONTATO -->
-  <section id="contact">
-    <div class="container">
-      <h5 class="section-subheading text-center" data-aos="fade-up">Fale comigo</h5>
-      <h2 class="section-heading text-center left right" data-aos="fade-up" data-aos-delay="100">Vamos transformar seu
-        sonho em site?</h2>
-      <div class="contact">
-        <!-- Formulário de Contato -->
-        <form id="my-form" class="contact__form" data-aos="fade-right">
-          <h1>Envie sua mensagem</h1>
-          <input type="text" name="user_name" placeholder="Nome completo" required>
-          <input type="email" name="user_email" placeholder="Seu melhor e-mail" required>
-          <input type="tel" name="user_phone" placeholder="WhatsApp" required>
-          <input type="text" name="subject" placeholder="Assunto" required>
-          <textarea rows="5" name="message" required placeholder="Descreva um pouco do seu projeto..."></textarea>
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <div><p class="section-kicker">Projetos selecionados</p><h2>Soluções criadas para diferentes desafios</h2></div>
+          <p>Uma seleção de sites e sistemas que demonstra a variedade de projetos desenvolvidos pela JB DEV.</p>
+        </div>
+        <div class="projects-grid">
+          <article class="project-card project-featured">
+            <a href="https://finance-ia.up.railway.app/" target="_blank" rel="noopener noreferrer" aria-label="Abrir projeto finance.ai em nova aba">
+              <img src="assents/img/finance.ai.png" alt="Tela do sistema finance.ai" width="1911" height="847" loading="lazy">
+            </a>
+            <div><p class="project-tag">Aplicação web</p><h3>finance.ai</h3><p>Gestão financeira pessoal com visão de receitas, despesas, orçamentos e indicadores em um único ambiente.</p><a href="https://finance-ia.up.railway.app/" target="_blank" rel="noopener noreferrer">Conhecer projeto <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
+          </article>
+          <article class="project-card">
+            <a href="https://barber-jb-production.up.railway.app/" target="_blank" rel="noopener noreferrer" aria-label="Abrir projeto JB Barber em nova aba"><img src="assents/img/barber-jb.png" alt="Tela do sistema JB Barber" width="1625" height="798" loading="lazy"></a>
+            <div><p class="project-tag">Sistema de agendamento</p><h3>JB Barber</h3><p>Agendamento de serviços, profissionais e horários com área administrativa para a barbearia.</p><a href="https://barber-jb-production.up.railway.app/" target="_blank" rel="noopener noreferrer">Conhecer projeto <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
+          </article>
+          <article class="project-card">
+            <a href="https://izabellafernandez.up.railway.app/" target="_blank" rel="noopener noreferrer" aria-label="Abrir projeto Izabella Nail Designer em nova aba"><img src="assents/img/Empreededora-unha.png" alt="Tela do sistema Izabella Nail Designer" width="1848" height="827" loading="lazy"></a>
+            <div><p class="project-tag">Sistema de agendamento</p><h3>Izabella Nail Designer</h3><p>Portfólio de serviços integrado à escolha de datas e horários, com gestão de agendamentos.</p><a href="https://izabellafernandez.up.railway.app/" target="_blank" rel="noopener noreferrer">Conhecer projeto <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
+          </article>
+          <article class="project-card">
+            <a href="https://victoriacfilms.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Abrir projeto Victoria Films em nova aba"><img src="assents/img/fotografa-site.png" alt="Tela do site Victoria Films" width="1652" height="817" loading="lazy"></a>
+            <div><p class="project-tag">Site e portfólio</p><h3>Victoria Films</h3><p>Experiência visual para apresentar fotografia, identidade, portfólio e contato de forma envolvente.</p><a href="https://victoriacfilms.vercel.app/" target="_blank" rel="noopener noreferrer">Conhecer projeto <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
+          </article>
+          <article class="project-card">
+            <a href="https://menu-cardapio-jonathan.netlify.app/" target="_blank" rel="noopener noreferrer" aria-label="Abrir projeto Menu Online em nova aba"><img src="assents/img/menu-online.jpeg" alt="Tela do Menu Online" width="1198" height="846" loading="lazy"></a>
+            <div><p class="project-tag">Cardápio digital</p><h3>Menu Online</h3><p>Navegação por categorias, busca e apresentação organizada dos produtos para facilitar pedidos.</p><a href="https://menu-cardapio-jonathan.netlify.app/" target="_blank" rel="noopener noreferrer">Conhecer projeto <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
+          </article>
+          <article class="project-card">
+            <a href="https://valarine-carla.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Abrir projeto Valarine Beauty em nova aba"><img src="assents/img/Valarine-carla.jpg" alt="Tela do site Valarine Beauty" width="1389" height="765" loading="lazy"></a>
+            <div><p class="project-tag">Landing page</p><h3>Valarine Beauty</h3><p>Apresentação de serviços, trabalhos e contato para fortalecer a presença digital do estúdio.</p><a href="https://valarine-carla.vercel.app/" target="_blank" rel="noopener noreferrer">Conhecer projeto <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
+          </article>
+        </div>
+        <div class="section-cta"><p>Quer ver sua ideia se transformar em um projeto real?</p><a href="#" class="btn btn-primary" data-whatsapp data-whatsapp-context="projects">Planejar meu projeto</a></div>
+      </div>
+    </section>
+
+    <section id="advantages" class="section section-soft">
+      <div class="container">
+        <div class="section-heading centered"><div><p class="section-kicker">Por que a JB DEV</p><h2>Parceria técnica sem complicar o caminho</h2></div></div>
+        <div class="advantages-grid">
+          <article><i class="fas fa-compass-drafting" aria-hidden="true"></i><h3>Decisões com propósito</h3><p>Cada recurso precisa apoiar um objetivo do negócio ou melhorar a experiência do cliente.</p></article>
+          <article><i class="fas fa-message" aria-hidden="true"></i><h3>Comunicação transparente</h3><p>Você sabe o que está sendo feito, por que foi escolhido e qual é o próximo passo.</p></article>
+          <article><i class="fas fa-mobile-screen" aria-hidden="true"></i><h3>Experiência responsiva</h3><p>A solução é pensada para funcionar com clareza em computadores, tablets e celulares.</p></article>
+          <article><i class="fas fa-seedling" aria-hidden="true"></i><h3>Base para evoluir</h3><p>Projetos organizados para receber melhorias conforme seu negócio ganha novas necessidades.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container about-grid">
+        <div class="about__image"><img src="assents/img/1716911104056.jpeg" alt="Jonathan Balieiro, fundador da JB DEV" width="800" height="800" loading="lazy"></div>
+        <div class="about__content">
+          <p class="section-kicker">Sobre a JB DEV</p>
+          <h2>Tecnologia próxima, objetiva e feita para o seu contexto</h2>
+          <p>A JB DEV desenvolve sites, sistemas e soluções digitais para empresas e profissionais que querem fortalecer sua presença, organizar processos ou tirar uma ideia do papel.</p>
+          <p>À frente da empresa, Jonathan Balieiro acompanha cada projeto diretamente e combina desenvolvimento, visão de produto e cuidado visual em todas as entregas.</p>
+          <ul><li><i class="fas fa-check" aria-hidden="true"></i> Atendimento direto com o desenvolvedor</li><li><i class="fas fa-check" aria-hidden="true"></i> Soluções alinhadas ao momento do negócio</li><li><i class="fas fa-check" aria-hidden="true"></i> Clareza do planejamento à entrega</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials" class="section section-dark">
+      <div class="container testimonials-layout">
+        <div><p class="section-kicker">Depoimentos</p><h2>O trabalho visto por quem já viveu o processo</h2><p>Relatos preservados do portfólio anterior da JB DEV.</p></div>
+        <div class="testimonial-shell">
+          <div class="testimonials" aria-live="polite">
+            <figure class="testimonial is-active"><blockquote>“Simplesmente transformador! A atenção aos detalhes e a agilidade no atendimento superaram todas as expectativas.”</blockquote><figcaption><strong>Gabriel Silva</strong><span>Empreendedor</span></figcaption></figure>
+            <figure class="testimonial" hidden><blockquote>“O Jonathan desenvolveu meu site com muito cuidado. O resultado superou minhas expectativas e meus clientes adoram a facilidade de navegação.”</blockquote><figcaption><strong>Carla Valarine</strong><span>Valarine Beauty</span></figcaption></figure>
+            <figure class="testimonial" hidden><blockquote>“Trabalho impecável! Um site que representa minha marca e facilita o contato com meus clientes.”</blockquote><figcaption><strong>Julia Rosa</strong><span>Julia Rosa Estética Facial</span></figcaption></figure>
+          </div>
+          <div class="testimonial-navigation" aria-label="Navegação dos depoimentos">
+            <button type="button" class="is-active" aria-label="Mostrar depoimento 1" aria-current="true"></button>
+            <button type="button" aria-label="Mostrar depoimento 2"></button>
+            <button type="button" aria-label="Mostrar depoimento 3"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="section">
+      <div class="container faq-layout">
+        <div><p class="section-kicker">Perguntas frequentes</p><h2>Antes de começar, vale saber</h2><p>Respostas diretas sobre o início de um projeto com a JB DEV.</p></div>
+        <div class="faq-list">
+          <details><summary>Quais tipos de projeto a JB DEV desenvolve?<i class="fas fa-plus" aria-hidden="true"></i></summary><p>Sites institucionais, landing pages, lojas virtuais, sistemas web e melhorias em projetos existentes.</p></details>
+          <details><summary>O atendimento é somente em Indaiatuba?<i class="fas fa-plus" aria-hidden="true"></i></summary><p>Não. O atendimento pode ser presencial em Indaiatuba/SP e remoto para clientes de outras cidades e regiões.</p></details>
+          <details><summary>Como recebo uma proposta?<i class="fas fa-plus" aria-hidden="true"></i></summary><p>Conte sua necessidade pelo WhatsApp ou formulário. Após entender objetivo e escopo, a JB DEV orienta os próximos passos.</p></details>
+          <details><summary>A JB DEV também cuida de projetos que já existem?<i class="fas fa-plus" aria-hidden="true"></i></summary><p>Sim. É possível avaliar otimizações, correções, novas funcionalidades e evolução técnica conforme o estado atual do projeto.</p></details>
+        </div>
+        <div class="section-cta faq-cta"><p>Ainda tem alguma dúvida?</p><a href="#" class="btn btn-primary" data-whatsapp data-whatsapp-context="faq">Falar com a JB DEV</a></div>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <div class="container final-cta__inner">
+        <p class="section-kicker">Seu próximo projeto começa com uma conversa</p>
+        <h2>Vamos construir uma solução digital que faça sentido para o seu negócio?</h2>
+        <p>Conte o que você precisa. A JB DEV ajuda a transformar o desafio em um caminho claro.</p>
+        <a href="#" class="btn btn-light btn-lg" data-whatsapp data-whatsapp-context="final">Começar pelo WhatsApp</a>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container contact-layout">
+        <div class="contact__intro">
+          <p class="section-kicker">Contato</p><h2>Prefere enviar os detalhes por aqui?</h2>
+          <p>Descreva sua ideia ou necessidade. A JB DEV retorna para entender melhor o projeto.</p>
+          <div class="contact-list">
+            <a href="#" data-whatsapp data-whatsapp-context="contact"><i class="fab fa-whatsapp" aria-hidden="true"></i><span><strong>WhatsApp</strong><small data-contact-phone></small></span></a>
+            <a data-contact-email-link><i class="fas fa-envelope" aria-hidden="true"></i><span><strong>E-mail</strong><small data-contact-email></small></span></a>
+            <div><i class="fas fa-location-dot" aria-hidden="true"></i><span><strong>Atendimento</strong><small>Indaiatuba/SP e remoto</small></span></div>
+          </div>
+        </div>
+        <form id="my-form" class="contact__form">
+          <div class="field"><label for="user-name">Nome</label><input id="user-name" type="text" name="user_name" autocomplete="name" required></div>
+          <div class="field"><label for="user-email">E-mail</label><input id="user-email" type="email" name="user_email" autocomplete="email" required></div>
+          <div class="field"><label for="user-phone">WhatsApp</label><input id="user-phone" type="tel" name="user_phone" autocomplete="tel" required></div>
+          <div class="field"><label for="subject">Assunto</label><input id="subject" type="text" name="subject" required></div>
+          <div class="field"><label for="message">Conte um pouco sobre o projeto</label><textarea id="message" rows="5" name="message" required></textarea></div>
           <button type="submit" class="btn btn-primary">Enviar mensagem</button>
+          <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
         </form>
-
-        <!-- Detalhes de Contato -->
-        <div class="contact__details" data-aos="fade-left">
-          <p class="text">
-            Fale comigo, seja para iniciar um projeto ou para conversar sobre possibilidades digitais, estou aqui para
-            ouvir você.
-          </p>
-          <div class="details">
-            <div class="detail">
-              <div class="detail__icon">
-                <i class="fas fa-phone"></i>
-              </div>
-              <div class="detail__content">
-                <h3>WhatsApp</h3>
-                <p>(19) 99749-5985</p>
-              </div>
-            </div>
-            <div class="detail">
-              <div class="detail__icon">
-                <i class="fas fa-envelope"></i>
-              </div>
-              <div class="detail__content">
-                <h3>Email</h3>
-                <p>jonathantotini@gmail.com</p>
-              </div>
-            </div>
-            <div class="detail">
-              <div class="detail__icon">
-                <i class="fas fa-map-marked-alt"></i>
-              </div>
-              <div class="detail__content">
-                <h3>Endereço</h3>
-                <p>Indaiatuba, São Paulo - Brasil</p>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer__grid">
+      <div><a href="#hero" class="footer__brand">JB DEV</a><p>Sites, sistemas e soluções digitais para negócios que querem avançar.</p></div>
+      <div><h2>Navegação</h2><ul><li><a href="#services">Serviços</a></li><li><a href="#process">Processo</a></li><li><a href="#projects">Projetos</a></li><li><a href="#about">Sobre</a></li></ul></div>
+      <div><h2>Contato</h2><ul><li><a href="#" data-whatsapp data-whatsapp-context="footer">WhatsApp</a></li><li><a data-contact-email-link data-contact-email></a></li><li>Indaiatuba/SP e remoto</li></ul></div>
+      <div><h2>Redes</h2><ul><li><a href="https://www.instagram.com/jonathan_desenvolvedor/" target="_blank" rel="noopener noreferrer">Instagram</a></li><li><a href="https://github.com/Jonathanfullstack" target="_blank" rel="noopener noreferrer">GitHub</a></li><li><a href="https://www.linkedin.com/in/jonathan-balieiro-b83230298/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li></ul></div>
     </div>
-  </section>
-
-
-  <!-- FOOTER -->
-  <footer data-aos="fade-up">
-    <div class="container">
-      <div class="footer__content">
-        <div class="footer__details">
-          <!--<div class="footer__logo">
-            <img id="footer-logo-img" src="assets/img/logo.svg" alt="Logo">
-          </div> -->
-          <p class="footer__text">
-            Fique por dentro de tudo que acontece no mundo digital.
-          </p>
-          <div class="footer__newletter">
-            <form action="#" class="footer__newsletter-form">
-              <input type="email" placeholder="Seu melhor e-mail" required>
-              <div class="icon">
-                <i class="fa fa-envelope"></i>
-              </div>
-            </form>
-          </div>
-        </div>
-
-        <div class="footer__menu">
-          <h3 class="footer__menu-title">Acesso rápido</h3>
-          <ul class="footer__menu-list">
-            <li><a href="#hero">Início</a></li>
-            <li><a href="#about">Sobre</a></li>
-            <li><a href="#services">Serviços</a></li>
-            <li><a href="#projects">Projetos</a></li>
-            <li><a href="#team">Profissional</a></li>
-            <li><a href="#testimonials">Depoimentos</a></li>
-            <li><a href="#contact">Contato</a></li>
-          </ul>
-        </div>
-
-        <div class="footer__menu">
-          <h3 class="footer__menu-title">Redes Sociais</h3>
-          <ul class="footer__menu-list">
-            <li><a href="https://www.instagram.com/jonathan_desenvolvedor/" target="_blank">Instagram</a></li>
-            <li><a href="https://github.com/Jonathanfullstack" target="_blank">Github</a></li>
-            <li><a href="https://www.linkedin.com/in/jonathan-balieiro-b83230298/" target="_blank">Linkedin</a></li>
-          </ul>
-        </div>
-
-      </div>
-      <div class="footer__bottom">
-        <div class="footer__bottom-icons">
-          <p>Siga-me</p>
-          <a href="https://www.instagram.com/jonathan_desenvolvedor/" class="instagram" target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-instagram"></i>
-          </a>
-          <a href="https://github.com/Jonathanfullstack" class="github" target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-github"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/jonathan-balieiro-b83230298/" class="linkedin" target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-linkedin"></i>
-          </a>
-        </div>
-        <p>&copy; 2026 JB│DEVELOPER. Todos os direitos reservados.</p>
-      </div>
-    </div>
+    <div class="container footer__bottom"><p>&copy; 2026 JB DEV. Todos os direitos reservados.</p><a href="#hero">Voltar ao início</a></div>
   </footer>
 
-  <!-- FONTAWESOME -->
+  <a class="whatsapp-button" href="#" data-whatsapp data-whatsapp-context="floating" aria-label="Falar com a JB DEV pelo WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+  <button class="back-to-top" id="backToTop" type="button" aria-label="Voltar ao topo"><i class="fas fa-chevron-up" aria-hidden="true"></i></button>
+
   <script src="js/site-config.js"></script>
   <script src="js/fontawesome.min.js"></script>
-
-  <!-- SCRIPTS (partículas só no fim — não bloqueia o primeiro paint) -->
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" defer></script>
-  <script src="js/particles.js" defer></script>
   <script src="js/script.js"></script>
   <script src="js/themeMode.js"></script>
   <script src="js/emailForm.js"></script>
   <script src="js/voltarTopo.js"></script>
-
-  <!-- AOS -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-  <!-- Inicialização do AOS (respeita prefers-reduced-motion) -->
-  <script>
-    AOS.init({
-      disable:
-        window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
-        window.matchMedia("(max-width: 768px)").matches,
-      once: true,
-      duration: 480,
-      offset: 40,
-    });
-  </script>
 </body>
-
 </html>

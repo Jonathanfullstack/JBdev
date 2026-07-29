@@ -1,32 +1,39 @@
 document.addEventListener("DOMContentLoaded", function () {
-    var cfg = window.SITE_CONFIG && window.SITE_CONFIG.emailJs;
-    if (!cfg || !cfg.publicKey) {
-        console.error("SITE_CONFIG.emailJs não definido.");
-        return;
-    }
-
-    emailjs.init(cfg.publicKey);
-
-    var myForm = document.getElementById("my-form");
-    if (!myForm) return;
-
-    myForm.addEventListener("submit", function (event) {
-        event.preventDefault();
-
-        emailjs.sendForm(cfg.serviceId, cfg.templateId, this).then(
-            function () {
-                alert("Mensagem enviada com sucesso!");
-                myForm.reset();
-            },
-            function (error) {
-                var msg =
-                    error && error.text
-                        ? error.text
-                        : error && error.message
-                          ? String(error.message)
-                          : "tente novamente mais tarde.";
-                alert("Erro ao enviar a mensagem: " + msg);
-            }
-        );
+  var config = window.SITE_CONFIG && window.SITE_CONFIG.emailJs;
+  var form = document.getElementById("my-form");
+  var status = document.getElementById("form-status");
+  if (!form) return;
+  if (!config || !config.publicKey || typeof window.emailjs === "undefined") {
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      status.className = "form-status is-error";
+      status.textContent = "O formulário está indisponível agora. Fale com a JB DEV pelo WhatsApp.";
     });
+    return;
+  }
+
+  window.emailjs.init(config.publicKey);
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    var button = form.querySelector('button[type="submit"]');
+    button.disabled = true;
+    button.textContent = "Enviando...";
+    status.className = "form-status";
+    status.textContent = "Enviando sua mensagem.";
+
+    window.emailjs.sendForm(config.serviceId, config.templateId, form).then(
+      function () {
+        status.className = "form-status is-success";
+        status.textContent = "Mensagem enviada com sucesso. A JB DEV retornará em breve.";
+        form.reset();
+      },
+      function () {
+        status.className = "form-status is-error";
+        status.textContent = "Não foi possível enviar agora. Tente novamente ou fale pelo WhatsApp.";
+      }
+    ).finally(function () {
+      button.disabled = false;
+      button.textContent = "Enviar mensagem";
+    });
+  });
 });

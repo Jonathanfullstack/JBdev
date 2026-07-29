@@ -1,11 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
-  var backToTopButton = document.getElementById("backToTop");
-  if (!backToTopButton) return;
-
-  backToTopButton.addEventListener("click", function () {
+  var button = document.getElementById("backToTop");
+  if (!button) return;
+  button.addEventListener("click", function () {
     window.scrollTo({
       top: 0,
-      behavior: "smooth",
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"
     });
   });
 });

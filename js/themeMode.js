@@ -1,44 +1,32 @@
-function toggleDarkMode() {
-  document.body.classList.toggle("dark-mode");
-  const isDark = document.body.classList.contains("dark-mode");
-  localStorage.setItem("colorMode", isDark ? "dark" : "light");
-  setLogoBasedOnMode(isDark ? "dark" : "light");
-  setThemeColorMeta(isDark);
-}
+(function () {
+  var toggle = document.getElementById("color-toggle");
+  var icon = document.getElementById("theme-icon");
+  var headerLogo = document.getElementById("header-logo-img");
+  var metaTheme = document.querySelector('meta[name="theme-color"]');
 
-function setLogoBasedOnMode(currentMode) {
-  const headerLogoImg = document.getElementById("header-logo-img");
-  const footerLogoImg = document.getElementById("footer-logo-img");
-
-  const logoLight = "assents/img/logo.png";
-  const logoDark = "assents/img/logo-escura.png";
-  const src = currentMode === "dark" ? logoDark : logoLight;
-
-  if (headerLogoImg) headerLogoImg.src = src;
-  if (footerLogoImg) footerLogoImg.src = src;
-}
-
-function setThemeColorMeta(isDark) {
-  const meta = document.querySelector('meta[name="theme-color"]');
-  if (meta) meta.setAttribute("content", isDark ? "#111111" : "#493eda");
-}
-
-function applyStoredTheme() {
-  const stored = localStorage.getItem("colorMode");
-  if (stored === "dark") {
-    document.body.classList.add("dark-mode");
-    setLogoBasedOnMode("dark");
-    setThemeColorMeta(true);
-  } else {
-    document.body.classList.remove("dark-mode");
-    setLogoBasedOnMode("light");
-    setThemeColorMeta(false);
+  function preferredTheme() {
+    var stored = localStorage.getItem("colorMode");
+    if (stored === "dark" || stored === "light") return stored;
+    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
   }
-}
 
-const colorToggle = document.getElementById("color-toggle");
-if (colorToggle) {
-  colorToggle.addEventListener("click", toggleDarkMode);
-}
+  function applyTheme(theme, persist) {
+    var isDark = theme === "dark";
+    document.body.classList.toggle("dark-mode", isDark);
+    if (headerLogo) headerLogo.src = isDark ? "assents/img/logo-escura.png" : "assents/img/logo.png";
+    if (metaTheme) metaTheme.content = isDark ? "#0b1020" : "#493eda";
+    if (toggle) {
+      toggle.setAttribute("aria-pressed", String(isDark));
+      toggle.setAttribute("aria-label", isDark ? "Ativar tema claro" : "Ativar tema escuro");
+    }
+    if (icon) icon.className = isDark ? "fas fa-sun" : "fas fa-moon";
+    if (persist) localStorage.setItem("colorMode", theme);
+  }
 
-applyStoredTheme();
+  applyTheme(preferredTheme(), false);
+  if (toggle) {
+    toggle.addEventListener("click", function () {
+      applyTheme(document.body.classList.contains("dark-mode") ? "light" : "dark", true);
+    });
+  }
+})();
