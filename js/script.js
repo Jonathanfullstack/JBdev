@@ -25,6 +25,7 @@
     menuButton.setAttribute("aria-expanded", "true");
     menuButton.setAttribute("aria-label", "Fechar menu");
     document.body.classList.add("menu-open");
+    if (window.JBLenis) window.JBLenis.stop();
     var firstItem = getFocusableMenuItems()[0];
     if (firstItem) {
       clearTimeout(menuFocusTimer);
@@ -41,6 +42,7 @@
     menuButton.setAttribute("aria-expanded", "false");
     menuButton.setAttribute("aria-label", "Abrir menu");
     document.body.classList.remove("menu-open");
+    if (window.JBLenis) window.JBLenis.start();
     clearTimeout(menuFocusTimer);
     if (!options || options.restoreFocus !== false) {
       if (lastFocusedElement && typeof lastFocusedElement.focus === "function") {
