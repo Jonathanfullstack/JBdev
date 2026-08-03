@@ -394,7 +394,7 @@ p { color: var(--text); }
 
 .about-grid { display: grid; grid-template-columns: minmax(18rem, 0.8fr) minmax(0, 1.2fr); align-items: center; gap: clamp(3rem, 8vw, 7rem); }
 .about__image { position: relative; max-width: 30rem; padding: 0.7rem; border: 1px solid var(--border); border-radius: var(--radius-lg); background: var(--surface-alt); }
-.about__image img { width: 100%; aspect-ratio: 1; border-radius: 1.45rem; object-fit: cover; }
+.about__image img { width: 100%; height: auto; aspect-ratio: 1045 / 1280; border-radius: 1.45rem; object-fit: cover; object-position: center; }
 .about__content h2 { margin-bottom: 1.5rem; }
 .about__content > p { font-size: 1.02rem; }
 .about__content ul { display: grid; gap: 0.75rem; margin-top: 1.5rem; color: var(--text); font-weight: 600; }
