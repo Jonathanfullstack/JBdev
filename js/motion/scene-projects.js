@@ -6,6 +6,7 @@
   motion.createProjectScene = function (api) {
     var gsap = api.gsap;
     var ScrollTrigger = api.ScrollTrigger;
+    var desktop = api.conditions.desktop;
     var mobile = api.conditions.mobile;
     var cleanups = [];
     var context = gsap.context(function () {
@@ -58,11 +59,11 @@
             duration: 0.3
           }, 0.2);
 
-        if (image && !mobile) {
+        if (image && desktop) {
           gsap.fromTo(image, {
-            "--project-parallax": "-3%"
+            "--project-parallax": "-1%"
           }, {
-            "--project-parallax": "3%",
+            "--project-parallax": "1%",
             ease: "none",
             scrollTrigger: {
               trigger: card,
@@ -79,8 +80,8 @@
             var moveY = gsap.quickTo(image, "--pointer-y", { duration: 0.42, ease: "power2.out" });
             var onPointerMove = function (event) {
               var rect = media.getBoundingClientRect();
-              moveX(((event.clientX - rect.left) / rect.width - 0.5) * 1.6 + "%");
-              moveY(((event.clientY - rect.top) / rect.height - 0.5) * 1.2 + "%");
+              moveX(((event.clientX - rect.left) / rect.width - 0.5) * 0.6 + "%");
+              moveY(((event.clientY - rect.top) / rect.height - 0.5) * 0.4 + "%");
             };
             var onPointerLeave = function () {
               moveX("0%");

@@ -146,8 +146,8 @@
         {
           element: document.querySelector("#projects"),
           scene: "projects",
-          position: function () { return sidePosition("right", 0.76, 0.18, 10); },
-          scale: 0.76, opacity: 0.78, rotation: -0.6, lines: 0.25, wire: 0.35, light: 0.75
+          position: function () { return sidePosition("left", 0.72, 0.7, 10); },
+          scale: 0.72, opacity: api.conditions.tablet ? 0 : 0.62, rotation: -0.4, lines: 0.2, wire: 0.3, light: 0.55
         },
         {
           element: document.querySelector("#advantages"),
