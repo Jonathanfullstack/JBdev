@@ -14,6 +14,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assents/style.css?v=14">
   <link rel="stylesheet" href="assents/fontawesome.min.css">
+  <script>
+    (function () {
+      var saved;
+      try { saved = localStorage.getItem("jbdev-language"); } catch (error) {}
+      var language = saved === "pt" || saved === "en" ? saved : (navigator.language.toLowerCase().startsWith("en") ? "en" : "pt");
+      document.documentElement.lang = language === "en" ? "en" : "pt-BR";
+      document.documentElement.dataset.initialLanguage = language;
+      if (language === "en") document.documentElement.classList.add("i18n-loading");
+    }());
+  </script>
   <script src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js" defer></script>
 </head>
 <body>
@@ -41,6 +51,11 @@
         <button class="icon-button theme-toggle" id="color-toggle" type="button" aria-label="Ativar tema escuro" aria-pressed="false">
           <i id="theme-icon" class="fas fa-moon" aria-hidden="true"></i>
         </button>
+        <div class="home-language-toggle" role="group" aria-label="Selecionar idioma">
+          <button type="button" data-home-lang="pt" aria-label="Exibir site em português" aria-pressed="true">PT</button>
+          <span aria-hidden="true"></span>
+          <button type="button" data-home-lang="en" aria-label="Display website in English" aria-pressed="false">EN</button>
+        </div>
         <a href="#" class="btn btn-primary header__cta" data-whatsapp data-whatsapp-context="header">Falar no WhatsApp</a>
         <button class="menu-btn" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="primary-menu">
           <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
@@ -303,6 +318,7 @@
   <a class="whatsapp-button" href="#" data-whatsapp data-whatsapp-context="floating" aria-label="Falar com a JB DEV pelo WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
   <button class="back-to-top" id="backToTop" type="button" aria-label="Voltar ao topo"><i class="fas fa-chevron-up" aria-hidden="true"></i></button>
 
+  <script src="js/i18n.js"></script>
   <script src="js/site-config.js"></script>
   <script src="js/fontawesome.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>

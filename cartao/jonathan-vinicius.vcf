@@ -1,0 +1,12 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Vinicius;Jonathan;;;
+FN:Jonathan Vinicius
+ORG:JB DEV
+TITLE:Desenvolvedor Web
+TEL;TYPE=CELL,VOICE,WHATSAPP:+5519997495985
+EMAIL;TYPE=INTERNET:jonathantotni@gmail.com
+URL:https://www.jbdev.com.br/
+X-SOCIALPROFILE;TYPE=linkedin:https://www.linkedin.com/in/jonathan-balieiro-b83230298/
+X-SOCIALPROFILE;TYPE=instagram:https://www.instagram.com/jonathan_desenvolvedor/
+END:VCARD

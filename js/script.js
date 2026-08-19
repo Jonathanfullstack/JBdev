@@ -2,6 +2,7 @@
   var header = document.getElementById("site-header");
   var menu = document.getElementById("primary-menu");
   var menuButton = document.querySelector(".menu-btn");
+  var headerLogoImage = document.getElementById("header-logo-img");
   var backToTop = document.getElementById("backToTop");
   var menuLinks = menu ? Array.from(menu.querySelectorAll('a[href^="#"]')) : [];
   var lastFocusedElement = null;
@@ -14,7 +15,10 @@
 
   function getFocusableMenuItems() {
     if (!menu) return [];
-    return Array.from(menu.querySelectorAll("a[href], button:not([disabled])"));
+    return [menuButton]
+      .concat(Array.from(document.querySelectorAll(".home-language-toggle button:not([disabled])")))
+      .concat(Array.from(menu.querySelectorAll("a[href]")))
+      .filter(Boolean);
   }
 
   function openMenu() {
@@ -23,14 +27,16 @@
     menu.classList.add("show");
     menuButton.classList.add("open");
     menuButton.setAttribute("aria-expanded", "true");
-    menuButton.setAttribute("aria-label", "Fechar menu");
+    menuButton.setAttribute("aria-label", window.JBI18N ? window.JBI18N.t("closeMenu") : "Fechar menu");
+    if (headerLogoImage) headerLogoImage.src = "assents/img/logo-escura.png";
+    document.body.style.paddingRight = Math.max(0, window.innerWidth - document.documentElement.clientWidth) + "px";
+    document.documentElement.classList.add("menu-open");
     document.body.classList.add("menu-open");
     if (window.JBLenis) window.JBLenis.stop();
-    var firstItem = getFocusableMenuItems()[0];
-    if (firstItem) {
+    if (menuButton) {
       clearTimeout(menuFocusTimer);
       menuFocusTimer = window.setTimeout(function () {
-        if (isMenuOpen()) firstItem.focus();
+        if (isMenuOpen()) menuButton.focus();
       }, 240);
     }
   }
@@ -40,8 +46,11 @@
     menu.classList.remove("show");
     menuButton.classList.remove("open");
     menuButton.setAttribute("aria-expanded", "false");
-    menuButton.setAttribute("aria-label", "Abrir menu");
+    menuButton.setAttribute("aria-label", window.JBI18N ? window.JBI18N.t("openMenu") : "Abrir menu");
+    if (headerLogoImage) headerLogoImage.src = document.body.classList.contains("dark-mode") ? "assents/img/logo-escura.png" : "assents/img/logo.png";
     document.body.classList.remove("menu-open");
+    document.documentElement.classList.remove("menu-open");
+    document.body.style.paddingRight = "";
     if (window.JBLenis) window.JBLenis.start();
     clearTimeout(menuFocusTimer);
     if (!options || options.restoreFocus !== false) {
@@ -68,27 +77,19 @@
       if (event.key !== "Tab") return;
       var focusable = getFocusableMenuItems();
       if (!focusable.length) return;
-      var first = focusable[0];
-      var last = focusable[focusable.length - 1];
-      if (event.shiftKey && document.activeElement === menuButton) {
-        event.preventDefault();
-        last.focus();
-      } else if (event.shiftKey && document.activeElement === first) {
-        event.preventDefault();
-        menuButton.focus();
-      } else if (!event.shiftKey && document.activeElement === menuButton) {
-        event.preventDefault();
-        first.focus();
-      } else if (!event.shiftKey && document.activeElement === last) {
-        event.preventDefault();
-        menuButton.focus();
-      }
+      event.preventDefault();
+      var currentIndex = focusable.indexOf(document.activeElement);
+      var nextIndex = event.shiftKey ? currentIndex - 1 : currentIndex + 1;
+      if (currentIndex < 0) nextIndex = 0;
+      if (nextIndex < 0) nextIndex = focusable.length - 1;
+      if (nextIndex >= focusable.length) nextIndex = 0;
+      focusable[nextIndex].focus();
     });
   }
 
   menuLinks.forEach(function (link) {
     link.addEventListener("click", function () {
-      if (isMenuOpen()) closeMenu({ restoreFocus: false });
+      if (isMenuOpen()) closeMenu({ restoreFocus: false, restoreScroll: false });
     });
   });
 
@@ -115,6 +116,17 @@
   window.addEventListener("resize", function () {
     if (window.innerWidth > 1024 && isMenuOpen()) closeMenu({ restoreFocus: false });
     updatePageState();
+  });
+  window.addEventListener("hashchange", function () { if (isMenuOpen()) closeMenu({ restoreFocus: false }); });
+  window.addEventListener("pagehide", function () {
+    if (!isMenuOpen()) return;
+    document.body.classList.remove("menu-open");
+    document.documentElement.classList.remove("menu-open");
+    document.body.style.paddingRight = "";
+  });
+  window.addEventListener("jbdev:languagechange", function () {
+    if (!menuButton) return;
+    menuButton.setAttribute("aria-label", window.JBI18N.t(isMenuOpen() ? "closeMenu" : "openMenu"));
   });
 
   var testimonials = Array.from(document.querySelectorAll(".testimonial"));

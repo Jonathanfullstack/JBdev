@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     form.addEventListener("submit", function (event) {
       event.preventDefault();
       status.className = "form-status is-error";
-      status.textContent = "O formulário está indisponível agora. Fale com a JB DEV pelo WhatsApp.";
+      status.textContent = window.JBI18N ? window.JBI18N.t("unavailable") : "O formulário está indisponível agora. Fale com a JB DEV pelo WhatsApp.";
     });
     return;
   }
@@ -17,23 +17,23 @@ document.addEventListener("DOMContentLoaded", function () {
     event.preventDefault();
     var button = form.querySelector('button[type="submit"]');
     button.disabled = true;
-    button.textContent = "Enviando...";
+    button.textContent = window.JBI18N ? window.JBI18N.t("sending") : "Enviando...";
     status.className = "form-status";
-    status.textContent = "Enviando sua mensagem.";
+    status.textContent = window.JBI18N ? window.JBI18N.t("sendingStatus") : "Enviando sua mensagem.";
 
     window.emailjs.sendForm(config.serviceId, config.templateId, form).then(
       function () {
         status.className = "form-status is-success";
-        status.textContent = "Mensagem enviada com sucesso. A JB DEV retornará em breve.";
+        status.textContent = window.JBI18N ? window.JBI18N.t("success") : "Mensagem enviada com sucesso. A JB DEV retornará em breve.";
         form.reset();
       },
       function () {
         status.className = "form-status is-error";
-        status.textContent = "Não foi possível enviar agora. Tente novamente ou fale pelo WhatsApp.";
+        status.textContent = window.JBI18N ? window.JBI18N.t("error") : "Não foi possível enviar agora. Tente novamente ou fale pelo WhatsApp.";
       }
     ).finally(function () {
       button.disabled = false;
-      button.textContent = "Enviar mensagem";
+      button.textContent = window.JBI18N ? window.JBI18N.t("submit") : "Enviar mensagem";
     });
   });
 });

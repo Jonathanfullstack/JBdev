@@ -17,7 +17,7 @@
     if (metaTheme) metaTheme.content = isDark ? "#0b1020" : "#493eda";
     if (toggle) {
       toggle.setAttribute("aria-pressed", String(isDark));
-      toggle.setAttribute("aria-label", isDark ? "Ativar tema claro" : "Ativar tema escuro");
+      toggle.setAttribute("aria-label", window.JBI18N ? window.JBI18N.t(isDark ? "lightTheme" : "darkTheme") : (isDark ? "Ativar tema claro" : "Ativar tema escuro"));
     }
     if (icon) icon.className = isDark ? "fas fa-sun" : "fas fa-moon";
     if (persist) localStorage.setItem("colorMode", theme);
@@ -29,4 +29,5 @@
       applyTheme(document.body.classList.contains("dark-mode") ? "light" : "dark", true);
     });
   }
+  window.addEventListener("jbdev:languagechange", function () { applyTheme(document.body.classList.contains("dark-mode") ? "dark" : "light", false); });
 })();

@@ -32,7 +32,7 @@ window.SITE_CONFIG = Object.freeze({
 
 document.addEventListener("DOMContentLoaded", function () {
   var config = window.SITE_CONFIG;
-  var contextMessages = {
+  var contextMessagesPt = {
     header: "Olá, JB DEV! Quero entender como vocês podem ajudar meu negócio.",
     hero: "Olá, JB DEV! Quero solicitar uma proposta para um projeto digital.",
     services: "Olá, JB DEV! Quero ajuda para identificar a melhor solução para o meu negócio.",
@@ -43,18 +43,30 @@ document.addEventListener("DOMContentLoaded", function () {
     footer: "Olá, JB DEV! Encontrei o site e quero conversar.",
     floating: config.contact.whatsappMessage
   };
+  var contextMessagesEn = {
+    header: "Hello, Jonathan! I found JB DEV through your website and would like to discuss a project.",
+    hero: "Hello, Jonathan! I found JB DEV through your website and would like to discuss a project.",
+    services: "Hello, Jonathan! I would like help choosing the right digital solution for my business.",
+    projects: "Hello, Jonathan! I saw your projects and would like to plan a digital solution for my business.",
+    faq: "Hello, Jonathan! I have a question about your services and projects.",
+    final: "Hello, Jonathan! I would like to discuss my next project.",
+    contact: "Hello, Jonathan! I would like to discuss a business need.",
+    footer: "Hello, Jonathan! I found JB DEV through your website and would like to discuss a project.",
+    floating: "Hello, Jonathan! I found JB DEV through your website and would like to discuss a project."
+  };
 
-  document.querySelectorAll("[data-whatsapp]").forEach(function (link) {
-    var context = link.getAttribute("data-whatsapp-context");
-    var message = contextMessages[context] || config.contact.whatsappMessage;
-    link.href =
-      "https://wa.me/" +
-      config.contact.whatsappE164 +
-      "?text=" +
-      encodeURIComponent(message);
-    link.target = "_blank";
-    link.rel = "noopener noreferrer";
-  });
+  window.JBApplyWhatsAppLinks = function () {
+    var isEnglish = window.JBI18N && window.JBI18N.getLanguage() === "en";
+    var contextMessages = isEnglish ? contextMessagesEn : contextMessagesPt;
+    document.querySelectorAll("[data-whatsapp]").forEach(function (link) {
+      var context = link.getAttribute("data-whatsapp-context");
+      var message = contextMessages[context] || (isEnglish ? contextMessagesEn.floating : config.contact.whatsappMessage);
+      link.href = "https://wa.me/" + config.contact.whatsappE164 + "?text=" + encodeURIComponent(message);
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+    });
+  };
+  window.JBApplyWhatsAppLinks();
 
   document.querySelectorAll("[data-contact-phone]").forEach(function (element) {
     element.textContent = config.contact.phoneDisplay;
