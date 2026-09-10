@@ -2,9 +2,13 @@
   var header = document.getElementById("site-header");
   var menu = document.getElementById("primary-menu");
   var menuButton = document.querySelector(".menu-btn");
-  var headerLogoImage = document.getElementById("header-logo-img");
+  var headerInner = document.querySelector(".header__inner");
   var backToTop = document.getElementById("backToTop");
-  var menuLinks = menu ? Array.from(menu.querySelectorAll('a[href^="#"]')) : [];
+  var menuAnchors = menu ? Array.from(menu.querySelectorAll("a")) : [];
+  // The panel CTA points at WhatsApp, so it must stay out of the scroll spy.
+  var menuLinks = menuAnchors.filter(function (link) {
+    return !link.closest(".header__menu-cta");
+  });
   var lastFocusedElement = null;
   var menuFocusTimer = null;
   var scrollFrame = null;
@@ -28,7 +32,6 @@
     menuButton.classList.add("open");
     menuButton.setAttribute("aria-expanded", "true");
     menuButton.setAttribute("aria-label", window.JBI18N ? window.JBI18N.t("closeMenu") : "Fechar menu");
-    if (headerLogoImage) headerLogoImage.src = "assents/img/logo-escura.png";
     document.body.style.paddingRight = Math.max(0, window.innerWidth - document.documentElement.clientWidth) + "px";
     document.documentElement.classList.add("menu-open");
     document.body.classList.add("menu-open");
@@ -47,7 +50,6 @@
     menuButton.classList.remove("open");
     menuButton.setAttribute("aria-expanded", "false");
     menuButton.setAttribute("aria-label", window.JBI18N ? window.JBI18N.t("openMenu") : "Abrir menu");
-    if (headerLogoImage) headerLogoImage.src = document.body.classList.contains("dark-mode") ? "assents/img/logo-escura.png" : "assents/img/logo.png";
     document.body.classList.remove("menu-open");
     document.documentElement.classList.remove("menu-open");
     document.body.style.paddingRight = "";
@@ -87,10 +89,18 @@
     });
   }
 
-  menuLinks.forEach(function (link) {
+  menuAnchors.forEach(function (link) {
     link.addEventListener("click", function () {
       if (isMenuOpen()) closeMenu({ restoreFocus: false, restoreScroll: false });
     });
+  });
+
+  // Clicking anywhere outside the bar or the panel (i.e. the scrim) closes it.
+  document.addEventListener("click", function (event) {
+    if (!isMenuOpen()) return;
+    var target = event.target;
+    if (menu.contains(target) || (headerInner && headerInner.contains(target))) return;
+    closeMenu({ restoreFocus: false });
   });
 
   function updatePageState() {
@@ -114,7 +124,7 @@
   }, { passive: true });
 
   window.addEventListener("resize", function () {
-    if (window.innerWidth > 1024 && isMenuOpen()) closeMenu({ restoreFocus: false });
+    if (window.innerWidth > 1152 && isMenuOpen()) closeMenu({ restoreFocus: false });
     updatePageState();
   });
   window.addEventListener("hashchange", function () { if (isMenuOpen()) closeMenu({ restoreFocus: false }); });

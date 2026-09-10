@@ -2,6 +2,11 @@
   "use strict";
 
   var EN = Object.freeze({
+    "DESENVOLVIMENTO WEB • ESTRATÉGIA • RESULTADOS": "WEB DEVELOPMENT • STRATEGY • RESULTS",
+    "Criação de Sites": "Website Development", "e Sistemas em": "and Systems in", "Indaiatuba": "Indaiatuba",
+    "Criamos sites profissionais, landing pages, sistemas web e e-commerce para empresas que querem gerar mais resultados.": "We build professional websites, landing pages, web systems and e-commerce for businesses seeking better results.",
+    "Solicitar orçamento": "Request a quote", "Mais visibilidade": "More visibility", "Mais oportunidades": "More opportunities", "Mais vendas": "More sales",
+    "ESTRATÉGIA EM MOVIMENTO": "STRATEGY IN MOTION", "IDEIAS QUE SE TRANSFORMAM EM RESULTADOS.": "IDEAS THAT TURN INTO RESULTS.", "EXPLORE": "EXPLORE",
     "Pular para o conteúdo": "Skip to content",
     "Início": "Home", "Serviços": "Services", "Processo": "Process", "Projetos": "Projects", "Sobre": "About", "Contato": "Contact",
     "Falar no WhatsApp": "Chat on WhatsApp", "Sites e sistemas que": "Websites and systems", "fazem o seu negócio": "that move your business", "avançar.": "forward.",
@@ -53,7 +58,23 @@
     "Seu próximo projeto começa com uma conversa": "Your next project starts with a conversation", "Vamos construir uma solução digital que faça sentido para o seu negócio?": "Let's build a digital solution that makes sense for your business.", "Conte o que você precisa. A JB DEV ajuda a transformar o desafio em um caminho claro.": "Tell us what you need. JB DEV will help turn your challenge into a clear path forward.", "Começar pelo WhatsApp": "Start on WhatsApp",
     "Prefere enviar os detalhes por aqui?": "Prefer to share the details here?", "Descreva sua ideia ou necessidade. A JB DEV retorna para entender melhor o projeto.": "Describe your idea or needs. JB DEV will get back to learn more about your project.", "E-mail": "Email", "Atendimento": "Service area", "Indaiatuba/SP e remoto": "Indaiatuba, Brazil, and remote",
     "Nome": "Name", "Assunto": "Subject", "Conte um pouco sobre o projeto": "Tell us a little about your project", "Enviar mensagem": "Send message",
-    "Sites, sistemas e soluções digitais para negócios que querem avançar.": "Websites, systems, and digital solutions for businesses ready to move forward.", "Navegação": "Navigation", "Redes": "Social media", "© 2026 JB DEV. Todos os direitos reservados.": "© 2026 JB DEV. All rights reserved.", "Voltar ao início": "Back to top"
+    "Sites, sistemas e soluções digitais para negócios que querem avançar.": "Websites, systems, and digital solutions for businesses ready to move forward.", "Navegação": "Navigation", "Redes": "Social media", "© 2026 JB DEV. Todos os direitos reservados.": "© 2026 JB DEV. All rights reserved.", "Voltar ao início": "Back to top",
+    "Pedir orçamento": "Request a quote", "Quero tirar meu projeto do papel": "I want to get my project off the ground", "Tirar projeto do papel": "Start my project", "Ver projetos realizados": "See completed projects",
+    "Conte sua ideia e receba uma proposta sem compromisso.": "Tell us your idea and get a no-obligation proposal.",
+    "Quero criar meu site": "I want to build my website", "Quero uma landing page": "I want a landing page", "Tenho uma ideia de sistema": "I have a system in mind", "Quero vender online": "I want to sell online", "Quero melhorar meu site": "I want to improve my website", "Preciso de suporte": "I need support",
+    "Explique seu cenário e a JB DEV indica o caminho mais direto.": "Describe your situation and JB DEV will point out the most direct path.", "Me ajude a escolher": "Help me choose",
+    "Vamos começar seu projeto?": "Ready to start your project?", "A gente entende sua necessidade antes de falar em solução.": "We understand your needs before proposing a solution.", "Começar pela descoberta": "Start with discovery",
+    "Ver projeto ao vivo": "Open live project", "Quero um projeto nesse nível": "I want a project at this level",
+    "Converse sobre sua ideia": "Talk through your idea", "Mesmo que você ainda não saiba exatamente o que precisa.": "Even if you are not sure exactly what you need yet.",
+    "Ainda ficou com alguma dúvida?": "Still have a question?", "Sem formulário e sem compromisso.": "No forms, no commitment.", "Falar direto no WhatsApp": "Message us on WhatsApp",
+    "Tem um projeto em mente? Vamos transformar em algo real.": "Have a project in mind? Let's turn it into something real.", "Conte o que você precisa e receba uma proposta personalizada para o seu projeto.": "Tell us what you need and get a proposal tailored to your project.",
+    "Quero conversar sobre meu projeto": "I want to discuss my project", "Ver projetos primeiro": "See the projects first", "Orçamento sem compromisso.": "No-obligation quote.",
+    "Criação de sites, landing pages, sistemas web e soluções digitais para empresas que querem crescer com mais estratégia e resultados.": "Websites, landing pages, web systems and digital solutions for companies that want to grow with more strategy and better results.",
+    "Soluções": "Solutions", "Atendimento": "Service area", "Especialidades": "Specialties",
+    "Criação de Sites": "Website Development", "Landing Pages": "Landing Pages", "Sistemas Web": "Web Systems", "Loja Virtual": "Online Store", "CRM Personalizado": "Custom CRM", "Sistema de Agendamento": "Scheduling System", "Otimização de Sites": "Website Optimization", "Manutenção e Suporte": "Maintenance and Support",
+    "sede": "HQ", "Atendimento online em todo o Brasil": "Remote service across Brazil",
+    "Site para Empresas": "Websites for Companies", "Site para Clínicas": "Websites for Clinics", "Site para Estética": "Websites for Beauty Studios", "Site para Imobiliária": "Websites for Real Estate", "Site para Restaurantes": "Websites for Restaurants", "Sistemas Personalizados": "Custom Systems", "SEO Local": "Local SEO", "Google Meu Negócio": "Google Business Profile",
+    "Desenvolvido com foco em resultados.": "Built with a focus on results."
   });
 
   var META = Object.freeze({
@@ -61,7 +82,7 @@
     en: { title: "JB DEV | Websites, systems and digital solutions", description: "JB DEV builds professional websites, custom systems, automations and digital solutions for businesses." }
   });
   var ATTR_EN = Object.freeze({
-    "JB DEV — página inicial": "JB DEV — home page", "Navegação principal": "Main navigation", "Selecionar idioma": "Select language", "Exibir site em português": "Display website in Portuguese", "Abrir menu": "Open menu", "Ativar tema escuro": "Switch to dark theme", "Compromissos da JB DEV": "JB DEV commitments", "Navegação dos depoimentos": "Testimonial navigation", "Mostrar depoimento 1": "Show testimonial 1", "Mostrar depoimento 2": "Show testimonial 2", "Mostrar depoimento 3": "Show testimonial 3", "Falar com a JB DEV pelo WhatsApp": "Chat with JB DEV on WhatsApp", "Voltar ao topo": "Back to top",
+    "JB DEV — página inicial": "JB DEV — home page", "Navegação principal": "Main navigation", "Selecionar idioma": "Select language", "Exibir site em português": "Display website in Portuguese", "Abrir menu": "Open menu", "Ativar tema escuro": "Switch to dark theme", "Compromissos da JB DEV": "JB DEV commitments", "Navegação dos depoimentos": "Testimonial navigation", "Mostrar depoimento 1": "Show testimonial 1", "Mostrar depoimento 2": "Show testimonial 2", "Mostrar depoimento 3": "Show testimonial 3", "Falar com a JB DEV pelo WhatsApp": "Chat with JB DEV on WhatsApp", "Fale com a JB DEV": "Chat with JB DEV", "Voltar ao topo": "Back to top", "Navegação do rodapé": "Footer navigation", "Instagram da JB DEV": "JB DEV on Instagram", "LinkedIn de Jonathan Balieiro": "Jonathan Balieiro on LinkedIn", "GitHub da JB DEV": "JB DEV on GitHub",
     "Apresentação responsiva do sistema finance.ai em notebook e celular": "Responsive presentation of the finance.ai system on desktop and mobile", "Apresentação responsiva do sistema JB Barber em notebook e celular": "Responsive presentation of the JB Barber system on desktop and mobile", "Apresentação responsiva do sistema Izabella Nail Designer em notebook e celular": "Responsive presentation of the Izabella Nail Designer system on desktop and mobile", "Apresentação responsiva do site Victoria Films em notebook e celular": "Responsive presentation of the Victoria Films website on desktop and mobile", "Apresentação responsiva do Menu Online em notebook e celular": "Responsive presentation of Menu Online on desktop and mobile", "Apresentação responsiva do site Valarine Beauty em notebook e celular": "Responsive presentation of the Valarine Beauty website on desktop and mobile", "Jonathan Balieiro trabalhando em seu espaço de desenvolvimento": "Jonathan Balieiro working in his development workspace"
   });
   var language = "pt", textRecords = [], attributeRecords = [];
