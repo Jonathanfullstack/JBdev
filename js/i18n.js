@@ -95,7 +95,7 @@
   });
 
   var META = Object.freeze({
-    pt: { title: "JB DEV | Sites, sistemas e soluções digitais", description: "A JB DEV desenvolve sites, sistemas e soluções digitais sob medida para empresas e profissionais. Atendimento em Indaiatuba/SP e remoto." },
+    pt: { title: "Criação de Sites e Sistemas em Indaiatuba | JB DEV", description: "A JB DEV desenvolve sites, sistemas e soluções digitais sob medida para empresas e profissionais. Atendimento em Indaiatuba/SP e remoto." },
     en: { title: "JB DEV | Websites, systems and digital solutions", description: "JB DEV builds professional websites, custom systems, automations and digital solutions for businesses." }
   });
   var ATTR_EN = Object.freeze({

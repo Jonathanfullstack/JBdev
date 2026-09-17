@@ -110,7 +110,8 @@ document.addEventListener("DOMContentLoaded", function () {
     name: config.brand.name,
     description: config.brand.description,
     url: config.siteUrl,
-    image: config.person.image,
+    image: new URL("assents/img/og-jbdev.png", config.siteUrl).href,
+    logo: new URL("assents/img/logo.png", config.siteUrl).href,
     telephone: "+" + config.contact.whatsappE164,
     email: config.contact.email,
     address: {
@@ -140,6 +141,38 @@ document.addEventListener("DOMContentLoaded", function () {
   };
   var schemaTag = document.createElement("script");
   schemaTag.type = "application/ld+json";
-  schemaTag.textContent = JSON.stringify(schema);
+  var person = Object.assign({}, schema.founder, {
+    "@id": config.siteUrl + "#person",
+    url: config.siteUrl + "cartao",
+    email: config.contact.email,
+    telephone: schema.telephone,
+    worksFor: { "@id": schema["@id"] },
+    sameAs: schema.sameAs
+  });
+  schema.founder = { "@id": person["@id"] };
+  var website = {
+    "@type": "WebSite",
+    "@id": config.siteUrl + "#website",
+    url: config.siteUrl,
+    name: config.brand.name,
+    inLanguage: "pt-BR",
+    publisher: { "@id": schema["@id"] }
+  };
+  var isCard = document.body.dataset.page === "card";
+  var pageUrl = config.siteUrl + (isCard ? "cartao" : "");
+  var page = {
+    "@type": isCard ? "ProfilePage" : "WebPage",
+    "@id": pageUrl + "#webpage",
+    url: pageUrl,
+    name: document.title,
+    inLanguage: document.documentElement.lang,
+    isPartOf: { "@id": website["@id"] },
+    mainEntity: { "@id": isCard ? person["@id"] : schema["@id"] }
+  };
+  delete schema["@context"];
+  schemaTag.textContent = JSON.stringify({
+    "@context": "https://schema.org",
+    "@graph": [schema, person, website, page]
+  });
   document.head.appendChild(schemaTag);
 });

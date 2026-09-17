@@ -60,7 +60,7 @@
   var initialLanguage = "pt";
   try {
     var savedLanguage = localStorage.getItem("jbdev-card-language");
-    initialLanguage = savedLanguage || (navigator.language.toLowerCase().startsWith("en") ? "en" : "pt");
+    initialLanguage = savedLanguage || "pt";
   } catch (error) { initialLanguage = "pt"; }
 
   buttons.forEach(function (button) {
