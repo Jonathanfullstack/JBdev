@@ -3,7 +3,7 @@
  * Padrão similar a cookbooks: dados estruturados separados da UI.
  */
 window.SITE_CONFIG = Object.freeze({
-  siteUrl: "https://jonathanbalieiro.dev/",
+  siteUrl: "https://www.jbdev.com.br/",
   brand: {
     name: "JB DEV",
     description: "Sites, sistemas e soluções digitais",
@@ -11,7 +11,7 @@ window.SITE_CONFIG = Object.freeze({
   person: {
     name: "Jonathan Vinicius Balieiro de Oliveira",
     jobTitle: "Desenvolvedor Web Full Stack",
-    image: "https://jonathanbalieiro.dev/assents/img/1716911104056.jpeg",
+    image: "https://www.jbdev.com.br/assents/img/1716911104056.jpeg",
   },
   contact: {
     phoneDisplay: "(19) 99749-5985",
