@@ -1369,3 +1369,45 @@ html.lenis.lenis-stopped { overflow: clip; }
   .technology-list[aria-hidden="true"] { display: none; }
   .technology-item { opacity: 0.54 !important; }
 }
+
+/* Commercial CTAs: preserve the existing palette and section composition. */
+.btn, .faq-cta__link, .service-card__cta, .whatsapp-button {
+  transition: transform 250ms ease, background-color 250ms ease, border-color 250ms ease, box-shadow 250ms ease;
+}
+[data-whatsapp]:focus-visible { outline: 2px solid var(--primary); outline-offset: 5px; }
+.final-cta [data-whatsapp]:focus-visible { outline-color: white; }
+[data-whatsapp]:active { transform: translateY(1px) scale(0.98); }
+.cta-arrow { display: inline-block; flex: none; transition: transform 250ms ease; }
+@media (hover: hover) {
+  [data-whatsapp]:hover .cta-arrow { transform: translateX(3px); }
+  .whatsapp-button:hover, .faq-cta__link:hover { transform: translateY(-2px); }
+  .btn-primary:hover, .whatsapp-button:hover { box-shadow: 0 8px 24px rgba(73, 62, 218, 0.28); }
+}
+.header__cta { min-height: 44px; }
+.hero__actions { margin-bottom: 1rem; }
+.hero__microcopy { display: flex; flex-wrap: wrap; gap: 0.5rem 1.2rem; padding: 0; margin: 0 0 1.5rem; list-style: none; color: var(--text); font-size: 0.78rem; }
+.hero__microcopy li { white-space: nowrap; }
+.hero__microcopy li span { color: var(--primary); margin-right: 0.25rem; }
+.section-cta .btn { flex-shrink: 0; }
+.service-card__cta, .faq-cta__link { min-height: 44px; }
+.faq-cta { margin-top: -1rem; }
+.faq-cta__link { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--ink); font-size: 0.9rem; font-weight: 600; }
+.whatsapp-button { display: flex; gap: 0.55rem; width: auto; height: auto; min-height: 48px; padding: 0.8rem 1rem; border: 1px solid rgba(255,255,255,0.18); border-radius: 999px; background: var(--primary); font-size: 0.8rem; box-shadow: 0 4px 18px rgba(73,62,218,0.2); }
+.whatsapp-button i, .whatsapp-button svg { width: 1.2rem; height: 1.2rem; }
+.whatsapp-label--mobile { display: none; }
+.whatsapp-button[hidden] { display: none; }
+@media (max-width: 767px) {
+  body { padding-bottom: calc(5rem + env(safe-area-inset-bottom, 0px)); }
+  html { scroll-padding-bottom: calc(6rem + env(safe-area-inset-bottom, 0px)); }
+  .whatsapp-button { left: max(0.75rem, env(safe-area-inset-left)); right: max(0.75rem, env(safe-area-inset-right)); bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px)); width: auto; height: auto; min-height: 52px; justify-content: center; border-radius: 1rem; font-size: 0.9rem; }
+  .whatsapp-label--desktop { display: none; }
+  .whatsapp-label--mobile { display: inline; }
+  .back-to-top { bottom: calc(5rem + env(safe-area-inset-bottom, 0px)); }
+  .menu-open .whatsapp-button { display: none; }
+  .hero__actions .btn, .final-cta .btn { padding-inline: 1rem; font-size: 0.9rem; text-align: center; }
+  .final-cta .btn { max-width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-whatsapp], .cta-arrow { transition: none; }
+}
+.header__cta { white-space: nowrap; flex-shrink: 0; }

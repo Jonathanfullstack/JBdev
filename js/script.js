@@ -262,3 +262,27 @@
     updatePageState();
   });
 })();
+
+// Keep the conversation shortcut clear of the footer and mobile keyboard.
+(function () {
+  var shortcut = document.querySelector('.whatsapp-button');
+  var footer = document.querySelector('footer');
+  if (!shortcut) return;
+  var footerVisible = false;
+  function updateShortcut() {
+    var mobile = window.matchMedia('(max-width: 767px)').matches;
+    var editing = document.activeElement && document.activeElement.matches('input, textarea, select, [contenteditable="true"]');
+    shortcut.hidden = footerVisible || (mobile && editing);
+    shortcut.dataset.cta = mobile ? 'mobile_sticky' : 'floating';
+  }
+  if (footer && 'IntersectionObserver' in window) {
+    new IntersectionObserver(function (entries) {
+      footerVisible = entries[0].isIntersecting;
+      updateShortcut();
+    }).observe(footer);
+  }
+  document.addEventListener('focusin', updateShortcut);
+  document.addEventListener('focusout', function () { window.requestAnimationFrame(updateShortcut); });
+  window.addEventListener('resize', updateShortcut);
+  updateShortcut();
+})();

@@ -51,7 +51,7 @@
 @media (max-width: 1024px) { #hero { padding-top: 8rem; } #hero h1 { font-size: clamp(2.2rem, 4.5vw, 3rem); } #hero .hero__eyebrow { font-size: .54rem; } #hero .hero__visual { height: 450px; } }
 @media (max-width: 768px) {
   #hero { min-height: auto; padding: 7rem 0 4.5rem; }
-  #hero .hero__grid { grid-template-columns: 1fr; gap: .5rem; }
+  #hero .hero__grid { grid-template-columns: 1fr; gap: 3.5rem; }
   #hero h1 { font-size: clamp(2.25rem, 8.8vw, 3.8rem); max-width: 19ch; }
   #hero .hero__eyebrow { font-size: .52rem; letter-spacing: .1em; margin-bottom: 1.3rem; }
   #hero .hero__lead { font-size: .93rem; max-width: 34rem; }

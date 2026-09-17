@@ -30,33 +30,37 @@ window.SITE_CONFIG = Object.freeze({
   },
 });
 
+window.getWhatsAppUrl = function (message) {
+  return "https://wa.me/" + window.SITE_CONFIG.contact.whatsappE164 + "?text=" + encodeURIComponent(message || window.SITE_CONFIG.contact.whatsappMessage);
+};
+
 document.addEventListener("DOMContentLoaded", function () {
   var config = window.SITE_CONFIG;
   // Each CTA carries the intent of its own section into the conversation.
   var contextMessagesPt = {
-    header: "Olá, JB DEV! Gostaria de pedir um orçamento para um projeto digital.",
-    hero: "Olá, JB DEV! Quero tirar meu projeto do papel e gostaria de receber uma proposta.",
-    services: "Olá, JB DEV! Não sei qual solução faz mais sentido e gostaria de ajuda para escolher.",
-    "service-site": "Olá, JB DEV! Gostaria de um orçamento para criação de site profissional.",
+    header: "Olá! Conheci a JB DEV pelo site e gostaria de conversar sobre um projeto.",
+    hero: "Olá! Conheci a JB DEV pelo site e gostaria de conversar sobre um projeto.",
+    services: "Olá! Estou analisando as soluções da JB DEV e gostaria de uma orientação sobre qual serviço faz mais sentido para meu projeto.",
+    "service-site": "Olá, JB DEV! Gostaria de uma orientação sobre a criação de um site profissional.",
     "service-landing": "Olá, JB DEV! Gostaria de conversar sobre uma landing page para o meu negócio.",
     "service-system": "Olá, JB DEV! Tenho uma ideia de sistema e gostaria de entender como podemos desenvolver.",
     "service-ecommerce": "Olá, JB DEV! Quero criar uma loja virtual e gostaria de conversar sobre o projeto.",
     "service-optimization": "Olá, JB DEV! Já tenho um site e gostaria de melhorar desempenho, visual ou resultados.",
     "service-support": "Olá, JB DEV! Preciso de suporte e acompanhamento técnico para um projeto que já está no ar.",
     process: "Olá, JB DEV! Quero começar um projeto e gostaria de iniciar pela etapa de descoberta.",
-    projects: "Olá, JB DEV! Vi os projetos do site e quero um projeto nesse nível para o meu negócio.",
+    projects: "Olá! Vi os projetos da JB DEV e gostaria de conversar sobre a criação de algo semelhante para o meu negócio.",
     about: "Olá, JB DEV! Tenho uma ideia em mente e gostaria de conversar antes de definir a solução.",
-    faq: "Olá, JB DEV! Ficou uma dúvida depois de ler o site e gostaria de falar direto por aqui.",
-    final: "Olá, JB DEV! Quero conversar sobre meu projeto e receber uma proposta personalizada.",
+    faq: "Olá! Ainda tenho algumas dúvidas sobre os serviços da JB DEV e gostaria de conversar.",
+    final: "Olá! Conheci a JB DEV pelo site e gostaria de conversar sobre um projeto.",
     contact: "Olá, JB DEV! Quero falar sobre uma necessidade do meu negócio.",
     footer: "Olá! Conheci a JB DEV pelo site e gostaria de conversar sobre um projeto.",
     floating: config.contact.whatsappMessage
   };
   var contextMessagesEn = {
-    header: "Hello, Jonathan! I would like to request a quote for a digital project.",
-    hero: "Hello, Jonathan! I want to get my project off the ground and would like to receive a proposal.",
+    header: "Hello, Jonathan! I would like to discuss a project.",
+    hero: "Hello, Jonathan! I want to get my project off the ground and would like to discuss it.",
     services: "Hello, Jonathan! I am not sure which solution fits best and would like help choosing.",
-    "service-site": "Hello, Jonathan! I would like a quote for a professional website.",
+    "service-site": "Hello, Jonathan! I would like guidance on a professional website.",
     "service-landing": "Hello, Jonathan! I would like to discuss a landing page for my business.",
     "service-system": "Hello, Jonathan! I have an idea for a web system and would like to understand how we could build it.",
     "service-ecommerce": "Hello, Jonathan! I want to launch an online store and would like to discuss the project.",
@@ -66,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
     projects: "Hello, Jonathan! I saw your projects and would like something at that level for my business.",
     about: "Hello, Jonathan! I have an idea in mind and would like to talk it through before defining the solution.",
     faq: "Hello, Jonathan! I still have a question after reading your website and would like to ask it here.",
-    final: "Hello, Jonathan! I would like to discuss my project and receive a tailored proposal.",
+    final: "Hello, Jonathan! I would like to discuss my project and explore the best solution.",
     contact: "Hello, Jonathan! I would like to discuss a business need.",
     footer: "Hello, Jonathan! I found JB DEV through your website and would like to discuss a project.",
     floating: "Hello, Jonathan! I found JB DEV through your website and would like to discuss a project."
@@ -78,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll("[data-whatsapp]").forEach(function (link) {
       var context = link.getAttribute("data-whatsapp-context");
       var message = contextMessages[context] || (isEnglish ? contextMessagesEn.floating : config.contact.whatsappMessage);
-      link.href = "https://wa.me/" + config.contact.whatsappE164 + "?text=" + encodeURIComponent(message);
+      link.href = window.getWhatsAppUrl(message);
       link.target = "_blank";
       link.rel = "noopener noreferrer";
     });

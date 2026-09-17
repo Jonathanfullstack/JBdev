@@ -2,6 +2,22 @@
   "use strict";
 
   var EN = Object.freeze({
+"Começar um projeto": "Start a project",
+"Atendimento direto": "Direct contact",
+"Projeto sob medida": "Tailored project",
+"Sem compromisso": "No obligation",
+"Não sabe qual solução seu negócio precisa?": "Not sure which solution your business needs?",
+"Conte o que você quer melhorar e nós ajudamos a encontrar o melhor caminho.": "Tell us what you want to improve and we will help you find the best path.",
+"Quero uma orientação": "I'd like some guidance",
+"Gostou do que viu? O próximo projeto pode ser o seu.": "Like what you see? The next project could be yours.",
+"Quero criar algo assim": "I want to create something like this",
+"Ainda tem dúvidas? Fale com a JB DEV": "Still have questions? Talk to JB DEV",
+"Vamos transformar sua ideia em um projeto real?": "Let's turn your idea into a real project?",
+"Conte o que você precisa e vamos conversar sobre a melhor solução para o seu negócio.": "Tell us what you need and let's discuss the best solution for your business.",
+"Vamos conversar sobre seu projeto": "Let's talk about your project",
+"Conversa inicial sem compromisso.": "An initial conversation with no obligation.",
+"WhatsApp • Fale com a JB DEV": "WhatsApp • Talk to JB DEV",
+"Quero começar meu projeto": "I want to start my project",
     "DESENVOLVIMENTO WEB • ESTRATÉGIA • RESULTADOS": "WEB DEVELOPMENT • STRATEGY • RESULTS",
     "Criação de Sites": "Website Development", "e Sistemas em": "and Systems in", "Indaiatuba": "Indaiatuba",
     "Criamos sites profissionais, landing pages, sistemas web e e-commerce para empresas que querem gerar mais resultados.": "We build professional websites, landing pages, web systems and e-commerce for businesses seeking better results.",
@@ -31,6 +47,7 @@
     "Projeto sob medida": "Custom-built projects", "Decisões alinhadas ao seu negócio, sem pacotes genéricos.": "Decisions aligned with your business, without generic packages.", "Local e remoto": "Local and remote", "Atendimento em Indaiatuba/SP e para clientes de outras regiões.": "Service in Indaiatuba, Brazil, and remotely for clients in other regions.",
     "Projetos selecionados": "Selected projects", "Soluções criadas para diferentes desafios": "Solutions built for different challenges", "Uma seleção de sites e sistemas que demonstra a variedade de projetos desenvolvidos pela JB DEV.": "A selection of websites and systems showcasing the range of solutions developed by JB DEV.",
     "Aplicação web": "Web application", "Gestão financeira pessoal com visão de receitas, despesas, orçamentos e indicadores em um único ambiente.": "Personal finance management with income, expenses, budgets, and key indicators in one place.",
+    "CRM comercial": "Sales CRM", "Gestão de leads e funil kanban com propostas, follow-ups, agenda e indicadores de conversão em um só painel.": "Lead management and kanban pipeline with proposals, follow-ups, scheduling, and conversion metrics in a single dashboard.",
     "Sistema de agendamento": "Scheduling system", "Agendamento de serviços, profissionais e horários com área administrativa para a barbearia.": "Service, professional, and time-slot scheduling with an admin area for the barbershop.",
     "Portfólio de serviços integrado à escolha de datas e horários, com gestão de agendamentos.": "Service portfolio integrated with date and time selection and appointment management.",
     "Site e portfólio": "Website and portfolio", "Experiência visual para apresentar fotografia, identidade, portfólio e contato de forma envolvente.": "A visual experience that presents photography, brand identity, portfolio, and contact information in an engaging way.",
@@ -83,7 +100,7 @@
   });
   var ATTR_EN = Object.freeze({
     "JB DEV — página inicial": "JB DEV — home page", "Navegação principal": "Main navigation", "Selecionar idioma": "Select language", "Exibir site em português": "Display website in Portuguese", "Abrir menu": "Open menu", "Ativar tema escuro": "Switch to dark theme", "Compromissos da JB DEV": "JB DEV commitments", "Navegação dos depoimentos": "Testimonial navigation", "Mostrar depoimento 1": "Show testimonial 1", "Mostrar depoimento 2": "Show testimonial 2", "Mostrar depoimento 3": "Show testimonial 3", "Falar com a JB DEV pelo WhatsApp": "Chat with JB DEV on WhatsApp", "Fale com a JB DEV": "Chat with JB DEV", "Voltar ao topo": "Back to top", "Navegação do rodapé": "Footer navigation", "Instagram da JB DEV": "JB DEV on Instagram", "LinkedIn de Jonathan Balieiro": "Jonathan Balieiro on LinkedIn", "GitHub da JB DEV": "JB DEV on GitHub",
-    "Apresentação responsiva do sistema finance.ai em notebook e celular": "Responsive presentation of the finance.ai system on desktop and mobile", "Apresentação responsiva do sistema JB Barber em notebook e celular": "Responsive presentation of the JB Barber system on desktop and mobile", "Apresentação responsiva do sistema Izabella Nail Designer em notebook e celular": "Responsive presentation of the Izabella Nail Designer system on desktop and mobile", "Apresentação responsiva do site Victoria Films em notebook e celular": "Responsive presentation of the Victoria Films website on desktop and mobile", "Apresentação responsiva do Menu Online em notebook e celular": "Responsive presentation of Menu Online on desktop and mobile", "Apresentação responsiva do site Valarine Beauty em notebook e celular": "Responsive presentation of the Valarine Beauty website on desktop and mobile", "Jonathan Balieiro trabalhando em seu espaço de desenvolvimento": "Jonathan Balieiro working in his development workspace"
+    "Apresentação responsiva do sistema finance.ai em notebook e celular": "Responsive presentation of the finance.ai system on desktop and mobile", "Apresentação responsiva do JB CRM em notebook e tablet": "Responsive presentation of JB CRM on laptop and tablet", "Apresentação responsiva do sistema JB Barber em notebook e celular": "Responsive presentation of the JB Barber system on desktop and mobile", "Apresentação responsiva do sistema Izabella Nail Designer em notebook e celular": "Responsive presentation of the Izabella Nail Designer system on desktop and mobile", "Apresentação responsiva do site Victoria Films em notebook e celular": "Responsive presentation of the Victoria Films website on desktop and mobile", "Apresentação responsiva do Menu Online em notebook e celular": "Responsive presentation of Menu Online on desktop and mobile", "Apresentação responsiva do site Valarine Beauty em notebook e celular": "Responsive presentation of the Valarine Beauty website on desktop and mobile", "Jonathan Balieiro trabalhando em seu espaço de desenvolvimento": "Jonathan Balieiro working in his development workspace"
   });
   var language = "pt", textRecords = [], attributeRecords = [];
 

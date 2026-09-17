@@ -4,6 +4,9 @@ node_modules/
 # Vercel
 .vercel
 
+# Saída de verificação headless (screenshots e scripts de auditoria)
+.hdr/
+
 # Sistema
 .DS_Store
 Thumbs.db
