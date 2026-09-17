@@ -55,9 +55,8 @@
   <link rel="stylesheet" href="assents/light-theme.css?v=11">
   <link rel="preconnect" href="https://cdn.simpleicons.org">
   <link rel="preload" href="assents/img/logo.png" as="image" fetchpriority="high">
-  <!-- assents/fontawesome.min.css foi removido do head: ele referencia ../webfonts/fa-*.woff2,
-       que não existe no projeto. Os ícones vêm do fontawesome.min.js em modo SVG, então o CSS
-       eram 100 KB de código morto bloqueando a primeira pintura. -->
+  <!-- Os ícones vêm do fontawesome.min.js em modo SVG (troca cada <i> por <svg> inline).
+       Não há folha de estilo de ícones aqui de propósito. -->
   <script>
     (function () {
       var saved;
