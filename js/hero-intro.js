@@ -24,6 +24,17 @@
   }
   state.finish = finish;
   if (!gsap) { finish(); return; }
+  // FLIP: keep the final layout box fixed; only composite its transform.
+  // The shader follows the apparent aspect ratio, preserving the original morph.
+  var destination = canvas.getBoundingClientRect();
+  var viewportHeight = document.documentElement.clientHeight;
+  state.view = { width: window.innerWidth, height: viewportHeight };
+  gsap.set(canvas, {
+    x: -destination.left, y: -destination.top,
+    scaleX: window.innerWidth / destination.width,
+    scaleY: viewportHeight / destination.height,
+    transformOrigin: '0 0'
+  });
   function start() {
     if (!state.active || state.started) return;
     state.started = true;
@@ -44,11 +55,10 @@
       .call(function () {
         root.classList.replace('intro-pending', 'intro-playing');
         gsap.set('.site-header, .hero__content', { autoAlpha: 1 });
-        var from = canvas.getBoundingClientRect();
-        var to = visual.getBoundingClientRect();
-        gsap.set(canvas, { left: from.left, top: from.top, width: from.width, height: from.height, xPercent: 0, yPercent: 0, transform: 'none' });
-        timeline.to(canvas, { left: to.left - to.width * .12, top: to.top - to.height * .1,
-          width: to.width * 1.24, height: to.height * 1.2, duration: .95, ease: 'power3.inOut' }, reveal);
+        timeline.to(canvas, { x: 0, y: 0, scaleX: 1, scaleY: 1,
+          duration: .95, ease: 'power3.inOut' }, reveal);
+        timeline.to(state.view, { width: destination.width, height: destination.height,
+          duration: .95, ease: 'power3.inOut' }, reveal);
       }, null, reveal)
       .to('.header__logo', { autoAlpha: 1, duration: .4 }, reveal)
       .to('.site-header nav, .header__actions', { autoAlpha: 1, duration: .4, stagger: .08 }, reveal + .1)

@@ -9,7 +9,7 @@ let disposed = false;
 async function mount() {
   if (disposed) return;
   try {
-    const THREE = await import('https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.min.js');
+    const THREE = await import('./vendor/three-0.170.0.module.min.js');
     if (disposed) return;
     const low = compact.matches || (navigator.hardwareConcurrency || 8) <= 4 || (navigator.deviceMemory || 8) <= 4;
     const count = low ? 2400 : 12500;
@@ -125,6 +125,10 @@ async function mount() {
     }
     let frame = 0, previous = 0, elapsed = 0, visible = true, lost = false, slowFrames = 0, lightTheme = false;
     const target = new THREE.Vector2();
+    const visual = hero.querySelector('.hero__visual');
+    let scrollProgress = 0, heroTop = 0, heroHeight = 1;
+    function updateScroll() { scrollProgress = Math.min(1, Math.max(0, (window.scrollY - heroTop) / heroHeight)); }
+    window.addEventListener('scroll', updateScroll, { passive: true });
     function draw(now) {
       frame = 0;
       if (disposed || document.hidden || !visible || lost) return;
@@ -138,18 +142,22 @@ async function mount() {
       uniforms.uInfinity.value = intro.active ? intro.infinity : 0;
       points.rotation.x = .35 * (1 - Math.max(uniforms.uChaos.value, uniforms.uInfinity.value));
       uniforms.uPulse.value = intro.active ? intro.pulse : 0;
-      uniforms.uScroll.value = reduced.matches ? 0 : Math.min(1, Math.max(0, -hero.getBoundingClientRect().top / hero.offsetHeight));
+      uniforms.uScroll.value = reduced.matches ? 0 : scrollProgress;
+      if (intro.active && intro.view) {
+        const aspect = intro.view.width / intro.view.height;
+        if (camera.aspect !== aspect) { camera.aspect = aspect; camera.updateProjectionMatrix(); uniforms.uView.value.set(2.475 * aspect, 2.475); }
+      }
       uniforms.uMouse.value.lerp(target, .045);
       const lineBase = lightTheme ? .22 : .13;
       paths.forEach((line, i) => { line.rotation.y = reduced.matches ? 0 : Math.sin(elapsed * .09 + i) * .12; line.material.opacity = lineBase * uniforms.uReveal.value * (1 - uniforms.uScroll.value) * (1 - uniforms.uChaos.value); });
       renderer.render(scene, camera);
-      hero.querySelector('.hero__visual').classList.add('is-rendered');
+      if (!visual.classList.contains('is-rendered')) visual.classList.add('is-rendered');
       if (!intro.ready) { intro.ready = true; window.dispatchEvent(new Event('jb:particles-ready')); }
       if (!low && dt > .045 && ++slowFrames === 35) { geometry.setDrawRange(0, 6000); renderer.setPixelRatio(1); uniforms.uDpr.value = 1; }
       if (!reduced.matches) frame = requestAnimationFrame(draw);
     }
     function resume() { if (!frame && !disposed) { previous = 0; frame = requestAnimationFrame(draw); } }
-    function resize() { const { width, height } = host.getBoundingClientRect(); renderer.setSize(width, height); camera.aspect = width / height; uniforms.uView.value.set(2.475 * camera.aspect, 2.475); camera.updateProjectionMatrix(); if (compact.matches) { geometry.setDrawRange(0, 2400); renderer.setPixelRatio(1); uniforms.uDpr.value = 1; } resume(); }
+    function resize() { const width = host.clientWidth, height = host.clientHeight; if (!width || !height) return; renderer.setSize(width, intro.active ? Math.max(height, window.innerHeight) : height, false); heroTop = hero.getBoundingClientRect().top + window.scrollY; heroHeight = hero.offsetHeight; updateScroll(); camera.aspect = width / height; uniforms.uView.value.set(2.475 * camera.aspect, 2.475); camera.updateProjectionMatrix(); if (compact.matches) { geometry.setDrawRange(0, 2400); renderer.setPixelRatio(1); uniforms.uDpr.value = 1; } resume(); }
     function pointer(e) { if (reduced.matches || e.pointerType === 'touch') return; const r = host.getBoundingClientRect(); target.set((e.clientX - r.left) / r.width * 2 - 1, 1 - (e.clientY - r.top) / r.height * 2); }
     function leave() { target.set(0, 0); }
     function visibility() { cancelAnimationFrame(frame); frame = 0; if (!document.hidden) resume(); }
@@ -158,6 +166,8 @@ async function mount() {
     const observer = new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; if (visible) resume(); else { cancelAnimationFrame(frame); frame = 0; } });
     observer.observe(hero);
     const sizeObserver = new ResizeObserver(resize); sizeObserver.observe(host);
+    window.addEventListener('jb:intro-finished', resize);
+    if (document.fonts) document.fonts.ready.then(resize);
     hero.addEventListener('pointermove', pointer); hero.addEventListener('pointerleave', leave);
     document.addEventListener('visibilitychange', visibility); reduced.addEventListener('change', resume);
     renderer.domElement.addEventListener('webglcontextlost', contextLost);
@@ -191,6 +201,8 @@ async function mount() {
       hero.removeEventListener('pointermove', pointer); hero.removeEventListener('pointerleave', leave);
       document.removeEventListener('visibilitychange', visibility); reduced.removeEventListener('change', resume);
       window.removeEventListener('jbdev:themechange', updateTheme);
+      window.removeEventListener('scroll', updateScroll);
+      window.removeEventListener('jb:intro-finished', resize);
       geometry.dispose(); material.dispose(); paths.forEach(p => { p.geometry.dispose(); p.material.dispose(); }); renderer.dispose();
     });
   } catch (error) { window.dispatchEvent(new Event('jb:particles-failed')); console.warn('JB DEV: visual decorativo indisponível; conteúdo preservado.', error); }

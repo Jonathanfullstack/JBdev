@@ -49,7 +49,6 @@
         };
 
         [
-          motion.createConductor,
           motion.createCommercialScenes,
           motion.createTechnologyScene,
           motion.createProjectScene,

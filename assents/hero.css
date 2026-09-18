@@ -76,10 +76,11 @@ html.intro-pending body, html.intro-playing body { overflow: hidden !important; 
 :is(.intro-pending, .intro-playing) .back-to-top { visibility: hidden; }
 :is(.intro-pending, .intro-playing) #hero::before,
 :is(.intro-pending, .intro-playing) #hero::after { opacity: 0; }
+:is(.intro-pending, .intro-playing) #hero { overflow: visible; }
 .intro-pending .hero__canvas, .intro-playing .hero__canvas {
-  position: fixed; inset: auto; left: 50%; top: 50%;
-  width: 100vw; height: 100svh;
-  transform: translate(-50%, -50%); z-index: 10;
+  transform-origin: 0 0;
+  z-index: 10;
+  will-change: transform;
 }
 /* Continuous dark-blue handoff; identical color on both sides of the seam. */
 #hero::after {

@@ -1,0 +1,4 @@
+/* Font Awesome Free 6.4.2 SVG geometry: CC BY 4.0, Fonticons, Inc. */
+.svg-inline--fa { display: inline-block; height: 1em; width: var(--fa-width, 1em); overflow: visible; vertical-align: -.125em; flex-shrink: 0; }
+/* Match Font Awesome's original box model, including padded service/contact icons. */
+svg:not(:root).svg-inline--fa { overflow: visible; box-sizing: content-box; }
