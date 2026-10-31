@@ -14,7 +14,8 @@ export type ServicePageContent = {
   faq: [string, string][];
 };
 
-type Pages = Record<ServiceSlug, Record<Locale, ServicePageContent>>;
+// SEO & Google Meu Negócio tem página própria (content/seo-service.ts)
+type Pages = Record<Exclude<ServiceSlug, 'seo-google-meu-negocio'>, Record<Locale, ServicePageContent>>;
 
 export const SERVICE_PAGES: Pages = {
   'criacao-de-sites': {
@@ -446,4 +447,4 @@ export const SERVICE_PAGES: Pages = {
   },
 };
 
-export const SERVICE_SLUGS = Object.keys(SERVICE_PAGES) as ServiceSlug[];
+export const SERVICE_SLUGS = Object.keys(SERVICE_PAGES) as (keyof Pages)[];

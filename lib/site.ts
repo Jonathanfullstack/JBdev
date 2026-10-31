@@ -5,8 +5,6 @@
 export const SITE = {
   url: 'https://www.jbdev.com.br',
   name: 'JB DEV',
-  legalName: '[Razão social LTDA]',
-  cnpj: '[00.000.000/0001-00]',
   founder: {
     name: 'Jonathan Vinicius Balieiro de Oliveira',
     shortName: 'Jonathan Balieiro',
@@ -25,7 +23,7 @@ export const SITE = {
     region: 'SP',
     country: 'BR',
   },
-  areaServed: ['Indaiatuba', 'Campinas', 'Itu', 'Salto', 'Sorocaba'],
+  areaServed: ['Indaiatuba', 'Campinas', 'Itu', 'Salto', 'Sorocaba', 'São Paulo'],
   social: {
     instagram: 'https://www.instagram.com/jonathan_desenvolvedor/',
     linkedin: 'https://www.linkedin.com/in/jonathan-balieiro-b83230298/',

@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
+import Logo from './Logo';
 import { usePathname } from 'next/navigation';
 import { LOCALES, LOCALE_LABEL, localePath, stripLocale, type Locale } from '@/lib/i18n';
 import { onFrame } from '@/lib/motion';
@@ -73,8 +74,7 @@ export default function Header({ locale, nav }: { locale: Locale; nav: Dict['nav
       <header ref={header} className={`site-header${menu ? ' menu-open' : ''}`}>
         <div className="nav-inner">
           <Link href={localePath(locale, '/')} className="brand">
-            <span className="brand-mark" aria-hidden="true">jb</span>
-            <span className="brand-word">JB DEV</span>
+            <Logo />
           </Link>
 
           <nav aria-label={nav.primary} className="nav-links desktop-only">

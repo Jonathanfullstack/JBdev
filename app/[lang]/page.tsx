@@ -1,13 +1,26 @@
 import { Suspense } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { localePath } from '@/lib/i18n';
 import { resolve } from '@/lib/page';
 import { buildMetadata, faqSchema } from '@/lib/seo';
 import { getPosts, toMeta } from '@/lib/blog';
+import { SEO_SLUG } from '@/content/seo-service';
 import { PROJECTS } from '@/content/projects';
 import RibbonCanvas from '@/components/motion/RibbonCanvas';
 import PinSection from '@/components/motion/PinSection';
-import Marquee from '@/components/motion/Marquee';
+import Marquee, { type TechItem } from '@/components/motion/Marquee';
+import {
+  siDocker, siNestjs, siNextdotjs, siNodedotjs, siPostgresql, siPrisma, siReact, siSupabase, siTypescript, siVercel,
+} from 'simple-icons';
+
+// OpenAI não está no simple-icons: brilho genérico de IA no lugar do logo
+const AI_SPARK = 'M12 0c.6 5.9 3.5 8.8 9.4 9.4v.2-.2C24 9.7 24 10 24 12c-6.5.6-9.4 3.5-10 10.4h-.2C13.2 15.5 10.3 12.6 4 12c6.3-.6 9.2-3.5 9.8-10.4M4.5 15.5c.3 2.6 1.4 3.7 4 4-2.6.3-3.7 1.4-4 4-.3-2.6-1.4-3.7-4-4 2.6-.3 3.7-1.4 4-4z';
+const TECH: TechItem[] = [
+  ...[siTypescript, siReact, siNextdotjs, siNodedotjs, siNestjs, siPostgresql, siPrisma, siDocker].map((i) => ({ title: i.title, path: i.path })),
+  { title: 'OpenAI', path: AI_SPARK },
+  ...[siVercel, siSupabase].map((i) => ({ title: i.title, path: i.path })),
+];
 import WordGlow from '@/components/motion/WordGlow';
 import SplitText from '@/components/SplitText';
 import FaqList from '@/components/FaqList';
@@ -26,7 +39,9 @@ export default async function Home({ params }: PageProps<'/[lang]'>) {
   const { locale, dict } = await resolve(params);
   const L = (p: string) => localePath(locale, p);
   const home = ['balli-acessorios', 'jb-crm', 'jb-barber'].map((s) => PROJECTS.find((p) => p.slug === s)!);
-  const posts = getPosts().slice(0, 3).map(toMeta);
+  const cats: Record<string, string> = Object.fromEntries(dict.blogPage.filters);
+  const posts = getPosts().slice(0, 3).map(toMeta)
+    .map((p) => (locale === 'pt' ? p : { ...p, category: cats[p.key] ?? p.category }));
   const h = dict.hero;
 
   return (
@@ -58,7 +73,7 @@ export default async function Home({ params }: PageProps<'/[lang]'>) {
       {/* CONSTRUÍMOS PARA… */}
       <PinSection {...dict.pin} ctaHref={L('/contato')} />
 
-      <Marquee items={dict.marquee} />
+      <Marquee title={dict.techTitle} items={TECH} />
 
       </Suspense>
 
@@ -108,7 +123,7 @@ export default async function Home({ params }: PageProps<'/[lang]'>) {
             <Link href={L('/servicos')} className="link-under">{dict.servicesHome.link}</Link>
           </div>
           <div className="grid cols-4" style={{ gap: 16, marginTop: 56 }}>
-            {dict.services.map((s, i) => (
+            {dict.services.filter((s) => s.slug !== SEO_SLUG).map((s, i) => (
               <div key={s.slug} data-reveal style={{ '--d': `${i * 90}ms` } as React.CSSProperties}>
                 <Link href={L(`/servicos/${s.slug}`)} className="svc-card" data-tilt style={{ height: '100%' }}>
                   <span className="glow" aria-hidden="true" />
@@ -123,6 +138,26 @@ export default async function Home({ params }: PageProps<'/[lang]'>) {
               </div>
             ))}
           </div>
+          {dict.services.filter((s) => s.slug === SEO_SLUG && s.image).map((s) => (
+            <div key={s.slug} data-reveal style={{ marginTop: 16 }}>
+              <Link href={L(`/servicos/${s.slug}`)} className="svc-card svc-wide">
+                <span className="glow" aria-hidden="true" />
+                <div className="svc-wide-media">
+                  <Image src={s.image!.src} alt={s.image!.alt} width={s.image!.width} height={s.image!.height} sizes="(max-width: 899px) 92vw, 600px" />
+                </div>
+                <div className="svc-wide-body">
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <span className="svc-icon">{s.icon}</span>
+                    <span className="mono muted" style={{ fontSize: 13 }}>{s.n}</span>
+                  </div>
+                  <h3 className="h3" style={{ marginTop: 12 }}>{s.title}</h3>
+                  <p className="muted" style={{ fontSize: 16, lineHeight: 1.55 }}>{s.short}</p>
+                  <div className="tags">{s.tags.map((t) => <span key={t} className="tag">{t}</span>)}</div>
+                  <span className="link-under" style={{ alignSelf: 'flex-start', marginTop: 'auto' }}>{dict.servicesHome.more}</span>
+                </div>
+              </Link>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -195,6 +230,7 @@ export default async function Home({ params }: PageProps<'/[lang]'>) {
             </div>
             <Link href={L('/blog')} className="link-under">{dict.blogHome.link}</Link>
           </div>
+          {dict.blogPage.ptOnly && <p className="notice" style={{ marginTop: 32 }}>{dict.blogPage.ptOnly}</p>}
           <div className="grid cols-3" style={{ gap: '32px 24px', marginTop: 56 }}>
             {posts.map((p, i) => <PostCard key={p.slug} post={p} locale={locale} index={i} />)}
           </div>

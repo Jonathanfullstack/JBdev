@@ -3,6 +3,7 @@ import { HTML_LANG, LOCALES, localePath } from '@/lib/i18n';
 import { absolute } from '@/lib/seo';
 import { PROJECTS } from '@/content/projects';
 import { SERVICE_SLUGS } from '@/content/service-pages';
+import { SEO_SLUG } from '@/content/seo-service';
 import { getPosts } from '@/lib/blog';
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -19,7 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     ...multi('/', 1, 'weekly'),
     ...multi('/servicos', 0.9, 'monthly'),
-    ...SERVICE_SLUGS.flatMap((s) => multi(`/servicos/${s}`, 0.9, 'monthly')),
+    ...[...SERVICE_SLUGS, SEO_SLUG].flatMap((s) => multi(`/servicos/${s}`, 0.9, 'monthly')),
     ...multi('/portfolio', 0.8, 'monthly'),
     ...PROJECTS.flatMap((p) => multi(`/portfolio/${p.slug}`, 0.6, 'monthly')),
     ...multi('/blog', 0.7, 'weekly'),

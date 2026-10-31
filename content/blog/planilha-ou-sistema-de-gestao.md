@@ -10,6 +10,8 @@ key: sistemas
 service: /servicos/sistemas-sob-medida
 date: 2026-10-14
 glyph: SELECT *
+image: /assents/img/blog-planilha-ou-sistema.webp
+imageAlt: 'Planilha de controle se transformando num painel de gestão com gráficos de receita, pedidos e clientes'
 cover: soft
 ---
 

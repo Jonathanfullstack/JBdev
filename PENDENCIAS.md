@@ -7,13 +7,11 @@ Quando tiver o dado, edite o arquivo indicado (ou me passe que eu aplico).
 
 | Placeholder | Onde aparece | Onde editar |
 |---|---|---|
-| `[Razão social LTDA]` | Rodapé (coluna Estúdio) | `lib/site.ts` → `legalName` |
-| `CNPJ [00.000.000/0001-00]` | Rodapé | `lib/site.ts` → `cnpj` |
-| `[Endereço, número]` | Rodapé (coluna Base) | `lib/site.ts` → `address.street` e `footer.baseLines` em `content/dictionaries/{pt,en,es}.ts` |
+| `[Endereço, número]` | Não aparece no site (o rodapé mostra só a cidade) | `lib/site.ts` → `address.street` |
 | CEP | Não aparece ainda | Adicionar ao `organizationSchema()` em `lib/seo.ts` junto com o endereço |
 | Horário de atendimento | Não aparece ainda | Adicionar ao schema (`openingHours`) e ao rodapé |
 
-> O endereço, o CEP e o CNPJ ficaram **fora** dos dados estruturados de propósito, para não publicar placeholder para o Google. Ao preencher, adicione `streetAddress`, `postalCode` e `taxID` em `organizationSchema()` (`lib/seo.ts`).
+> O endereço e o CEP ficaram **fora** dos dados estruturados de propósito, para não publicar placeholder para o Google. Ao preencher, adicione `streetAddress` e `postalCode` em `organizationSchema()` (`lib/seo.ts`).
 >
 > O NAP (nome, endereço, telefone) do site precisa ficar **idêntico** ao do Perfil da Empresa no Google.
 
@@ -23,14 +21,9 @@ Arquivo: `content/dictionaries/{pt,en,es}.ts`
 
 | Placeholder | Onde |
 |---|---|
-| `[00]+` Projetos entregues | Home → manifesto |
-| `[00]%` Código próprio | Home → manifesto |
-| `[00]h` Tempo de resposta | Home → manifesto |
-| `[00]` Segmentos | Portfólio → topo |
-| `[00]%` Clientes que voltam | Portfólio → topo |
 | `[24h]` prazo de resposta | FAQ, CTA final, contato (vários textos) |
 
-O "07 projetos no ar" do portfólio é real (conta os 7 projetos publicados) e anima como contador.
+O "08 projetos no ar" do portfólio é real (conta os 8 projetos publicados) e anima como contador.
 Os contadores animam sozinhos assim que o valor for um número sem colchetes.
 
 ## 3. Preços e prazos
@@ -44,7 +37,7 @@ Os contadores animam sozinhos assim que o valor for um número sem colchetes.
 
 ## 4. Cases do portfólio
 
-Arquivo: `content/projects.ts`. Os 7 projetos reais já estão no ar com nome, categoria, descrição, link e print.
+Arquivo: `content/projects.ts`. Os 8 projetos reais já estão no ar com nome, categoria, descrição, link e print.
 Faltam, para **todos**:
 
 | Campo | Placeholder |
@@ -52,7 +45,7 @@ Faltam, para **todos**:
 | Ano | `[Ano]` |
 | Desafio | `[Desafio do projeto — a preencher]` |
 | Resultado | `[Resultado do projeto — a preencher]` |
-| Métricas (3 por case) | `[+00%]`, `[00]`, `[00%]` com rótulos "métrica 1/2/3" |
+| Métricas (3 por case) | Ocultas até ter dados reais: preencher `metrics` do projeto em `content/projects.ts` |
 | Cidade do cliente | não exibida |
 | Prints extras (desktop + celular separados) | hoje cada case usa o print composto que já existia |
 
@@ -98,3 +91,14 @@ Falta escolher a ferramenta da newsletter (Brevo, Mailchimp, ConvertKit…) e o 
 - **Páginas de serviço em en/es:** versões condensadas. O texto completo (600+ palavras) está em português, que é o foco de SEO.
 - **Cartão digital (`/cartao`):** mantido como página estática antiga, na mesma URL. Ele ainda lê `public/js/site-config.js`; se mudar contato em `lib/site.ts`, atualize lá também.
 - **Victoria Films:** o print continua em `public/assents/img/`, mas não é usado.
+
+## SEO & Google Meu Negócio (`/servicos/seo-google-meu-negocio`)
+
+Arquivo: `content/seo-service.ts` (pt, en, es).
+
+| Item | Situação |
+|---|---|
+| Preços dos 3 planos | Sem preço: o card mostra "Solicitar orçamento" (WhatsApp). Para exibir, preencher `price` em cada plano |
+| Entregas dos planos | Redigidas a partir da lista de entregas da página — revisar se batem com o que será vendido |
+| Selo do plano do meio | "Recomendado" (não "mais escolhido", que é um dado que ainda não temos) |
+| FAQ "Meu site não foi feito pela JB DEV…" | Resposta provisória: atende, começando pelo diagnóstico — confirmar |

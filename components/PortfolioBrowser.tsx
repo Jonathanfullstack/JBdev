@@ -18,7 +18,7 @@ type Labels = {
 
 function Frame({ p, sizes, priority }: { p: CardProject; sizes: string; priority?: boolean }) {
   return (
-    <div className="browser" style={{ color: p.palette.fg }}>
+    <div className="browser" style={{ color: p.palette.fg, background: p.palette.bg }}>
       <div className="browser-bar"><i /><i /><i /><span>{p.host}</span></div>
       <Image src={p.image.src} width={p.image.width} height={p.image.height} alt={p.image.alt} sizes={sizes} priority={priority} style={{ background: p.palette.bg }} />
     </div>
@@ -49,7 +49,7 @@ export default function PortfolioBrowser({ projects, labels }: { projects: CardP
         <section style={{ padding: '48px 0 24px' }}>
           <div className="container">
             <Link href={featured.caseHref} className="feat" data-reveal>
-              <div className="feat-art" style={{ background: featured.palette.bg }}>
+              <div className="feat-art">
                 <div data-tilt="3d" style={{ width: '100%', borderRadius: 12, overflow: 'hidden', boxShadow: '0 40px 70px -35px rgba(0,0,0,0.6)' }}>
                   <Frame p={featured} sizes="(max-width: 899px) 92vw, 720px" priority />
                 </div>
@@ -61,9 +61,11 @@ export default function PortfolioBrowser({ projects, labels }: { projects: CardP
                 <h2 style={{ margin: '6px 0 0', fontSize: 'clamp(28px, 3vw, 44px)', lineHeight: 1.05, letterSpacing: '-0.035em', fontWeight: 600 }}>{featured.name}</h2>
                 <p className="muted" style={{ fontSize: 14 }}>{featured.segment}</p>
                 <p style={{ margin: '6px 0 0', fontSize: 17, lineHeight: 1.55, color: 'var(--ink2)' }}>{featured.desc}</p>
-                <div className="metrics3">
-                  {featured.metrics.map(([v, l]) => <div key={l}><p className="v">{v}</p><p className="l">{l}</p></div>)}
-                </div>
+                {featured.metrics.length > 0 && (
+                  <div className="metrics3">
+                    {featured.metrics.map(([v, l]) => <div key={l}><p className="v">{v}</p><p className="l">{l}</p></div>)}
+                  </div>
+                )}
                 <span className="btn btn-ink btn-md" style={{ alignSelf: 'flex-start', marginTop: 12 }}>{labels.viewFull}</span>
               </div>
             </Link>
@@ -81,9 +83,7 @@ export default function PortfolioBrowser({ projects, labels }: { projects: CardP
                 <div key={p.slug} data-reveal style={{ '--d': `${(i % 2) * 90}ms` } as React.CSSProperties}>
                   <article className="proj-card" data-tilt style={{ height: '100%', borderRadius: 24 }}>
                     <span className="glow" aria-hidden="true" />
-                    <div className="frame-wrap" style={{ background: p.palette.bg, padding: '28px 28px 0' }}>
-                      <Frame p={p} sizes="(max-width: 699px) 92vw, 640px" />
-                    </div>
+                    <Frame p={p} sizes="(max-width: 699px) 92vw, 640px" />
                     <div className="proj-body" style={{ padding: '26px 28px 28px', gap: 10 }}>
                       <div className="proj-meta"><span>{p.cat}</span><span>{p.year}</span></div>
                       <h2 style={{ margin: '4px 0 0', fontSize: 28, fontWeight: 600, letterSpacing: '-0.025em' }}>{p.name}</h2>

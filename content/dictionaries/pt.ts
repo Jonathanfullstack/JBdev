@@ -49,7 +49,7 @@ const pt: Dict = {
     text: 'De clínicas e lojas a escritórios, oficinas e startups: se o seu negócio precisa de tecnologia, a gente constrói com você.',
     cta: 'Começar seu projeto →',
   },
-  marquee: ['Sites', 'Landing pages', 'Lojas virtuais', 'Sistemas', 'Automações', 'IA aplicada', 'Apps mobile', 'Integrações'],
+  techTitle: 'Tecnologias que impulsionam nossas soluções',
   diag: {
     eyebrow: '// diagnóstico',
     title: 'Se você sente que:',
@@ -64,7 +64,7 @@ const pt: Dict = {
     revealSplit: 5,
     cta1: 'Quero estrutura', cta2: 'Ver serviços',
   },
-  servicesHome: { eyebrow: '// serviços', title: 'Tudo que o seu negócio precisa, num time só.', link: 'Detalhes dos serviços →' },
+  servicesHome: { eyebrow: '// serviços', title: 'Tudo que o seu negócio precisa, num time só.', link: 'Detalhes dos serviços →', more: 'Saiba mais →' },
   services: [
     {
       slug: 'criacao-de-sites', key: 'sites', n: '01', icon: '</>', title: 'Sites e landing pages',
@@ -72,6 +72,8 @@ const pt: Dict = {
       long: 'Sites institucionais, landing pages e lojas virtuais rápidos, otimizados pro Google e feitos pra virar contato — não só vitrine.',
       tags: ['SEO', 'Performance', 'Copy'], ideal: 'quem precisa ser encontrado e chamado.',
       includes: ['Design sob medida, com modo claro e escuro', 'Otimização pro Google (SEO) e SEO local', 'Integração com WhatsApp e formulários', 'Loja virtual com catálogo, quando fizer sentido', 'Hospedagem e domínio configurados'],
+      image: { src: '/assents/img/service-sites.webp', width: 1402, height: 1122, alt: 'Site de arquitetura aberto num notebook e num celular, com a mesma página adaptada às duas telas' },
+
     },
     {
       slug: 'sistemas-sob-medida', key: 'sistemas', n: '02', icon: '[ ]', title: 'Sistemas sob medida',
@@ -79,6 +81,7 @@ const pt: Dict = {
       long: 'Um painel com as regras do seu negócio: clientes, vendas, estoque, agenda e financeiro num lugar só, acessível de qualquer lugar.',
       tags: ['Painéis', 'Web apps', 'APIs'], ideal: 'quem vive entre planilhas e cadernos.',
       includes: ['Cadastro de clientes e histórico', 'Vendas, orçamentos e estoque', 'Agenda e controle de equipe', 'Relatórios e indicadores', 'Acesso por perfil e permissões'],
+      image: { src: '/assents/img/service-sistemas.webp', width: 1402, height: 1122, alt: 'Monitor com painel de vendas mostrando faturamento, clientes, estoque, gráfico do mês e últimas vendas' },
     },
     {
       slug: 'automacao-e-ia', key: 'auto', n: '03', icon: 'ai()', title: 'Automações e IA',
@@ -86,6 +89,7 @@ const pt: Dict = {
       long: 'Atendimento com IA no WhatsApp, lembretes, cobranças e integrações que trabalham enquanto você cuida do que importa.',
       tags: ['WhatsApp', 'IA', 'Integrações'], ideal: 'quem perde horas com tarefas repetidas.',
       includes: ['Assistente de IA no WhatsApp', 'Agendamento automático', 'Lembretes e cobranças', 'Integração entre sistemas', 'Passagem para atendente humano'],
+      image: { src: '/assents/img/service-automacao.webp', width: 1586, height: 992, alt: 'Celular com uma conversa de atendimento automático confirmando um agendamento, ligada a ícones de agenda, relógio e confirmação' },
     },
     {
       slug: 'aplicativos', key: 'apps', n: '04', icon: 'app', title: 'Apps mobile',
@@ -93,6 +97,15 @@ const pt: Dict = {
       long: 'Apps para iOS e Android — ou PWA — com a sua marca, pra fidelizar clientes e vender mais.',
       tags: ['iOS', 'Android', 'PWA'], ideal: 'quem quer estar no bolso do cliente.',
       includes: ['Design de interface mobile', 'App iOS e Android ou PWA', 'Notificações push', 'Login, pagamentos e integrações', 'Publicação nas lojas'],
+      image: { src: '/assents/img/service-aplicativos.webp', width: 1402, height: 1122, alt: 'Dois smartphones com um app de agenda mostrando consultas do dia e o botão de novo agendamento' },
+    },
+    {
+      slug: 'seo-google-meu-negocio', key: 'seo', n: '05', icon: 'seo', title: 'SEO & Google Meu Negócio',
+      short: 'Apareça no Google e no Maps para quem procura o seu serviço na sua região.',
+      long: 'SEO técnico, SEO on-page e Perfil da Empresa no Google otimizados para você ser encontrado nas buscas e no Google Maps.',
+      tags: ['SEO local', 'Google Maps', 'Search Console'], ideal: 'quem precisa ser encontrado por clientes da região.',
+      includes: ['SEO técnico: velocidade, mobile e dados estruturados', 'SEO on-page com palavras-chave da sua região', 'Criação ou otimização do Perfil da Empresa no Google', 'Search Console e Analytics configurados', 'Relatório com o antes e o depois'],
+      image: { src: '/assents/img/service-seo-google.webp', width: 1536, height: 1024, alt: 'Notebook e celular mostrando a busca no Google com a empresa em destaque, botões de site e rotas e o mapa com a localização' },
     },
   ],
   portfolioHome: { eyebrow: '// portfólio', title: 'Feito pela JB DEV.', link: 'Ver portfólio completo →', viewCase: 'Ver case →' },
@@ -109,7 +122,7 @@ const pt: Dict = {
   manifesto: {
     eyebrow: '// manifesto', l1: 'Menos promessa.', l2: 'Mais deploy.',
     text: 'Do primeiro contato à manutenção, cada projeto é feito e cuidado por quem assina o código.',
-    stats: [['[00]+', 'Projetos entregues'], ['[00]%', 'Código próprio'], ['[00]h', 'Tempo de resposta']],
+    stats: [['10+', 'Projetos entregues'], ['100%', 'Código proprietário'], ['24 horas', 'Resposta média']],
   },
   blogHome: { eyebrow: '// blog', title: 'Conteúdo pra quem toca o negócio.', link: 'Ver todos os artigos →' },
   faq: {
@@ -135,23 +148,37 @@ const pt: Dict = {
     button: 'Iniciar projeto',
   },
   footer: {
-    studio: 'ESTÚDIO', base: 'BASE', pages: 'PÁGINAS', social: 'REDES', solutions: 'SOLUÇÕES',
+    description: 'Criação de sites, landing pages, sistemas web e soluções digitais para empresas que querem crescer com mais estratégia e resultados.',
+    solutions: 'SOLUÇÕES', service: 'ATENDIMENTO', hq: 'SEDE', specialties: 'ESPECIALIDADES',
+    online: 'Atendimento online em todo o Brasil',
     solutionLinks: [
-      ['Criação de sites em Indaiatuba', '/servicos/criacao-de-sites'],
-      ['Sistemas sob medida', '/servicos/sistemas-sob-medida'],
-      ['Automação de WhatsApp com IA', '/servicos/automacao-e-ia'],
-      ['Desenvolvimento de aplicativos', '/servicos/aplicativos'],
+      ['Criação de Sites', '/servicos/criacao-de-sites'],
+      ['Landing Pages', '/servicos/criacao-de-sites'],
+      ['Sistemas Web', '/servicos/sistemas-sob-medida'],
+      ['Loja Virtual', '/servicos/criacao-de-sites'],
+      ['CRM Personalizado', '/servicos/sistemas-sob-medida'],
+      ['Sistema de Agendamento', '/servicos/sistemas-sob-medida'],
+      ['Otimização de Sites', '/servicos/criacao-de-sites'],
+      ['Manutenção e Suporte', '/contato'],
     ],
-    baseLines: ['[Endereço, número]', 'Indaiatuba — SP, Brasil', 'Indaiatuba e região, e online em todo o Brasil'],
-    toTop: 'VOLTAR AO TOPO ↑',
+    specialtyLinks: [
+      ['Site para Empresas', '/servicos/criacao-de-sites'],
+      ['Site para Clínicas', '/servicos/criacao-de-sites'],
+      ['Site para Estética', '/servicos/criacao-de-sites'],
+      ['Site para Imobiliária', '/servicos/criacao-de-sites'],
+      ['Site para Restaurantes', '/servicos/criacao-de-sites'],
+      ['Sistemas Personalizados', '/servicos/sistemas-sob-medida'],
+      ['SEO Local', '/servicos/seo-google-meu-negocio'],
+      ['Google Meu Negócio', '/servicos/seo-google-meu-negocio'],
+    ],
     rights: 'Todos os direitos reservados.',
     made: 'feito com código próprio',
     card: 'Cartão digital',
   },
   servicesPage: {
     eyebrow: '// serviços', title1: 'O que a gente', title2: 'constrói.',
-    lead: 'Quatro frentes, um time só. Você fala com quem desenha e programa — do primeiro rabisco à manutenção.',
-    includes: 'O QUE INCLUI', idealFor: 'Ideal para:', want: 'Quero esse →', details: 'Ver detalhes', of: '04',
+    lead: 'Cinco frentes, um time só. Você fala com quem desenha e programa — do primeiro rabisco à manutenção.',
+    includes: 'O QUE INCLUI', idealFor: 'Ideal para:', want: 'Quero esse →', details: 'Ver detalhes', of: '05',
   },
   servicePage: {
     eyebrow: '// serviço', includes: 'O que inclui', process: 'Como funciona', faq: 'Perguntas frequentes',
@@ -161,7 +188,7 @@ const pt: Dict = {
   portfolioPage: {
     eyebrow: '// portfólio',
     lead: 'Sites, sistemas e lojas virtuais que já estão no ar — e o que cada um resolve.',
-    stats: [['07', 'Projetos no ar'], ['[00]', 'Segmentos'], ['[00]%', 'Clientes que voltam']],
+    stats: [['08', 'Projetos no ar'], ['07', 'Segmentos'], ['100%', 'Clientes que voltam']],
     filtersLabel: 'Filtrar portfólio',
     filters: [['all', 'Todos'], ['sites', 'Sites'], ['sistemas', 'Sistemas'], ['auto', 'Automação'], ['apps', 'Apps']],
     featured: 'Case em destaque', viewFull: 'Ver case completo →', visit: 'Visitar site ↗', viewCase: 'Ver case →',

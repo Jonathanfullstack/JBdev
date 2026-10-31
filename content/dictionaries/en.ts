@@ -49,7 +49,7 @@ const en: Dict = {
     text: 'From clinics and stores to offices, workshops and startups: if your business needs technology, we build it with you.',
     cta: 'Start your project →',
   },
-  marquee: ['Websites', 'Landing pages', 'Online stores', 'Software', 'Automation', 'Applied AI', 'Mobile apps', 'Integrations'],
+  techTitle: 'Technologies that power our solutions',
   diag: {
     eyebrow: '// diagnosis',
     title: 'If you feel that:',
@@ -64,7 +64,7 @@ const en: Dict = {
     revealSplit: 5,
     cta1: 'I want structure', cta2: 'See services',
   },
-  servicesHome: { eyebrow: '// services', title: 'Everything your business needs, in one team.', link: 'Service details →' },
+  servicesHome: { eyebrow: '// services', title: 'Everything your business needs, in one team.', link: 'Service details →', more: 'Learn more →' },
   services: [
     {
       slug: 'criacao-de-sites', key: 'sites', n: '01', icon: '</>', title: 'Websites and landing pages',
@@ -72,6 +72,8 @@ const en: Dict = {
       long: 'Business websites, landing pages and online stores that are fast, search-optimized and built to generate contacts — not just to sit there.',
       tags: ['SEO', 'Performance', 'Copy'], ideal: 'businesses that need to be found and contacted.',
       includes: ['Custom design with light and dark mode', 'Search optimization (SEO) and local SEO', 'WhatsApp and form integration', 'Online store with catalog, when it makes sense', 'Hosting and domain set up'],
+      image: { src: '/assents/img/service-sites.webp', width: 1402, height: 1122, alt: 'Architecture website open on a laptop and a phone, with the same page adapted to both screens' },
+
     },
     {
       slug: 'sistemas-sob-medida', key: 'sistemas', n: '02', icon: '[ ]', title: 'Custom software',
@@ -79,6 +81,7 @@ const en: Dict = {
       long: 'A dashboard with your business rules: customers, sales, stock, schedule and finance in one place, accessible from anywhere.',
       tags: ['Dashboards', 'Web apps', 'APIs'], ideal: 'teams living between spreadsheets and notebooks.',
       includes: ['Customer records and history', 'Sales, quotes and inventory', 'Scheduling and team control', 'Reports and metrics', 'Role-based access and permissions'],
+      image: { src: '/assents/img/service-sistemas.webp', width: 1402, height: 1122, alt: 'Monitor with a sales dashboard showing revenue, customers, stock, a monthly chart and latest sales' },
     },
     {
       slug: 'automacao-e-ia', key: 'auto', n: '03', icon: 'ai()', title: 'Automation and AI',
@@ -86,6 +89,7 @@ const en: Dict = {
       long: 'AI support on WhatsApp, reminders, billing and integrations that work while you focus on what matters.',
       tags: ['WhatsApp', 'AI', 'Integrations'], ideal: 'teams losing hours on repetitive tasks.',
       includes: ['AI assistant on WhatsApp', 'Automatic booking', 'Reminders and billing', 'Integration between systems', 'Hand-off to a human agent'],
+      image: { src: '/assents/img/service-automacao.webp', width: 1586, height: 992, alt: 'Phone with an automated support chat confirming a booking, connected to calendar, clock and confirmation icons' },
     },
     {
       slug: 'aplicativos', key: 'apps', n: '04', icon: 'app', title: 'Mobile apps',
@@ -93,6 +97,15 @@ const en: Dict = {
       long: 'iOS and Android apps — or PWAs — with your brand, to build loyalty and sell more.',
       tags: ['iOS', 'Android', 'PWA'], ideal: 'brands that want to be in the customer’s pocket.',
       includes: ['Mobile interface design', 'iOS and Android app or PWA', 'Push notifications', 'Login, payments and integrations', 'App store publishing'],
+      image: { src: '/assents/img/service-aplicativos.webp', width: 1402, height: 1122, alt: 'Two smartphones with a booking app showing the day’s appointments and the new booking button' },
+    },
+    {
+      slug: 'seo-google-meu-negocio', key: 'seo', n: '05', icon: 'seo', title: 'SEO & Google Business Profile',
+      short: 'Show up on Google and Maps for people searching for your service nearby.',
+      long: 'Technical SEO, on-page SEO and an optimized Google Business Profile so you get found in search results and on Google Maps.',
+      tags: ['Local SEO', 'Google Maps', 'Search Console'], ideal: 'businesses that need local customers to find them.',
+      includes: ['Technical SEO: speed, mobile and structured data', 'On-page SEO with local keywords', 'Google Business Profile creation or optimization', 'Search Console and Analytics set up', 'Before-and-after report'],
+      image: { src: '/assents/img/service-seo-google.webp', width: 1536, height: 1024, alt: 'Laptop and phone showing a Google search with the business highlighted, website and directions buttons and a map with its location' },
     },
   ],
   portfolioHome: { eyebrow: '// portfolio', title: 'Made by JB DEV.', link: 'See full portfolio →', viewCase: 'View case →' },
@@ -109,7 +122,7 @@ const en: Dict = {
   manifesto: {
     eyebrow: '// manifesto', l1: 'Less promise.', l2: 'More deploy.',
     text: 'From first contact to maintenance, every project is built and cared for by the person who signs the code.',
-    stats: [['[00]+', 'Projects delivered'], ['[00]%', 'Own code'], ['[00]h', 'Response time']],
+    stats: [['10+', 'Projects delivered'], ['100%', 'Proprietary code'], ['24 hours', 'Average response']],
   },
   blogHome: { eyebrow: '// blog', title: 'Content for people who run the business.', link: 'See all articles →' },
   faq: {
@@ -135,23 +148,37 @@ const en: Dict = {
     button: 'Start a project',
   },
   footer: {
-    studio: 'STUDIO', base: 'BASE', pages: 'PAGES', social: 'SOCIAL', solutions: 'SOLUTIONS',
+    description: 'Websites, landing pages, web systems and digital solutions for businesses that want to grow with more strategy and results.',
+    solutions: 'SOLUTIONS', service: 'SERVICE AREA', hq: 'HQ', specialties: 'SPECIALTIES',
+    online: 'Online service across Brazil and abroad',
     solutionLinks: [
-      ['Website development', '/servicos/criacao-de-sites'],
-      ['Custom software', '/servicos/sistemas-sob-medida'],
-      ['WhatsApp automation with AI', '/servicos/automacao-e-ia'],
-      ['Mobile app development', '/servicos/aplicativos'],
+      ['Website Development', '/servicos/criacao-de-sites'],
+      ['Landing Pages', '/servicos/criacao-de-sites'],
+      ['Web Systems', '/servicos/sistemas-sob-medida'],
+      ['Online Store', '/servicos/criacao-de-sites'],
+      ['Custom CRM', '/servicos/sistemas-sob-medida'],
+      ['Booking System', '/servicos/sistemas-sob-medida'],
+      ['Website Optimization', '/servicos/criacao-de-sites'],
+      ['Maintenance & Support', '/contato'],
     ],
-    baseLines: ['[Endereço, número]', 'Indaiatuba — SP, Brazil', 'Indaiatuba region in person, remote worldwide'],
-    toTop: 'BACK TO TOP ↑',
+    specialtyLinks: [
+      ['Business Websites', '/servicos/criacao-de-sites'],
+      ['Clinic Websites', '/servicos/criacao-de-sites'],
+      ['Beauty Salon Websites', '/servicos/criacao-de-sites'],
+      ['Real Estate Websites', '/servicos/criacao-de-sites'],
+      ['Restaurant Websites', '/servicos/criacao-de-sites'],
+      ['Custom Software', '/servicos/sistemas-sob-medida'],
+      ['Local SEO', '/servicos/seo-google-meu-negocio'],
+      ['Google Business Profile', '/servicos/seo-google-meu-negocio'],
+    ],
     rights: 'All rights reserved.',
     made: 'made with our own code',
     card: 'Digital card',
   },
   servicesPage: {
     eyebrow: '// services', title1: 'What we', title2: 'build.',
-    lead: 'Four fronts, one team. You talk to the people who design and code — from the first sketch to maintenance.',
-    includes: 'WHAT’S INCLUDED', idealFor: 'Ideal for:', want: 'I want this →', details: 'See details', of: '04',
+    lead: 'Five fronts, one team. You talk to the people who design and code — from the first sketch to maintenance.',
+    includes: 'WHAT’S INCLUDED', idealFor: 'Ideal for:', want: 'I want this →', details: 'See details', of: '05',
   },
   servicePage: {
     eyebrow: '// service', includes: 'What’s included', process: 'How it works', faq: 'Frequently asked questions',
@@ -161,7 +188,7 @@ const en: Dict = {
   portfolioPage: {
     eyebrow: '// portfolio',
     lead: 'Websites, software and online stores that are already live — and what each one solves.',
-    stats: [['07', 'Live projects'], ['[00]', 'Industries'], ['[00]%', 'Returning clients']],
+    stats: [['08', 'Live projects'], ['07', 'Industries'], ['100%', 'Returning clients']],
     filtersLabel: 'Filter portfolio',
     filters: [['all', 'All'], ['sites', 'Websites'], ['sistemas', 'Software'], ['auto', 'Automation'], ['apps', 'Apps']],
     featured: 'Featured case', viewFull: 'View full case →', visit: 'Visit site ↗', viewCase: 'View case →',

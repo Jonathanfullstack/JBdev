@@ -68,9 +68,31 @@ export default function Effects() {
       });
     }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
 
+    // As seções dentro de <Suspense> hidratam depois deste efeito; mexer na classe antes
+    // disso gera aviso de hydration. Elementos ainda sem fiber do React esperam.
+    const hydrated = (el: HTMLElement) => Object.keys(el).some((k) => k.startsWith('__reactFiber$'));
+    const pending = new Set<HTMLElement>();
+    let raf = 0;
+    const t0 = performance.now();
+    const flush = () => {
+      raf = 0;
+      const late = performance.now() - t0 > 4000;
+      pending.forEach((el) => {
+        if (!late && !hydrated(el)) return;
+        pending.delete(el);
+        check(el);
+      });
+      if (pending.size) raf = requestAnimationFrame(flush);
+    };
+
     const seen = new WeakSet<Element>();
     const check = (el: HTMLElement) => {
       if (el.classList.contains('in') || seen.has(el)) return;
+      if (!hydrated(el) && performance.now() - t0 <= 4000) {
+        pending.add(el);
+        if (!raf) raf = requestAnimationFrame(flush);
+        return;
+      }
       seen.add(el);
       if (reduced) el.classList.add('in');
       else io.observe(el);
@@ -147,6 +169,7 @@ export default function Effects() {
     }
 
     return () => {
+      cancelAnimationFrame(raf);
       io.disconnect();
       mo.disconnect();
       document.removeEventListener('pointermove', onMove);

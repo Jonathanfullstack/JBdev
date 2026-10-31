@@ -8,7 +8,7 @@ export function BrowserFrame({ p, locale, sizes, priority, bar = true, natural =
   p: Project; locale: Locale; sizes: string; priority?: boolean; bar?: boolean; natural?: boolean;
 }) {
   return (
-    <div className="browser" style={{ color: p.palette.fg }}>
+    <div className="browser" style={{ color: p.palette.fg, background: p.palette.bg }}>
       {bar && (
         <div className="browser-bar"><i /><i /><i /><span>{p.host}</span></div>
       )}
@@ -26,9 +26,7 @@ export function ProjectCard({ p, locale, viewCase, index = 0 }: { p: Project; lo
     <div data-reveal style={{ '--d': `${index * 90}ms` } as React.CSSProperties}>
     <Link href={localePath(locale, `/portfolio/${p.slug}`)} className="proj-card" data-tilt data-cursor="↗" style={{ height: '100%' }}>
       <span className="glow" aria-hidden="true" />
-      <div className="frame-wrap" style={{ background: p.palette.bg }}>
-        <BrowserFrame p={p} locale={locale} sizes="(max-width: 699px) 92vw, (max-width: 1099px) 46vw, 430px" />
-      </div>
+      <BrowserFrame p={p} locale={locale} sizes="(max-width: 699px) 92vw, (max-width: 1099px) 46vw, 430px" />
       <div className="proj-body">
         <div className="proj-meta"><span>{p.cat[locale]}</span><span>{p.year}</span></div>
         <h3 style={{ margin: '6px 0 0', fontSize: 22, fontWeight: 600, letterSpacing: '-0.02em' }}>{p.name}</h3>
@@ -40,7 +38,16 @@ export function ProjectCard({ p, locale, viewCase, index = 0 }: { p: Project; lo
   );
 }
 
-export function Cover({ post, size, style }: { post: Pick<PostMeta, 'cover' | 'glyph'>; size?: string; style?: React.CSSProperties }) {
+export function Cover({ post, size, style, priority, sizes = '(max-width: 699px) 92vw, 420px', alt = '' }: {
+  post: Pick<PostMeta, 'cover' | 'glyph' | 'image'>; size?: string; style?: React.CSSProperties; priority?: boolean; sizes?: string; alt?: string;
+}) {
+  if (post.image) {
+    return (
+      <div className="cover cover-photo" aria-hidden={alt ? undefined : true} style={style}>
+        <Image src={post.image.src} alt={alt} fill sizes={sizes} priority={priority} />
+      </div>
+    );
+  }
   return (
     <div className={`cover cover-${post.cover}`} data-tilt="3d" aria-hidden="true" style={{ fontSize: size, ...style }}>
       {post.glyph}
@@ -62,8 +69,8 @@ export function PostCard({ post, locale, dateLabel, index = 0, showExcerpt = tru
         <span className="c">{post.category}</span><span>·</span><span>{post.minutes} min</span>
         {locale !== 'pt' && <><span>·</span><span>PT-BR</span></>}
       </div>
-      <h3>{post.title}</h3>
-      {showExcerpt && <p className="muted" style={{ fontSize: 15, lineHeight: 1.55 }}>{post.excerpt}</p>}
+      <h3 lang={locale !== 'pt' ? 'pt-BR' : undefined}>{post.title}</h3>
+      {showExcerpt && <p className="muted" lang={locale !== 'pt' ? 'pt-BR' : undefined} style={{ fontSize: 15, lineHeight: 1.55 }}>{post.excerpt}</p>}
       {showDate && dateLabel && <p className="mono muted" style={{ fontSize: 12 }}>{dateLabel}</p>}
     </Link>
   );

@@ -97,16 +97,18 @@ export default async function CasePage({ params }: Props) {
         </div>
       </section>
 
-      <section className="surface" style={{ padding: '72px 0' }}>
-        <div className="container stats" style={{ marginTop: 0, textAlign: 'center', gap: '40px 32px' }}>
-          {p.metrics[locale].map(([v, l]) => (
-            <div key={l} data-reveal>
-              <p className="stat-v accent">{v}</p>
-              <p className="stat-l">{l}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+      {p.metrics[locale].length > 0 && (
+        <section className="surface" style={{ padding: '72px 0' }}>
+          <div className="container stats" style={{ marginTop: 0, textAlign: 'center', gap: '40px 32px' }}>
+            {p.metrics[locale].map(([v, l]) => (
+              <div key={l} data-reveal>
+                <p className="stat-v accent">{v}</p>
+                <p className="stat-l">{l}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
 
       <section className="section-half">
         <div className="container">

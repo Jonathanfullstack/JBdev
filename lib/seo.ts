@@ -61,7 +61,7 @@ export function organizationSchema() {
         description: 'Criação de sites, sistemas sob medida, automação com IA e aplicativos para empresas.',
         telephone: SITE.contact.phoneE164,
         email: SITE.contact.email,
-        // streetAddress e CNPJ entram quando os dados reais forem informados (ver PENDENCIAS.md)
+        // streetAddress entra quando os dados reais forem informados (ver PENDENCIAS.md)
         address: {
           '@type': 'PostalAddress',
           addressLocality: SITE.address.locality,

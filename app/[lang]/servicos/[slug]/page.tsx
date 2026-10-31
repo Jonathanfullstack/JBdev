@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { LOCALES, localePath } from '@/lib/i18n';
@@ -6,7 +7,6 @@ import { SITE } from '@/lib/site';
 import { ORG_ID, absolute, breadcrumbSchema, buildMetadata, faqSchema } from '@/lib/seo';
 import { SERVICE_PAGES, SERVICE_SLUGS } from '@/content/service-pages';
 import { PROJECTS } from '@/content/projects';
-import type { ServiceSlug } from '@/content/dictionaries/types';
 import SplitText from '@/components/SplitText';
 import ServiceArt from '@/components/ServiceArt';
 import ProcessSteps from '@/components/ProcessSteps';
@@ -20,14 +20,15 @@ export const dynamicParams = false;
 export const generateStaticParams = () => LOCALES.flatMap((lang) => SERVICE_SLUGS.map((slug) => ({ lang, slug })));
 
 type Props = PageProps<'/[lang]/servicos/[slug]'>;
+type PageSlug = (typeof SERVICE_SLUGS)[number];
 
 async function load(params: Props['params']) {
   const { slug } = await params;
   const { locale, dict } = await resolve(params);
   const summary = dict.services.find((s) => s.slug === slug);
-  const page = SERVICE_PAGES[slug as ServiceSlug]?.[locale];
+  const page = SERVICE_PAGES[slug as PageSlug]?.[locale];
   if (!summary || !page) notFound();
-  return { locale, dict, summary, page, slug: slug as ServiceSlug };
+  return { locale, dict, summary, page, slug: slug as PageSlug };
 }
 
 export async function generateMetadata({ params }: Props) {
@@ -41,6 +42,9 @@ export default async function ServicePage({ params }: Props) {
   const sp = dict.servicePage;
   const related = PROJECTS.filter((p) => p.key === summary.key).slice(0, 3);
   const index = dict.services.findIndex((s) => s.slug === slug);
+  const img = summary.image;
+  // a arte da introdução some quando repetiria a foto do topo (o chat da automação é outra peça)
+  const showArt = !img || summary.key === 'auto';
 
   const serviceLd = {
     '@context': 'https://schema.org',
@@ -61,29 +65,38 @@ export default async function ServicePage({ params }: Props) {
       <JsonLd data={breadcrumbSchema([[dict.nav.home, L('/')], [sp.breadcrumbServices, L('/servicos')], [summary.title, L(`/servicos/${slug}`)]])} />
 
       <section className="page-head bb dotted" style={{ paddingBottom: 'var(--sec-y-half)' }}>
-        <div className="container">
+        <div className={`container${img ? ' seo-hero' : ''}`}>
+          <div>
           <nav aria-label="breadcrumb" className="mono muted" style={{ fontSize: 13, marginBottom: 24 }}>
             <Link href={L('/servicos')} style={{ textDecoration: 'none' }}>{sp.breadcrumbServices}</Link>
             <span aria-hidden="true"> / </span>
             <span className="accent" aria-current="page">{summary.n}</span>
           </nav>
-          <SplitText as="h1" className="h1-page" style={{ maxWidth: 1150, fontSize: 'clamp(44px, 6.4vw, 92px)' }} parts={[page.h1]} />
+          <SplitText as="h1" className="h1-page" style={{ maxWidth: 1150, fontSize: img ? 'clamp(40px, 5vw, 76px)' : 'clamp(44px, 6.4vw, 92px)' }} parts={[page.h1]} />
           <p className="lead fade-up" style={{ margin: '32px 0 0', maxWidth: 680 }}>{page.lead}</p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, marginTop: 40 }} className="fade-up">
             <Link href={L('/contato')} className="btn btn-accent" data-magnetic>{sp.cta}</Link>
             <a href="#inclui" className="btn btn-ghost" data-no-transition>{sp.includes}</a>
           </div>
+          </div>
+          {img && (
+            <div className="seo-hero-media fade-up">
+              <Image src={img.src} alt={img.alt} width={img.width} height={img.height} priority sizes="(max-width: 899px) 92vw, 620px" />
+            </div>
+          )}
         </div>
       </section>
 
       <section className="section-half">
-        <div className="container svc-block">
-          <div className="prose" data-reveal style={{ maxWidth: 640 }}>
+        <div className={showArt ? 'container svc-block' : 'container'} style={showArt ? undefined : { maxWidth: 1100 }}>
+          <div className="prose" data-reveal style={{ maxWidth: showArt ? 640 : undefined }}>
             {page.intro.map((p, i) => <p key={i}>{p}</p>)}
           </div>
-          <div data-reveal style={{ '--d': '120ms' } as React.CSSProperties}>
-            <ServiceArt s={summary} index={index} locale={locale} />
-          </div>
+          {showArt && (
+            <div data-reveal style={{ '--d': '120ms' } as React.CSSProperties}>
+              <ServiceArt s={summary} index={index} locale={locale} />
+            </div>
+          )}
         </div>
       </section>
 

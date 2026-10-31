@@ -3,8 +3,10 @@
 import { useEffect, useRef } from 'react';
 import { motion, onFrame, prefersReduced } from '@/lib/motion';
 
-/** Faixa de serviços que corre sozinha e acelera com a velocidade do scroll. */
-export default function Marquee({ items }: { items: string[] }) {
+export type TechItem = { title: string; path: string };
+
+/** Faixa de tecnologias que corre sozinha e acelera com a velocidade do scroll. */
+export default function Marquee({ title, items }: { title: string; items: TechItem[] }) {
   const track = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -25,10 +27,19 @@ export default function Marquee({ items }: { items: string[] }) {
 
   const doubled = [...items, ...items, ...items, ...items];
   return (
-    <div className="marquee" aria-hidden="true">
-      <div ref={track} className="marquee-track">
-        {doubled.map((label, i) => <span key={i}>{label}</span>)}
+    <section className="marquee" aria-label={title}>
+      <p className="marquee-title">{title}</p>
+      <ul className="sr-only">{items.map((t) => <li key={t.title}>{t.title}</li>)}</ul>
+      <div className="marquee-clip" aria-hidden="true">
+        <div ref={track} className="marquee-track">
+          {doubled.map((t, i) => (
+            <span key={i}>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d={t.path} /></svg>
+              {t.title}
+            </span>
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 }

@@ -30,11 +30,8 @@ export type Project = {
 const P = (pt: string, en: string, es: string): L => ({ pt, en, es });
 const pendingChallenge = P('[Desafio do projeto — a preencher]', '[Project challenge — to be filled in]', '[Desafío del proyecto — por completar]');
 const pendingResult = P('[Resultado do projeto — a preencher]', '[Project result — to be filled in]', '[Resultado del proyecto — por completar]');
-const pendingMetrics: L<[string, string][]> = {
-  pt: [['[+00%]', 'métrica 1'], ['[00]', 'métrica 2'], ['[00%]', 'métrica 3']],
-  en: [['[+00%]', 'metric 1'], ['[00]', 'metric 2'], ['[00%]', 'metric 3']],
-  es: [['[+00%]', 'métrica 1'], ['[00]', 'métrica 2'], ['[00%]', 'métrica 3']],
-};
+// sem métricas reais o bloco de números não aparece
+const pendingMetrics: L<[string, string][]> = { pt: [], en: [], es: [] };
 
 export const PROJECTS: Project[] = [
   {
@@ -44,7 +41,7 @@ export const PROJECTS: Project[] = [
     href: 'https://balli-semijoias.vercel.app/',
     host: 'balli-semijoias.vercel.app',
     image: {
-      src: '/assents/img/project-balli.webp', width: 1536, height: 864,
+      src: '/assents/img/project-balli.webp', width: 1536, height: 960,
       alt: P('E-commerce BALLI Acessórios em notebook e celular', 'BALLI Acessórios online store on laptop and phone', 'Tienda online BALLI Acessórios en portátil y móvil'),
     },
     cat: P('LOJA VIRTUAL', 'ONLINE STORE', 'TIENDA ONLINE'),
@@ -61,6 +58,31 @@ export const PROJECTS: Project[] = [
     result: pendingResult,
     metrics: pendingMetrics,
     palette: { bg: '#F4F1EA', fg: '#1A1A1A', acc: '#1F5FE0' },
+  },
+  {
+    slug: 'vitra-mobile',
+    name: 'Vitra Mobile',
+    key: 'sites',
+    href: 'https://iphone-loja.vercel.app/',
+    host: 'iphone-loja.vercel.app',
+    image: {
+      src: '/assents/img/project-vitra-mobile.webp', width: 1536, height: 960,
+      alt: P('Site da loja de celulares Vitra Mobile em notebook e celular', 'Vitra Mobile phone store website on laptop and phone', 'Sitio de la tienda de móviles Vitra Mobile en portátil y móvil'),
+    },
+    cat: P('LOJA DE CELULARES', 'PHONE STORE', 'TIENDA DE MÓVILES'),
+    segment: P('Celulares e assistência técnica', 'Phones and repair services', 'Móviles y servicio técnico'),
+    client: 'Vitra Mobile',
+    year: '[Ano]',
+    desc: P(
+      'Site para loja de celulares em Indaiatuba, com catálogo de aparelhos novos e seminovos, assistência técnica e contato direto pelo WhatsApp, em um visual escuro e premium 100% responsivo.',
+      'Website for a phone store in Indaiatuba, with a catalog of new and pre-owned devices, repair services and direct WhatsApp contact, in a dark, premium and fully responsive design.',
+      'Sitio para una tienda de móviles en Indaiatuba, con catálogo de equipos nuevos y seminuevos, servicio técnico y contacto directo por WhatsApp, con un diseño oscuro, premium y 100% responsivo.',
+    ),
+    tags: { pt: ['Catálogo', 'Assistência técnica', 'WhatsApp', 'Responsivo'], en: ['Catalog', 'Repair services', 'WhatsApp', 'Responsive'], es: ['Catálogo', 'Servicio técnico', 'WhatsApp', 'Responsivo'] },
+    challenge: pendingChallenge,
+    result: pendingResult,
+    metrics: pendingMetrics,
+    palette: { bg: '#0E0E10', fg: '#F2F2F2', acc: '#1F5FE0' },
   },
   {
     slug: 'jb-crm',

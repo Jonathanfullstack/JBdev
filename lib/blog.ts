@@ -20,6 +20,8 @@ export type PostMeta = {
   updated?: string;
   glyph: string;
   cover: 'accent' | 'ink' | 'soft';
+  /** foto de capa opcional (frontmatter `image` + `imageAlt`) */
+  image?: { src: string; alt: string };
   draft: boolean;
   minutes: number;
   words: number;
@@ -91,6 +93,7 @@ function parse(file: string): Post {
     updated: data.updated ? (data.updated instanceof Date ? data.updated.toISOString().slice(0, 10) : String(data.updated)) : undefined,
     glyph: data.glyph ?? '//',
     cover: data.cover ?? 'accent',
+    image: data.image ? { src: data.image, alt: data.imageAlt ?? '' } : undefined,
     draft: Boolean(data.draft),
     minutes: Math.max(1, Math.round(words / 200)),
     words,

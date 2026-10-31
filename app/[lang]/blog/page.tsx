@@ -16,8 +16,10 @@ export async function generateMetadata({ params }: PageProps<'/[lang]/blog'>) {
 export default async function Blog({ params }: PageProps<'/[lang]/blog'>) {
   const { locale, dict } = await resolve(params);
   const b = dict.blogPage;
+  const cats: Record<string, string> = Object.fromEntries(b.filters);
   const posts = getPosts().map((p) => ({
     ...toMeta(p),
+    category: locale === 'pt' ? p.category : cats[p.key] ?? p.category,
     href: localePath('pt', `/blog/${p.slug}`),
     dateLabel: formatDate(p.date, HTML_LANG[locale]),
   }));

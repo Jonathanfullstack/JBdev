@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import type { Locale } from '@/lib/i18n';
 import type { ServiceSummary } from '@/content/dictionaries/types';
 import WhatsAppChat, { type ChatMsg } from './motion/WhatsAppChat';
@@ -51,6 +52,13 @@ export default function ServiceArt({ s, index, locale }: { s: ServiceSummary; in
     return (
       <div className="svc-art cover-soft" style={{ justifyContent: 'center', aspectRatio: 'auto', padding: 'clamp(24px, 3vw, 40px)' }}>
         <WhatsAppChat title={c.title} status={c.status} caption={c.caption} messages={c.messages} />
+      </div>
+    );
+  }
+  if (s.image) {
+    return (
+      <div className="svc-art svc-photo">
+        <Image src={s.image.src} alt={s.image.alt} width={s.image.width} height={s.image.height} sizes="(max-width: 899px) 92vw, 600px" />
       </div>
     );
   }

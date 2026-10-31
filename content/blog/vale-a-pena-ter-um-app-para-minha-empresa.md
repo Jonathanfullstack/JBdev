@@ -10,6 +10,8 @@ key: apps
 service: /servicos/aplicativos
 date: 2026-10-07
 glyph: app.tsx
+image: /assents/img/service-aplicativos.webp
+imageAlt: 'Dois smartphones com um app de agenda mostrando consultas do dia e o botão de novo agendamento'
 cover: soft
 ---
 

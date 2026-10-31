@@ -1,5 +1,5 @@
-export type ServiceSlug = 'criacao-de-sites' | 'sistemas-sob-medida' | 'automacao-e-ia' | 'aplicativos';
-export type ServiceKey = 'sites' | 'sistemas' | 'auto' | 'apps';
+export type ServiceSlug = 'criacao-de-sites' | 'sistemas-sob-medida' | 'automacao-e-ia' | 'aplicativos' | 'seo-google-meu-negocio';
+export type ServiceKey = 'sites' | 'sistemas' | 'auto' | 'apps' | 'seo';
 
 export type ServiceSummary = {
   slug: ServiceSlug;
@@ -12,6 +12,8 @@ export type ServiceSummary = {
   tags: string[];
   ideal: string;
   includes: string[];
+  /** foto opcional do serviço (public/assents/img) */
+  image?: { src: string; alt: string; width: number; height: number };
 };
 
 export type PageMeta = { title: string; description: string };
@@ -29,13 +31,13 @@ export type Dict = {
     primary: string; secondary: string; canvasLabel: string; scroll: string;
   };
   pin: { eyebrow: string; prefix: string; words: string[]; text: string; cta: string };
-  marquee: string[];
+  techTitle: string;
   diag: {
     eyebrow: string; title: string; aside: string;
     items: [string, string, string][];
     reveal: string[]; revealSplit: number; cta1: string; cta2: string;
   };
-  servicesHome: { eyebrow: string; title: string; link: string };
+  servicesHome: { eyebrow: string; title: string; link: string; more: string };
   services: ServiceSummary[];
   portfolioHome: { eyebrow: string; title: string; link: string; viewCase: string };
   process: { eyebrow: string; title: string; steps: [string, string][] };
@@ -44,8 +46,8 @@ export type Dict = {
   faq: { eyebrow: string; title: string; text: string; cta: string; whatsapp: string; items: [string, string][] };
   cta: { eyebrow: string; title: string; text: string; button: string };
   footer: {
-    studio: string; base: string; pages: string; social: string; solutions: string;
-    solutionLinks: [string, string][]; baseLines: string[]; toTop: string; rights: string; made: string; card: string;
+    description: string; solutions: string; service: string; hq: string; specialties: string; online: string;
+    solutionLinks: [string, string][]; specialtyLinks: [string, string][]; rights: string; made: string; card: string;
   };
   servicesPage: {
     eyebrow: string; title1: string; title2: string; lead: string;

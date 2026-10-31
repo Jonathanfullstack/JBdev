@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: Props) {
   return buildMetadata({
     locale: 'pt', locales: ['pt'], path: `/blog/${post.slug}`, type: 'article',
     title: `${post.seoTitle} | JB DEV`, description: post.description,
-    publishedTime: post.date, modifiedTime: post.updated ?? post.date,
+    publishedTime: post.date, modifiedTime: post.updated ?? post.date, image: post.image?.src,
   });
 }
 
@@ -50,7 +50,7 @@ export default async function Article({ params }: Props) {
     inLanguage: 'pt-BR',
     mainEntityOfPage: url,
     url,
-    image: absolute('/assents/img/og-jbdev.png'),
+    image: absolute(post.image?.src ?? '/assents/img/og-jbdev.png'),
     keywords: post.keyword,
     wordCount: post.words,
     author: { '@type': 'Person', name: SITE.founder.shortName, url: absolute('/cartao') },
@@ -86,7 +86,7 @@ export default async function Article({ params }: Props) {
         </header>
 
         <div className="container">
-          <Cover post={post} style={{ aspectRatio: 'auto', minHeight: 'clamp(200px, 30vw, 420px)', borderRadius: 28, fontSize: 'clamp(48px, 6.7vw, 96px)', backgroundSize: '22px 22px' }} />
+          <Cover post={post} priority sizes="(max-width: 1299px) 94vw, 1240px" alt={post.image?.alt} style={post.image ? { aspectRatio: '16 / 8', borderRadius: 28 } : { aspectRatio: 'auto', minHeight: 'clamp(200px, 30vw, 420px)', borderRadius: 28, fontSize: 'clamp(48px, 6.7vw, 96px)', backgroundSize: '22px 22px' }} />
         </div>
 
         <div className="container" style={{ maxWidth: 1100, padding: '64px var(--pad) var(--sec-y-half)' }}>

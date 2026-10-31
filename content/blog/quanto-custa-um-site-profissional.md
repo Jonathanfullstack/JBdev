@@ -10,6 +10,8 @@ key: sites
 service: /servicos/criacao-de-sites
 date: 2026-10-21
 glyph: R$ ?
+image: /assents/img/blog-quanto-custa-site.webp
+imageAlt: 'Notebook com um site aberto ao lado de uma proposta impressa e uma calculadora sobre a mesa'
 cover: ink
 ---
 
