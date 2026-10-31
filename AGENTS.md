@@ -30,7 +30,7 @@ Construído a partir dos mockups aprovados (`jbdev-site-handoff.zip`) e dos brie
 | `content/projects.ts` | Portfólio real (7 projetos) e depoimentos |
 | `content/blog/*.md` | Artigos (`draft: true` = rascunho fora do site) |
 | `components/motion/` | Fita de partículas, seção fixada, marquee, cursor, transição, efeitos por atributo |
-| `public/assents/` | Imagens e fontes antigas (grafia `assents` mantida: o cartão usa) |
+| `public/assets/` | Imagens e fontes (era `assents`; `/assents/*` redireciona para `/assets/*`) |
 | `public/cartao/` | Cartão digital antigo, servido em `/cartao` |
 | `conteudo/` | Inventário do site antigo, palavras-chave, plano do blog, checklist de SEO |
 | `PENDENCIAS.md` | Placeholders que faltam preencher |

@@ -10,7 +10,7 @@ key: sites
 service: /servicos/criacao-de-sites
 date: 2026-10-10
 glyph: <lp/>
-image: /assents/img/blog-landing-page.webp
+image: /assets/img/blog-landing-page.webp
 imageAlt: 'Dois sites lado a lado em telas sobre pedestais num estúdio azul, com fotos de arquitetura e cards de conteúdo'
 cover: ink
 ---

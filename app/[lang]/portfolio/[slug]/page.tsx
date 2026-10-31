@@ -40,6 +40,9 @@ export default async function CasePage({ params }: Props) {
   const idx = PROJECTS.findIndex((x) => x.slug === p.slug);
   const next = PROJECTS[(idx + 1) % PROJECTS.length];
   const t = p.testimonial;
+  // desafio e resultado só entram quando houver texto real
+  const blocks = ([[c.challenge, p.challenge?.[locale]], [c.solution, p.desc[locale]], [c.result, p.result?.[locale]]] as const)
+    .filter((b): b is readonly [string, string] => Boolean(b[1]));
 
   const workLd = {
     '@context': 'https://schema.org',
@@ -62,17 +65,17 @@ export default async function CasePage({ params }: Props) {
           <Link href={L('/portfolio')} className="mono muted" style={{ display: 'inline-flex', alignItems: 'center', minHeight: 44, fontSize: 13, textDecoration: 'none' }}>{c.back}</Link>
           <div className="head-row" style={{ marginTop: 24, gap: 32 }}>
             <div style={{ maxWidth: 900 }}>
-              <p className="mono muted" style={{ display: 'flex', gap: 10, fontSize: 13 }}><span className="accent">{p.cat[locale]}</span><span>·</span><span>{p.year}</span></p>
+              <p className="mono muted" style={{ display: 'flex', gap: 10, fontSize: 13 }}><span className="accent">{p.cat[locale]}</span>{p.year && <><span>·</span><span>{p.year}</span></>}</p>
               <SplitText as="h1" className="h1-page" style={{ marginTop: 18 }} parts={[p.name]} />
               <p className="lead fade-up" style={{ margin: '24px 0 0', maxWidth: 680 }}>{p.desc[locale]}</p>
             </div>
             <a href={p.href} target="_blank" rel="noopener noreferrer" className="btn btn-ghost btn-md" data-magnetic>{c.visit} {p.host} ↗</a>
           </div>
           <dl className="meta-dl">
-            <div><dt>{c.client}</dt><dd>{p.client}</dd></div>
+            {p.client !== undefined && <div><dt>{c.client}</dt><dd>{p.client ?? c.ownProject}</dd></div>}
             <div><dt>{c.segment}</dt><dd>{p.segment[locale]}</dd></div>
             <div><dt>{c.deliveries}</dt><dd>{p.tags[locale].join(', ')}</dd></div>
-            <div><dt>{c.year}</dt><dd>{p.year}</dd></div>
+            {p.year && <div><dt>{c.year}</dt><dd>{p.year}</dd></div>}
           </dl>
         </div>
       </section>
@@ -86,8 +89,8 @@ export default async function CasePage({ params }: Props) {
       </div>
 
       <section className="section-half">
-        <div className="container grid cols-3" style={{ gap: '40px 32px' }}>
-          {[[c.challenge, p.challenge[locale]], [c.solution, p.desc[locale]], [c.result, p.result[locale]]].map(([h, text], i) => (
+        <div className={blocks.length > 1 ? 'container grid cols-3' : 'container'} style={{ gap: '40px 32px', maxWidth: blocks.length > 1 ? undefined : 820 }}>
+          {blocks.map(([h, text], i) => (
             <div key={h} className="draw-top" style={{ paddingTop: 24, '--bw': '2px', '--bc': i === 0 ? 'var(--accent)' : 'var(--line)', '--d': `${i * 120}ms` } as React.CSSProperties}>
               <p className={`mono ${i === 0 ? 'accent' : 'muted'}`} style={{ fontSize: 13 }}>0{i + 1}</p>
               <h2 style={{ margin: '14px 0 12px', fontSize: 26, fontWeight: 600, letterSpacing: '-0.025em' }}>{h}</h2>
@@ -110,21 +113,23 @@ export default async function CasePage({ params }: Props) {
         </section>
       )}
 
-      <section className="section-half">
-        <div className="container">
-          <figure className="quote-card" data-reveal>
-            <Quote style={{ color: 'var(--accent)' }} />
-            <blockquote>“{t ? t.quote[locale] : c.testimonialPlaceholder}”</blockquote>
-            <figcaption>
-              <span className="avatar">{t ? t.name.split(' ').map((w) => w[0]).join('') : '[AB]'}</span>
-              <span>
-                <span style={{ display: 'block', fontWeight: 600, fontSize: 16 }}>{t ? t.name : c.testimonialName}</span>
-                <span style={{ display: 'block', fontSize: 14, opacity: 0.7 }}>{t ? t.role : `${c.testimonialRole} · ${p.name}`}</span>
-              </span>
-            </figcaption>
-          </figure>
-        </div>
-      </section>
+      {t && (
+        <section className="section-half">
+          <div className="container">
+            <figure className="quote-card" data-reveal>
+              <Quote style={{ color: 'var(--accent)' }} />
+              <blockquote>“{t.quote[locale]}”</blockquote>
+              <figcaption>
+                <span className="avatar">{t.name.split(' ').map((w) => w[0]).join('')}</span>
+                <span>
+                  <span style={{ display: 'block', fontWeight: 600, fontSize: 16 }}>{t.name}</span>
+                  <span style={{ display: 'block', fontSize: 14, opacity: 0.7 }}>{t.role}</span>
+                </span>
+              </figcaption>
+            </figure>
+          </div>
+        </section>
+      )}
 
       <section className="bt">
         <div className="container">

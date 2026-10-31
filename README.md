@@ -35,7 +35,7 @@ Página de apresentação da JB DEV, com serviços, processo de trabalho, depoim
 | Caminho | Função |
 | --- | --- |
 | `index.html` | Página principal |
-| `assents/` | Estilos, fontes, ícones e imagens |
+| `assets/` | Estilos, fontes, ícones e imagens |
 | `js/site-config.js` | Fonte única de dados de contato, EmailJS e SEO |
 | `js/` | Tema, animações, i18n, formulário e interações |
 | `cartao/` | Cartão de visita digital |

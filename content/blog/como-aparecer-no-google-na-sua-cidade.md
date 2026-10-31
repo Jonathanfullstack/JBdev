@@ -10,7 +10,7 @@ key: sites
 service: /servicos/criacao-de-sites
 date: 2026-10-17
 glyph: near:me
-image: /assents/img/blog-seo-local.webp
+image: /assets/img/blog-seo-local.webp
 imageAlt: 'Quarteirão de lojas em miniatura com um pino de localização e um cartão de avaliação cinco estrelas sobre a busca'
 cover: accent
 ---

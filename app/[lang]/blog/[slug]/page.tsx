@@ -50,7 +50,7 @@ export default async function Article({ params }: Props) {
     inLanguage: 'pt-BR',
     mainEntityOfPage: url,
     url,
-    image: absolute(post.image?.src ?? '/assents/img/og-jbdev.png'),
+    image: absolute(post.image?.src ?? '/assets/img/og-jbdev.png'),
     keywords: post.keyword,
     wordCount: post.words,
     author: { '@type': 'Person', name: SITE.founder.shortName, url: absolute('/cartao') },

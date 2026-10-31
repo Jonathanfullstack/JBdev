@@ -24,7 +24,7 @@ export function buildMetadata(m: MetaInput): Metadata {
   const languages: Record<string, string> = {};
   locales.forEach((l) => { languages[HTML_LANG[l]] = absolute(localePath(l, m.path)); });
   if (locales.includes('pt')) languages['x-default'] = absolute(localePath('pt', m.path));
-  const image = m.image ?? '/assents/img/og-jbdev.png';
+  const image = m.image ?? '/assets/img/og-jbdev.png';
   return {
     title: m.title,
     description: m.description,
@@ -52,18 +52,20 @@ export function organizationSchema() {
     '@context': 'https://schema.org',
     '@graph': [
       {
-        '@type': ['Organization', 'ProfessionalService'],
+        '@type': ['LocalBusiness', 'ProfessionalService'],
         '@id': ORG_ID,
         name: SITE.name,
         url: SITE.url,
-        logo: `${SITE.url}/assents/img/logo.png`,
-        image: `${SITE.url}/assents/img/og-jbdev.png`,
+        logo: `${SITE.url}/assets/img/logo.png`,
+        image: `${SITE.url}/assets/img/og-jbdev.png`,
         description: 'Criação de sites, sistemas sob medida, automação com IA e aplicativos para empresas.',
         telephone: SITE.contact.phoneE164,
         email: SITE.contact.email,
-        // streetAddress entra quando os dados reais forem informados (ver PENDENCIAS.md)
+        // geo e openingHours entram quando forem informados (ver PENDENCIAS.md)
         address: {
           '@type': 'PostalAddress',
+          streetAddress: `${SITE.address.street} - ${SITE.address.neighborhood}`,
+          postalCode: SITE.address.postalCode,
           addressLocality: SITE.address.locality,
           addressRegion: SITE.address.region,
           addressCountry: SITE.address.country,

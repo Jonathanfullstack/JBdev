@@ -1,10 +1,12 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
+import { localePath, type Locale } from '@/lib/i18n';
 import type { Dict } from '@/content/dictionaries/types';
 import { Check } from '../Icons';
 
-export default function BriefingForm({ c, locale }: { c: Dict['contact']; locale: string }) {
+export default function BriefingForm({ c, locale }: { c: Dict['contact']; locale: Locale }) {
   const [needs, setNeeds] = useState<string[]>([]);
   const [state, setState] = useState<'idle' | 'sending' | 'done' | 'error'>('idle');
 
@@ -101,6 +103,7 @@ export default function BriefingForm({ c, locale }: { c: Dict['contact']; locale
       <button type="submit" className="btn btn-accent" style={{ height: 56, fontSize: 17 }} disabled={state === 'sending'} data-magnetic>
         {state === 'sending' ? c.sending : c.submit}
       </button>
+      <p className="form-note">{c.privacyNote} <Link href={localePath(locale, '/politica-de-privacidade')}>{c.privacyLink}</Link>.</p>
     </form>
   );
 }

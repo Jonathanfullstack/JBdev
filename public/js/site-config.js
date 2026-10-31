@@ -11,12 +11,14 @@ window.SITE_CONFIG = Object.freeze({
   person: {
     name: "Jonathan Vinicius Balieiro de Oliveira",
     jobTitle: "Desenvolvedor Web Full Stack",
-    image: "https://www.jbdev.com.br/assents/img/1716911104056.jpeg",
+    image: "https://www.jbdev.com.br/assets/img/1716911104056.jpeg",
   },
   contact: {
     phoneDisplay: "(19) 99749-5985",
     whatsappE164: "5519997495985",
     email: "jonathantotini@gmail.com",
+    streetAddress: "Av. Eng. Fábio Roberto Barnabé, 215 - Vila Nossa Sra. Aparecida",
+    postalCode: "13330-565",
     addressLocality: "Indaiatuba",
     addressRegion: "SP",
     addressCountry: "BR",
@@ -110,17 +112,19 @@ document.addEventListener("DOMContentLoaded", function () {
     name: config.brand.name,
     description: config.brand.description,
     url: config.siteUrl,
-    image: new URL("assents/img/og-jbdev.png", config.siteUrl).href,
-    logo: new URL("assents/img/logo.png", config.siteUrl).href,
+    image: new URL("assets/img/og-jbdev.png", config.siteUrl).href,
+    logo: new URL("assets/img/logo.png", config.siteUrl).href,
     telephone: "+" + config.contact.whatsappE164,
     email: config.contact.email,
     address: {
       "@type": "PostalAddress",
+      streetAddress: config.contact.streetAddress,
+      postalCode: config.contact.postalCode,
       addressLocality: config.contact.addressLocality,
       addressRegion: config.contact.addressRegion,
       addressCountry: config.contact.addressCountry
     },
-    areaServed: ["Indaiatuba", "Campinas", "Itu", "Salto", "Sorocaba", "São Paulo", "Brasil"].map(function (place) {
+    areaServed: ["Indaiatuba", "Salto", "Itu", "Campinas", "Sorocaba", "São Paulo", "Brasil"].map(function (place) {
       return { "@type": "Place", name: place };
     }),
     knowsAbout: [

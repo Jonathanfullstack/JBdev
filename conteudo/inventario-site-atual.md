@@ -25,9 +25,9 @@ O site atual também tem versão em inglês (toggle PT/EN via JS), que não exis
 | Meta description | A JB DEV desenvolve sites, sistemas e soluções digitais sob medida para empresas e profissionais. Atendimento em Indaiatuba/SP e remoto. | `/` |
 | Schema | `ProfessionalService` + `Person` + `WebSite` + `WebPage` | `js/site-config.js` |
 | Áreas atendidas (schema) | Indaiatuba, Campinas, Itu, Salto, Sorocaba, São Paulo, Brasil | `js/site-config.js` |
-| Logo | `assents/img/logo.webp/.png`, `logo-escura.webp/.png` | repo |
-| Favicon | `assents/img/favicon-jbdev.png`, `favicon.ico` | repo |
-| OG image | `assents/img/og-jbdev.png` | repo |
+| Logo | `assets/img/logo.webp/.png`, `logo-escura.webp/.png` | repo |
+| Favicon | `assets/img/favicon-jbdev.png`, `favicon.ico` | repo |
+| OG image | `assets/img/og-jbdev.png` | repo |
 
 ## 2. Contato e NAP
 
@@ -44,7 +44,7 @@ O site atual também tem versão em inglês (toggle PT/EN via JS), que não exis
 | LinkedIn | https://www.linkedin.com/in/jonathan-balieiro-b83230298/ | rodapé |
 | GitHub | https://github.com/Jonathanfullstack | rodapé |
 | Mensagem padrão WhatsApp | "Olá, JB DEV! Quero conversar sobre um projeto digital para o meu negócio." (+ mensagens por contexto de CTA) | `js/site-config.js` |
-| Foto | `assents/img/1716911104056.jpeg`, `about-jonathan-workspace*.webp` | repo |
+| Foto | `assets/img/1716911104056.jpeg`, `about-jonathan-workspace*.webp` | repo |
 
 ## 3. Serviços (site atual)
 
@@ -64,7 +64,7 @@ Rodapé — "Especialidades": Site para Empresas, Clínicas, Estética, Imobili�
 
 ## 4. Projetos (portfólio real)
 
-Todos em `/` → seção "Projetos selecionados". Prints já estão no repo (`assents/img/project-*.webp`, com versões 480/800).
+Todos em `/` → seção "Projetos selecionados". Prints já estão no repo (`assets/img/project-*.webp`, com versões 480/800).
 
 | Projeto | Categoria | Descrição | Link | Imagem |
 |---|---|---|---|---|
@@ -120,7 +120,7 @@ Não existem para nenhum projeto: cidade do cliente, ano, desafio, solução, re
 | Cases fictícios `PROJ` (p1–p6) e `[Nome do projeto 0X]`, `[clienteX].com.br` | Os 7 projetos reais acima, com nome, categoria, descrição, link e print | `/` |
 | Desafio / Solução / Resultado dos cases | Só a descrição real; o resto vira pendência | — |
 | `[Nome do cliente]`, `[Cargo]` (depoimento) | Gabriel Silva, Carla Valarine (no case Valarine), Julia Rosa | `/` |
-| Prints dos cases | `assents/img/project-*.webp` → `public/` | repo |
+| Prints dos cases | `assets/img/project-*.webp` → `public/` | repo |
 
 ## Continuam como placeholder (vão para `PENDENCIAS.md`)
 

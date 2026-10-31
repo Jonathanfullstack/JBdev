@@ -4,6 +4,7 @@ import { absolute } from '@/lib/seo';
 import { PROJECTS } from '@/content/projects';
 import { SERVICE_SLUGS } from '@/content/service-pages';
 import { SEO_SLUG } from '@/content/seo-service';
+import { LOCAL_SLUGS } from '@/content/local-pages';
 import { getPosts } from '@/lib/blog';
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -30,7 +31,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly' as const,
       priority: 0.7,
     })),
+    ...LOCAL_SLUGS.map((s) => ({ url: absolute(`/${s}`), lastModified: now, changeFrequency: 'monthly' as const, priority: 0.8 })),
+    ...multi('/sobre', 0.6, 'monthly'),
     ...multi('/contato', 0.6, 'monthly'),
+    ...multi('/politica-de-privacidade', 0.2, 'monthly'),
     { url: absolute('/cartao'), lastModified: now, changeFrequency: 'monthly', priority: 0.4 },
   ];
 }

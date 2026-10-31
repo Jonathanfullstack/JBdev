@@ -17,6 +17,8 @@ const nextConfig: NextConfig = {
     return [
       { source: '/index.html', destination: '/', permanent: true },
       { source: '/cartao/index.html', destination: '/cartao', permanent: true },
+      // a pasta pública era "assents"; links antigos e imagens indexadas seguem funcionando
+      { source: '/assents/:path*', destination: '/assets/:path*', permanent: true },
     ];
   },
   async rewrites() {
@@ -27,11 +29,11 @@ const nextConfig: NextConfig = {
     return [
       { source: '/(.*)', headers: securityHeaders },
       {
-        source: '/assents/fonts/(.*)',
+        source: '/assets/fonts/(.*)',
         headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }],
       },
       {
-        source: '/assents/img/(.*)',
+        source: '/assets/img/(.*)',
         headers: [{ key: 'Cache-Control', value: 'public, max-age=86400, stale-while-revalidate=604800' }],
       },
     ];

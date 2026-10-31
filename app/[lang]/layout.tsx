@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   applicationName: SITE.name,
   authors: [{ name: SITE.founder.shortName, url: `${SITE.url}/cartao` }],
-  icons: { icon: [{ url: '/assents/img/favicon-jbdev.png', type: 'image/png' }, { url: '/assents/img/favicon.ico' }] },
+  icons: { icon: [{ url: '/assets/img/favicon-jbdev.png', type: 'image/png' }, { url: '/assets/img/favicon.ico' }] },
   formatDetection: { telephone: false },
 };
 

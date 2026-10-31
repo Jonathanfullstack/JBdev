@@ -63,8 +63,8 @@ export const SERVICE_PAGES: Pages = {
         },
       ],
       faq: [
-        ['Quanto custa a criação de um site?', 'Depende do tipo de site, do número de páginas e dos recursos. Depois do briefing você recebe uma proposta fechada, sem surpresa. Projetos a partir de [R$ 0.000].'],
-        ['Em quanto tempo o site fica pronto?', 'Sites institucionais e landing pages costumam ficar prontos em cerca de [X] semanas, dependendo do conteúdo e das aprovações.'],
+        ['Quanto custa a criação de um site?', 'Depende do tipo de site, do número de páginas e dos recursos. Valor conforme o escopo, com proposta fechada após o briefing, sem surpresa.'],
+        ['Em quanto tempo o site fica pronto?', 'Sites em poucas semanas, conforme o escopo, o conteúdo e as aprovações.'],
         ['Vocês escrevem os textos do site?', 'Sim. A gente organiza a mensagem a partir do briefing e escreve os textos pensando no seu cliente e nas buscas do Google. Você revisa e aprova tudo.'],
         ['Consigo editar o site depois?', 'Sim. Quando faz sentido, o site vem com um painel para editar textos e fotos. Também é possível contratar suporte para as mudanças maiores.'],
         ['Vocês atendem fora de Indaiatuba?', 'Sim. Atendemos presencialmente em Indaiatuba e região e de forma remota em todo o Brasil.'],
@@ -95,8 +95,8 @@ export const SERVICE_PAGES: Pages = {
         },
       ],
       faq: [
-        ['How much does a website cost?', 'It depends on scope. After the brief you get a fixed proposal. Projects from [R$ 0.000].'],
-        ['How long does it take?', 'Business websites and landing pages usually take about [X] weeks.'],
+        ['How much does a website cost?', 'Pricing depends on scope, with a fixed proposal after the brief.'],
+        ['How long does it take?', 'Websites in a few weeks, depending on scope.'],
         ['Do you work remotely?', 'Yes. We work remotely with clients anywhere, with online meetings at every step.'],
       ],
     },
@@ -125,8 +125,8 @@ export const SERVICE_PAGES: Pages = {
         },
       ],
       faq: [
-        ['¿Cuánto cuesta un sitio?', 'Depende del alcance. Después del briefing recibes una propuesta cerrada. Proyectos desde [R$ 0.000].'],
-        ['¿En cuánto tiempo está listo?', 'Sitios institucionales y landing pages suelen tardar unas [X] semanas.'],
+        ['¿Cuánto cuesta un sitio?', 'Valor según el alcance, con propuesta cerrada después del briefing.'],
+        ['¿En cuánto tiempo está listo?', 'Sitios en pocas semanas, según el alcance.'],
         ['¿Trabajan de forma remota?', 'Sí. Atendemos de forma remota, con reuniones online en cada etapa.'],
       ],
     },
@@ -177,7 +177,7 @@ export const SERVICE_PAGES: Pages = {
         },
       ],
       faq: [
-        ['Quanto custa um sistema sob medida?', 'Depende dos módulos e das integrações. Depois do briefing você recebe uma proposta fechada, com escopo e prazo. Projetos a partir de [R$ 0.000].'],
+        ['Quanto custa um sistema sob medida?', 'Depende dos módulos e das integrações. Valor conforme o escopo, com proposta fechada após o briefing, incluindo escopo e prazo.'],
         ['Quanto tempo leva para ficar pronto?', 'Depende do escopo. As entregas são frequentes, então você começa a usar as primeiras partes antes do projeto inteiro terminar.'],
         ['Dá para importar os dados das minhas planilhas?', 'Sim. A migração é planejada junto com você para levar clientes, produtos e histórico para o sistema novo.'],
         ['O sistema funciona no celular?', 'Sim. Os sistemas são web e responsivos, funcionando no computador, tablet e celular.'],
@@ -204,7 +204,7 @@ export const SERVICE_PAGES: Pages = {
         },
       ],
       faq: [
-        ['How much does custom software cost?', 'It depends on modules and integrations. You get a fixed proposal after the brief. Projects from [R$ 0.000].'],
+        ['How much does custom software cost?', 'It depends on modules and integrations, with a fixed proposal after the brief.'],
         ['Does it work on mobile?', 'Yes. Our systems are web-based and responsive.'],
         ['Can I import my spreadsheets?', 'Yes. We plan the data migration with you.'],
       ],
@@ -229,7 +229,7 @@ export const SERVICE_PAGES: Pages = {
         },
       ],
       faq: [
-        ['¿Cuánto cuesta un sistema a medida?', 'Depende de los módulos e integraciones. Recibes una propuesta cerrada después del briefing. Proyectos desde [R$ 0.000].'],
+        ['¿Cuánto cuesta un sistema a medida?', 'Depende de los módulos e integraciones. Valor según el alcance, con propuesta cerrada después del briefing.'],
         ['¿Funciona en el móvil?', 'Sí. Los sistemas son web y responsivos.'],
         ['¿Puedo importar mis hojas de cálculo?', 'Sí. Planificamos la migración contigo.'],
       ],
@@ -289,7 +289,7 @@ export const SERVICE_PAGES: Pages = {
       faq: [
         ['Preciso trocar o número do WhatsApp?', 'Depende da solução. Em muitos casos dá para usar o número atual com a API oficial do WhatsApp. Avaliamos isso no briefing.'],
         ['A IA pode responder algo errado?', 'O assistente responde a partir das informações que você aprova e passa para um humano quando não tem certeza. As respostas são revisadas antes de ir ao ar.'],
-        ['Quanto custa uma automação de WhatsApp?', 'Depende dos fluxos e das integrações. Depois do briefing você recebe uma proposta fechada. Projetos a partir de [R$ 0.000].'],
+        ['Quanto custa uma automação de WhatsApp?', 'Depende dos fluxos e das integrações. Valor conforme o escopo, com proposta fechada após o briefing.'],
         ['Meus clientes vão saber que é um robô?', 'Recomendamos ser transparente: o assistente se apresenta e oferece falar com uma pessoa a qualquer momento.'],
       ],
     },
@@ -314,7 +314,7 @@ export const SERVICE_PAGES: Pages = {
       ],
       faq: [
         ['Can the AI give wrong answers?', 'It answers from information you approve and hands off to a human when unsure.'],
-        ['How much does it cost?', 'It depends on flows and integrations. Projects from [R$ 0.000].'],
+        ['How much does it cost?', 'It depends on flows and integrations, with a fixed proposal after the brief.'],
       ],
     },
     es: {
@@ -338,7 +338,7 @@ export const SERVICE_PAGES: Pages = {
       ],
       faq: [
         ['¿La IA puede responder algo incorrecto?', 'Responde a partir de la información que apruebas y deriva a un humano cuando no está segura.'],
-        ['¿Cuánto cuesta?', 'Depende de los flujos e integraciones. Proyectos desde [R$ 0.000].'],
+        ['¿Cuánto cuesta?', 'Depende de los flujos e integraciones. Valor según el alcance, con propuesta cerrada después del briefing.'],
       ],
     },
   },
@@ -392,7 +392,7 @@ export const SERVICE_PAGES: Pages = {
         },
       ],
       faq: [
-        ['Quanto custa criar um aplicativo?', 'Depende das funcionalidades, das integrações e do formato (nativo, híbrido ou PWA). Depois do briefing você recebe uma proposta fechada. Projetos a partir de [R$ 0.000].'],
+        ['Quanto custa criar um aplicativo?', 'Depende das funcionalidades, das integrações e do formato (nativo, híbrido ou PWA). Valor conforme o escopo, com proposta fechada após o briefing.'],
         ['Vocês publicam o app nas lojas?', 'Sim. Cuidamos da publicação na App Store e no Google Play, usando a conta de desenvolvedor da sua empresa.'],
         ['Um PWA aparece nas lojas?', 'Normalmente não. O PWA é instalado direto pelo navegador, o que reduz custo e prazo.'],
         ['O app pode se integrar ao meu sistema?', 'Sim. O app pode usar os mesmos dados do seu sistema de gestão, loja ou CRM.'],
@@ -417,7 +417,7 @@ export const SERVICE_PAGES: Pages = {
         },
       ],
       faq: [
-        ['How much does an app cost?', 'It depends on features and format. Projects from [R$ 0.000].'],
+        ['How much does an app cost?', 'It depends on features and format, with a fixed proposal after the brief.'],
         ['Do you publish to the stores?', 'Yes, using your company’s developer account.'],
       ],
     },
@@ -440,7 +440,7 @@ export const SERVICE_PAGES: Pages = {
         },
       ],
       faq: [
-        ['¿Cuánto cuesta una app?', 'Depende de las funciones y del formato. Proyectos desde [R$ 0.000].'],
+        ['¿Cuánto cuesta una app?', 'Depende de las funciones y del formato. Valor según el alcance, con propuesta cerrada después del briefing.'],
         ['¿Publican en las tiendas?', 'Sí, con la cuenta de desarrollador de tu empresa.'],
       ],
     },

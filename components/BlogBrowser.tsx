@@ -10,7 +10,7 @@ type Item = PostMeta & { href: string; dateLabel: string };
 
 function Cover({ p, size, sizes = '(max-width: 699px) 92vw, 420px' }: { p: Item; size?: string; sizes?: string }) {
   if (p.image) {
-    return <div className="cover cover-photo" aria-hidden="true"><Image src={p.image.src} alt="" fill sizes={sizes} /></div>;
+    return <div className="cover cover-photo"><Image src={p.image.src} alt={p.image.alt} fill sizes={sizes} /></div>;
   }
   return <div className={`cover cover-${p.cover}`} data-tilt="3d" aria-hidden="true" style={{ fontSize: size }}>{p.glyph}</div>;
 }

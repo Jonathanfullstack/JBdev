@@ -2,14 +2,14 @@ import type { Dict } from './types';
 
 const es: Dict = {
   nav: {
-    home: 'Inicio', services: 'Servicios', portfolio: 'Portafolio', blog: 'Blog', contact: 'Contacto',
+    home: 'Inicio', services: 'Servicios', portfolio: 'Portafolio', about: 'Sobre', blog: 'Blog', contact: 'Contacto',
     start: 'Iniciar proyecto', openMenu: 'Abrir menú', closeMenu: 'Cerrar menú', menuEyebrow: '// menú',
     toggleTheme: 'Cambiar entre modo claro y oscuro', language: 'Idioma', skip: 'Saltar al contenido',
     homeAria: 'JB DEV — inicio', primary: 'Principal',
   },
   curtain: {
     home: 'Inicio', servicos: 'Servicios', portfolio: 'Portafolio', case: 'Caso', blog: 'Blog',
-    artigo: 'Artículo', contato: 'Contacto', servico: 'Servicio',
+    artigo: 'Artículo', contato: 'Contacto', servico: 'Servicio', sobre: 'Sobre',
   },
   meta: {
     home: {
@@ -72,7 +72,7 @@ const es: Dict = {
       long: 'Sitios institucionales, landing pages y tiendas online rápidos, optimizados para Google y hechos para generar contactos — no solo una vitrina.',
       tags: ['SEO', 'Rendimiento', 'Copy'], ideal: 'quien necesita ser encontrado y contactado.',
       includes: ['Diseño a medida, con modo claro y oscuro', 'Optimización para Google (SEO) y SEO local', 'Integración con WhatsApp y formularios', 'Tienda online con catálogo, cuando tenga sentido', 'Hosting y dominio configurados'],
-      image: { src: '/assents/img/service-sites.webp', width: 1402, height: 1122, alt: 'Sitio de arquitectura abierto en un portátil y un móvil, con la misma página adaptada a las dos pantallas' },
+      image: { src: '/assets/img/service-sites.webp', width: 1402, height: 1122, alt: 'Sitio de arquitectura abierto en un portátil y un móvil, con la misma página adaptada a las dos pantallas' },
 
     },
     {
@@ -81,7 +81,7 @@ const es: Dict = {
       long: 'Un panel con las reglas de tu negocio: clientes, ventas, stock, agenda y finanzas en un solo lugar, accesible desde cualquier parte.',
       tags: ['Paneles', 'Web apps', 'APIs'], ideal: 'quien vive entre hojas de cálculo y cuadernos.',
       includes: ['Registro de clientes e historial', 'Ventas, presupuestos y stock', 'Agenda y control de equipo', 'Informes e indicadores', 'Acceso por perfil y permisos'],
-      image: { src: '/assents/img/service-sistemas.webp', width: 1402, height: 1122, alt: 'Monitor con un panel de ventas que muestra facturación, clientes, stock, gráfico del mes y últimas ventas' },
+      image: { src: '/assets/img/service-sistemas.webp', width: 1402, height: 1122, alt: 'Monitor con un panel de ventas que muestra facturación, clientes, stock, gráfico del mes y últimas ventas' },
     },
     {
       slug: 'automacao-e-ia', key: 'auto', n: '03', icon: 'ai()', title: 'Automatización e IA',
@@ -89,7 +89,7 @@ const es: Dict = {
       long: 'Atención con IA en WhatsApp, recordatorios, cobros e integraciones que trabajan mientras tú te ocupas de lo importante.',
       tags: ['WhatsApp', 'IA', 'Integraciones'], ideal: 'quien pierde horas en tareas repetitivas.',
       includes: ['Asistente de IA en WhatsApp', 'Agenda automática', 'Recordatorios y cobros', 'Integración entre sistemas', 'Derivación a un agente humano'],
-      image: { src: '/assents/img/service-automacao.webp', width: 1586, height: 992, alt: 'Móvil con una conversación de atención automática que confirma una cita, conectada a íconos de agenda, reloj y confirmación' },
+      image: { src: '/assets/img/service-automacao.webp', width: 1586, height: 992, alt: 'Móvil con una conversación de atención automática que confirma una cita, conectada a íconos de agenda, reloj y confirmación' },
     },
     {
       slug: 'aplicativos', key: 'apps', n: '04', icon: 'app', title: 'Apps móviles',
@@ -97,7 +97,7 @@ const es: Dict = {
       long: 'Apps para iOS y Android — o PWA — con tu marca, para fidelizar clientes y vender más.',
       tags: ['iOS', 'Android', 'PWA'], ideal: 'quien quiere estar en el bolsillo del cliente.',
       includes: ['Diseño de interfaz móvil', 'App iOS y Android o PWA', 'Notificaciones push', 'Login, pagos e integraciones', 'Publicación en las tiendas'],
-      image: { src: '/assents/img/service-aplicativos.webp', width: 1402, height: 1122, alt: 'Dos smartphones con una app de agenda que muestra las citas del día y el botón de nueva cita' },
+      image: { src: '/assets/img/service-aplicativos.webp', width: 1402, height: 1122, alt: 'Dos smartphones con una app de agenda que muestra las citas del día y el botón de nueva cita' },
     },
     {
       slug: 'seo-google-meu-negocio', key: 'seo', n: '05', icon: 'seo', title: 'SEO y Perfil de Empresa en Google',
@@ -105,7 +105,7 @@ const es: Dict = {
       long: 'SEO técnico, SEO on-page y Perfil de Empresa en Google optimizados para que te encuentren en las búsquedas y en Google Maps.',
       tags: ['SEO local', 'Google Maps', 'Search Console'], ideal: 'quien necesita que lo encuentren los clientes de su zona.',
       includes: ['SEO técnico: velocidad, móvil y datos estructurados', 'SEO on-page con palabras clave de tu zona', 'Creación u optimización del Perfil de Empresa en Google', 'Search Console y Analytics configurados', 'Informe con el antes y el después'],
-      image: { src: '/assents/img/service-seo-google.webp', width: 1536, height: 1024, alt: 'Portátil y móvil mostrando una búsqueda en Google con la empresa destacada, botones de sitio y rutas y el mapa con su ubicación' },
+      image: { src: '/assets/img/service-seo-google.webp', width: 1536, height: 1024, alt: 'Portátil y móvil mostrando una búsqueda en Google con la empresa destacada, botones de sitio y rutas y el mapa con su ubicación' },
     },
   ],
   portfolioHome: { eyebrow: '// portafolio', title: 'Hecho por JB DEV.', link: 'Ver portafolio completo →', viewCase: 'Ver caso →' },
@@ -128,13 +128,13 @@ const es: Dict = {
   faq: {
     eyebrow: '// dudas',
     title: 'Preguntas que siempre llegan.',
-    text: '¿No encontraste la tuya? Respondemos en hasta [24h].',
+    text: '¿No encontraste la tuya? Respondemos en hasta 24 horas.',
     cta: 'Iniciar proyecto', whatsapp: 'Escribir por WhatsApp',
     items: [
       ['¿Atienden a empresas pequeñas?', 'Sí. El proyecto se dimensiona según el momento de tu negocio — del autónomo a la empresa con varias sedes.'],
       ['¿Necesito saber exactamente lo que quiero?', 'No. En el briefing entendemos el problema y proponemos el camino más simple para resolverlo.'],
-      ['¿Cuánto cuesta?', 'Depende del alcance. Después del briefing recibes una propuesta cerrada, sin sorpresas. Proyectos desde [R$ 0.000].'],
-      ['¿En cuánto tiempo está listo?', 'Sitios en unas [X] semanas. Sistemas y apps según el alcance, con entregas frecuentes para que acompañes.'],
+      ['¿Cuánto cuesta?', 'Valor según el alcance, con propuesta cerrada después del briefing, sin sorpresas.'],
+      ['¿En cuánto tiempo está listo?', 'Sitios en pocas semanas, según el alcance. Sistemas y apps también según el alcance, con entregas frecuentes para que acompañes.'],
       ['¿Solo atienden en Indaiatuba?', 'No. Atendemos en persona en Indaiatuba/SP y la región, y de forma remota en cualquier lugar, con reuniones online en cada etapa.'],
       ['¿Se ocupan de proyectos que ya existen?', 'Sí. Podemos evaluar optimizaciones, correcciones, nuevas funcionalidades y la evolución técnica según el estado actual del proyecto.'],
       ['¿El código es mío?', 'Sí. Código, dominio y accesos son tuyos al final del proyecto.'],
@@ -144,7 +144,7 @@ const es: Dict = {
   cta: {
     eyebrow: '// siguiente paso',
     title: '¿Llevamos tu idea a la realidad?',
-    text: 'Cuéntanos lo que necesitas. En hasta [24h] respondemos con los próximos pasos.',
+    text: 'Cuéntanos lo que necesitas. En hasta 24 horas respondemos con los próximos pasos.',
     button: 'Iniciar proyecto',
   },
   footer: {
@@ -172,8 +172,8 @@ const es: Dict = {
       ['Perfil de Empresa en Google', '/servicos/seo-google-meu-negocio'],
     ],
     rights: 'Todos los derechos reservados.',
-    made: 'hecho con código propio',
     card: 'Tarjeta digital',
+    about: 'Sobre JB DEV', privacy: 'Política de privacidad',
   },
   servicesPage: {
     eyebrow: '// servicios', title1: 'Lo que', title2: 'construimos.',
@@ -182,7 +182,7 @@ const es: Dict = {
   },
   servicePage: {
     eyebrow: '// servicio', includes: 'Qué incluye', process: 'Cómo funciona', faq: 'Preguntas frecuentes',
-    related: 'Proyectos relacionados', relatedEmpty: '[Casos de esta categoría próximamente — aún no hay proyecto publicado.]',
+    related: 'Proyectos relacionados', relatedEmpty: 'Casos de esta categoría próximamente.',
     cta: 'Pedir presupuesto →', idealFor: 'Ideal para', breadcrumbServices: 'Servicios',
   },
   portfolioPage: {
@@ -192,15 +192,13 @@ const es: Dict = {
     filtersLabel: 'Filtrar portafolio',
     filters: [['all', 'Todos'], ['sites', 'Sitios'], ['sistemas', 'Sistemas'], ['auto', 'Automatización'], ['apps', 'Apps']],
     featured: 'Caso destacado', viewFull: 'Ver caso completo →', visit: 'Visitar sitio ↗', viewCase: 'Ver caso →',
-    logos: 'Marcas que confían en JB DEV', logoPlaceholder: '[Logo cliente]',
-    empty: '[Aún no hay casos publicados en esta categoría.]',
+    empty: 'Aún no hay casos publicados en esta categoría.',
     testimonials: 'Lo que dicen los clientes',
   },
   casePage: {
     back: '← Volver al portafolio', client: 'CLIENTE', segment: 'SECTOR', deliveries: 'ENTREGAS', year: 'AÑO',
     challenge: 'El desafío', solution: 'La solución', result: 'El resultado', next: 'Siguiente caso', visit: 'Visitar',
-    testimonialPlaceholder: '[Testimonio del cliente contando cómo el proyecto cambió el día a día del negocio.]',
-    testimonialName: '[Nombre del cliente]', testimonialRole: '[Cargo]',
+    ownProject: 'Proyecto propio',
   },
   blogPage: {
     eyebrow: '// blog', title1: 'Blog de', title2: 'JB DEV.',
@@ -220,18 +218,19 @@ const es: Dict = {
   },
   contact: {
     eyebrow: '// briefing', title1: 'Llevemos tu idea', title2: 'a la realidad.',
-    lead: 'Cuéntanos lo que necesitas. En hasta [24h] respondemos con los próximos pasos — sin compromiso.',
+    lead: 'Cuéntanos lo que necesitas. En hasta 24 horas respondemos con los próximos pasos — sin compromiso.',
     name: 'Nombre', namePh: '¿Cómo te llamamos?', company: 'Empresa', optional: '(opcional)', companyPh: 'Nombre del negocio',
     email: 'E-mail', emailPh: 'tu@empresa.com', whatsapp: 'WhatsApp', whatsappPh: '+00 00 00000-0000',
     needs: '¿Qué necesitas?', needOptions: ['Sitio web', 'Landing page', 'Tienda online', 'Sistema', 'Automatización / IA', 'App'],
-    invest: 'Inversión prevista', investOptions: ['Aún no lo sé', 'Hasta [R$ 0.000]', '[R$ 0.000] a [R$ 00.000]', 'Más de [R$ 00.000]'],
+    invest: 'Inversión prevista', investOptions: ['Aún no lo sé', 'Quiero empezar con algo simple', 'Proyecto completo', 'Proyecto mayor (sistema o app)'],
     message: 'Cuéntanos un poco sobre el proyecto', messagePh: '¿Qué problema quieres resolver? ¿Tienes plazo?',
     consent: 'Acepto ser contactado por JB DEV sobre este proyecto.',
     submit: 'Enviar briefing →', sending: 'Enviando…',
-    successTitle: '¡Briefing recibido!', successText: 'En hasta [24h] te escribimos con los próximos pasos.', again: 'Enviar otro',
+    privacyNote: 'Tus datos se usan solo para responder este briefing. Más información en la', privacyLink: 'Política de Privacidad',
+    successTitle: '¡Briefing recibido!', successText: 'En hasta 24 horas te escribimos con los próximos pasos.', again: 'Enviar otro',
     error: 'No pudimos enviarlo ahora. Inténtalo de nuevo o escríbenos por WhatsApp.',
     whatsappCard: 'WhatsApp', emailCard: 'E-mail', nextTitle: 'QUÉ PASA DESPUÉS',
-    nextSteps: ['Leemos tu briefing y respondemos en hasta [24h].', 'Una conversación rápida para entender el negocio.', 'Recibes una propuesta cerrada, con plazo.'],
+    nextSteps: ['Leemos tu briefing y respondemos en hasta 24 horas.', 'Una conversación rápida para entender el negocio.', 'Recibes una propuesta cerrada, con plazo.'],
   },
   common: {
     whatsappMessage: '¡Hola, JB DEV! Quiero conversar sobre un proyecto digital para mi negocio.',

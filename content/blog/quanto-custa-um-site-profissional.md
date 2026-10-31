@@ -10,7 +10,7 @@ key: sites
 service: /servicos/criacao-de-sites
 date: 2026-10-21
 glyph: R$ ?
-image: /assents/img/blog-quanto-custa-site.webp
+image: /assets/img/blog-quanto-custa-site.webp
 imageAlt: 'Notebook com um site aberto ao lado de uma proposta impressa e uma calculadora sobre a mesa'
 cover: ink
 ---
@@ -33,14 +33,14 @@ Pense no site como uma obra: o preço não depende só do tamanho, mas do que va
 
 ## Site institucional, landing page ou loja: qual o custo de cada um?
 
-Os valores variam muito conforme o escopo, então em vez de números soltos, veja como cada formato costuma se comportar em esforço e investimento:
+Os valores variam muito conforme o escopo, então em vez de números soltos, veja como cada formato costuma se comportar em esforço. O valor de cada um sai numa proposta fechada após o briefing:
 
-| Tipo de site | Para que serve | Esforço típico | Investimento |
-|---|---|---|---|
-| Landing page | Uma oferta, uma campanha, um único botão de ação | Menor | A partir de [R$ 0.000] |
-| Site institucional | Apresentar a empresa, os serviços e gerar contatos | Médio | A partir de [R$ 0.000] |
-| Loja virtual | Vender produtos com catálogo, carrinho e pagamento | Maior | A partir de [R$ 00.000] |
-| Site com sistema | Área do cliente, agendamento, painel administrativo | Depende do sistema | Sob consulta |
+| Tipo de site | Para que serve | Esforço típico |
+|---|---|---|
+| Landing page | Uma oferta, uma campanha, um único botão de ação | Menor |
+| Site institucional | Apresentar a empresa, os serviços e gerar contatos | Médio |
+| Loja virtual | Vender produtos com catálogo, carrinho e pagamento | Maior |
+| Site com sistema | Área do cliente, agendamento, painel administrativo | Depende do sistema |
 
 Se você ainda não sabe qual formato faz sentido, vale ler [landing page ou site institucional: qual sua empresa precisa](/blog/landing-page-ou-site-institucional).
 

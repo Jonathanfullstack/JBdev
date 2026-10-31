@@ -1,4 +1,4 @@
-// Logo real da JB DEV (</> azul e ciano + "JB | DEV"), redesenhado em SVG a partir de public/assents/img/logo.png.
+// Logo real da JB DEV (</> azul e ciano + "JB | DEV"), redesenhado em SVG a partir de public/assets/img/logo.png.
 // O símbolo mantém as cores da marca; o texto usa currentColor e acompanha o tema claro/escuro.
 export function LogoMark({ size = 40 }: { size?: number }) {
   return (

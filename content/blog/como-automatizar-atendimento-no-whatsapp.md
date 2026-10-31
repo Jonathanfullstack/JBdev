@@ -10,7 +10,7 @@ key: auto
 service: /servicos/automacao-e-ia
 date: 2026-10-24
 glyph: if (msg)
-image: /assents/img/service-automacao.webp
+image: /assets/img/service-automacao.webp
 imageAlt: 'Celular com uma conversa de atendimento automático confirmando um agendamento, ligada a ícones de agenda, relógio e confirmação'
 cover: accent
 ---

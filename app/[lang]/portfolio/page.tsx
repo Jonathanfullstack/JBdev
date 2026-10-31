@@ -77,15 +77,6 @@ export default async function Portfolio({ params }: PageProps<'/[lang]/portfolio
         </div>
       </section>
 
-      <section style={{ padding: '0 0 var(--sec-y)' }}>
-        <div className="container">
-          <div className="head-row bt" style={{ alignItems: 'center', paddingTop: 40, gap: '20px 40px' }}>
-            <p className="label-caps" style={{ textTransform: 'uppercase' }}>{pp.logos}</p>
-            <div className="logos">{Array.from({ length: 5 }, (_, i) => <span key={i}>{pp.logoPlaceholder}</span>)}</div>
-          </div>
-        </div>
-      </section>
-
       <CtaSection locale={locale} dict={dict} />
     </>
   );

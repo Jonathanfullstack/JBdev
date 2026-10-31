@@ -26,7 +26,7 @@ export default function Header({ locale, nav }: { locale: Locale; nav: Dict['nav
   const langRef = useRef<HTMLDivElement>(null);
 
   const items: [string, string][] = [
-    ['/', nav.home], ['/servicos', nav.services], ['/portfolio', nav.portfolio], ['/blog', nav.blog], ['/contato', nav.contact],
+    ['/', nav.home], ['/servicos', nav.services], ['/portfolio', nav.portfolio], ['/sobre', nav.about], ['/blog', nav.blog], ['/contato', nav.contact],
   ];
   const isActive = (href: string) => (href === '/' ? path === '/' : path === href || path.startsWith(`${href}/`));
 

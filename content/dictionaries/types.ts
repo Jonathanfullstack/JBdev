@@ -12,7 +12,7 @@ export type ServiceSummary = {
   tags: string[];
   ideal: string;
   includes: string[];
-  /** foto opcional do serviço (public/assents/img) */
+  /** foto opcional do serviço (public/assets/img) */
   image?: { src: string; alt: string; width: number; height: number };
 };
 
@@ -20,11 +20,11 @@ export type PageMeta = { title: string; description: string };
 
 export type Dict = {
   nav: {
-    home: string; services: string; portfolio: string; blog: string; contact: string;
+    home: string; services: string; portfolio: string; about: string; blog: string; contact: string;
     start: string; openMenu: string; closeMenu: string; menuEyebrow: string;
     toggleTheme: string; language: string; skip: string; homeAria: string; primary: string;
   };
-  curtain: Record<'home' | 'servicos' | 'portfolio' | 'case' | 'blog' | 'artigo' | 'contato' | 'servico', string>;
+  curtain: Record<'home' | 'servicos' | 'portfolio' | 'case' | 'blog' | 'artigo' | 'contato' | 'servico' | 'sobre', string>;
   meta: Record<'home' | 'services' | 'portfolio' | 'blog' | 'contact' | 'notFound', PageMeta>;
   hero: {
     badge: string; l1: string; l2: string; l3: string; lead: string;
@@ -47,7 +47,7 @@ export type Dict = {
   cta: { eyebrow: string; title: string; text: string; button: string };
   footer: {
     description: string; solutions: string; service: string; hq: string; specialties: string; online: string;
-    solutionLinks: [string, string][]; specialtyLinks: [string, string][]; rights: string; made: string; card: string;
+    solutionLinks: [string, string][]; specialtyLinks: [string, string][]; rights: string; card: string; about: string; privacy: string;
   };
   servicesPage: {
     eyebrow: string; title1: string; title2: string; lead: string;
@@ -60,12 +60,12 @@ export type Dict = {
   portfolioPage: {
     eyebrow: string; lead: string; stats: [string, string][]; filtersLabel: string;
     filters: [string, string][]; featured: string; viewFull: string; visit: string; viewCase: string;
-    logos: string; logoPlaceholder: string; empty: string; testimonials: string;
+    empty: string; testimonials: string;
   };
   casePage: {
     back: string; client: string; segment: string; deliveries: string; year: string;
     challenge: string; solution: string; result: string; next: string; visit: string;
-    testimonialPlaceholder: string; testimonialName: string; testimonialRole: string;
+    ownProject: string;
   };
   blogPage: {
     eyebrow: string; title1: string; title2: string; lead: string; filtersLabel: string;
@@ -83,6 +83,7 @@ export type Dict = {
     email: string; emailPh: string; whatsapp: string; whatsappPh: string;
     needs: string; needOptions: string[]; invest: string; investOptions: string[];
     message: string; messagePh: string; consent: string; submit: string; sending: string;
+    privacyNote: string; privacyLink: string;
     successTitle: string; successText: string; again: string; error: string;
     whatsappCard: string; emailCard: string; nextTitle: string; nextSteps: string[];
   };

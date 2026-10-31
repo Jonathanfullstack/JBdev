@@ -2,14 +2,14 @@ import type { Dict } from './types';
 
 const pt: Dict = {
   nav: {
-    home: 'Início', services: 'Serviços', portfolio: 'Portfólio', blog: 'Blog', contact: 'Contato',
+    home: 'Início', services: 'Serviços', portfolio: 'Portfólio', about: 'Sobre', blog: 'Blog', contact: 'Contato',
     start: 'Iniciar projeto', openMenu: 'Abrir menu', closeMenu: 'Fechar menu', menuEyebrow: '// menu',
     toggleTheme: 'Alternar modo claro e escuro', language: 'Idioma', skip: 'Pular para o conteúdo',
     homeAria: 'JB DEV — início', primary: 'Principal',
   },
   curtain: {
     home: 'Início', servicos: 'Serviços', portfolio: 'Portfólio', case: 'Case', blog: 'Blog',
-    artigo: 'Artigo', contato: 'Contato', servico: 'Serviço',
+    artigo: 'Artigo', contato: 'Contato', servico: 'Serviço', sobre: 'Sobre',
   },
   meta: {
     home: {
@@ -72,7 +72,7 @@ const pt: Dict = {
       long: 'Sites institucionais, landing pages e lojas virtuais rápidos, otimizados pro Google e feitos pra virar contato — não só vitrine.',
       tags: ['SEO', 'Performance', 'Copy'], ideal: 'quem precisa ser encontrado e chamado.',
       includes: ['Design sob medida, com modo claro e escuro', 'Otimização pro Google (SEO) e SEO local', 'Integração com WhatsApp e formulários', 'Loja virtual com catálogo, quando fizer sentido', 'Hospedagem e domínio configurados'],
-      image: { src: '/assents/img/service-sites.webp', width: 1402, height: 1122, alt: 'Site de arquitetura aberto num notebook e num celular, com a mesma página adaptada às duas telas' },
+      image: { src: '/assets/img/service-sites.webp', width: 1402, height: 1122, alt: 'Site de arquitetura aberto num notebook e num celular, com a mesma página adaptada às duas telas' },
 
     },
     {
@@ -81,7 +81,7 @@ const pt: Dict = {
       long: 'Um painel com as regras do seu negócio: clientes, vendas, estoque, agenda e financeiro num lugar só, acessível de qualquer lugar.',
       tags: ['Painéis', 'Web apps', 'APIs'], ideal: 'quem vive entre planilhas e cadernos.',
       includes: ['Cadastro de clientes e histórico', 'Vendas, orçamentos e estoque', 'Agenda e controle de equipe', 'Relatórios e indicadores', 'Acesso por perfil e permissões'],
-      image: { src: '/assents/img/service-sistemas.webp', width: 1402, height: 1122, alt: 'Monitor com painel de vendas mostrando faturamento, clientes, estoque, gráfico do mês e últimas vendas' },
+      image: { src: '/assets/img/service-sistemas.webp', width: 1402, height: 1122, alt: 'Monitor com painel de vendas mostrando faturamento, clientes, estoque, gráfico do mês e últimas vendas' },
     },
     {
       slug: 'automacao-e-ia', key: 'auto', n: '03', icon: 'ai()', title: 'Automações e IA',
@@ -89,7 +89,7 @@ const pt: Dict = {
       long: 'Atendimento com IA no WhatsApp, lembretes, cobranças e integrações que trabalham enquanto você cuida do que importa.',
       tags: ['WhatsApp', 'IA', 'Integrações'], ideal: 'quem perde horas com tarefas repetidas.',
       includes: ['Assistente de IA no WhatsApp', 'Agendamento automático', 'Lembretes e cobranças', 'Integração entre sistemas', 'Passagem para atendente humano'],
-      image: { src: '/assents/img/service-automacao.webp', width: 1586, height: 992, alt: 'Celular com uma conversa de atendimento automático confirmando um agendamento, ligada a ícones de agenda, relógio e confirmação' },
+      image: { src: '/assets/img/service-automacao.webp', width: 1586, height: 992, alt: 'Celular com uma conversa de atendimento automático confirmando um agendamento, ligada a ícones de agenda, relógio e confirmação' },
     },
     {
       slug: 'aplicativos', key: 'apps', n: '04', icon: 'app', title: 'Apps mobile',
@@ -97,7 +97,7 @@ const pt: Dict = {
       long: 'Apps para iOS e Android — ou PWA — com a sua marca, pra fidelizar clientes e vender mais.',
       tags: ['iOS', 'Android', 'PWA'], ideal: 'quem quer estar no bolso do cliente.',
       includes: ['Design de interface mobile', 'App iOS e Android ou PWA', 'Notificações push', 'Login, pagamentos e integrações', 'Publicação nas lojas'],
-      image: { src: '/assents/img/service-aplicativos.webp', width: 1402, height: 1122, alt: 'Dois smartphones com um app de agenda mostrando consultas do dia e o botão de novo agendamento' },
+      image: { src: '/assets/img/service-aplicativos.webp', width: 1402, height: 1122, alt: 'Dois smartphones com um app de agenda mostrando consultas do dia e o botão de novo agendamento' },
     },
     {
       slug: 'seo-google-meu-negocio', key: 'seo', n: '05', icon: 'seo', title: 'SEO & Google Meu Negócio',
@@ -105,7 +105,7 @@ const pt: Dict = {
       long: 'SEO técnico, SEO on-page e Perfil da Empresa no Google otimizados para você ser encontrado nas buscas e no Google Maps.',
       tags: ['SEO local', 'Google Maps', 'Search Console'], ideal: 'quem precisa ser encontrado por clientes da região.',
       includes: ['SEO técnico: velocidade, mobile e dados estruturados', 'SEO on-page com palavras-chave da sua região', 'Criação ou otimização do Perfil da Empresa no Google', 'Search Console e Analytics configurados', 'Relatório com o antes e o depois'],
-      image: { src: '/assents/img/service-seo-google.webp', width: 1536, height: 1024, alt: 'Notebook e celular mostrando a busca no Google com a empresa em destaque, botões de site e rotas e o mapa com a localização' },
+      image: { src: '/assets/img/service-seo-google.webp', width: 1536, height: 1024, alt: 'Notebook e celular mostrando a busca no Google com a empresa em destaque, botões de site e rotas e o mapa com a localização' },
     },
   ],
   portfolioHome: { eyebrow: '// portfólio', title: 'Feito pela JB DEV.', link: 'Ver portfólio completo →', viewCase: 'Ver case →' },
@@ -128,13 +128,13 @@ const pt: Dict = {
   faq: {
     eyebrow: '// dúvidas',
     title: 'Perguntas que sempre chegam.',
-    text: 'Não achou a sua? Resposta em até [24h].',
+    text: 'Não achou a sua? Resposta em até 24 horas.',
     cta: 'Iniciar projeto', whatsapp: 'Chamar no WhatsApp',
     items: [
       ['Vocês atendem empresa pequena?', 'Sim. O projeto é dimensionado pro momento do seu negócio — do autônomo à empresa com várias unidades.'],
       ['Preciso já saber o que eu quero?', 'Não. No briefing a gente entende o problema e propõe o caminho mais simples pra resolver.'],
-      ['Quanto custa?', 'Depende do escopo. Depois do briefing você recebe uma proposta fechada, sem surpresa. Projetos a partir de [R$ 0.000].'],
-      ['Em quanto tempo fica pronto?', 'Sites em cerca de [X] semanas. Sistemas e apps conforme o escopo, com entregas frequentes pra você acompanhar.'],
+      ['Quanto custa?', 'Valor conforme o escopo, com proposta fechada após o briefing, sem surpresa.'],
+      ['Em quanto tempo fica pronto?', 'Sites em poucas semanas, conforme o escopo. Sistemas e apps também conforme o escopo, com entregas frequentes pra você acompanhar.'],
       ['O atendimento é só em Indaiatuba?', 'Não. Atendemos presencialmente em Indaiatuba/SP e região, e de forma remota em todo o Brasil, com reuniões online em cada etapa.'],
       ['Vocês cuidam de projetos que já existem?', 'Sim. Dá pra avaliar otimizações, correções, novas funcionalidades e a evolução técnica conforme o estado atual do projeto.'],
       ['O código fica meu?', 'Fica. Código, domínio e acessos são seus ao fim do projeto.'],
@@ -144,7 +144,7 @@ const pt: Dict = {
   cta: {
     eyebrow: '// próximo passo',
     title: 'Bora tirar sua ideia do papel?',
-    text: 'Conta o que você precisa. Em até [24h] a gente responde com os próximos passos.',
+    text: 'Conta o que você precisa. Em até 24 horas a gente responde com os próximos passos.',
     button: 'Iniciar projeto',
   },
   footer: {
@@ -163,17 +163,17 @@ const pt: Dict = {
     ],
     specialtyLinks: [
       ['Site para Empresas', '/servicos/criacao-de-sites'],
-      ['Site para Clínicas', '/servicos/criacao-de-sites'],
-      ['Site para Estética', '/servicos/criacao-de-sites'],
-      ['Site para Imobiliária', '/servicos/criacao-de-sites'],
-      ['Site para Restaurantes', '/servicos/criacao-de-sites'],
+      ['Site para Clínicas', '/criacao-de-sites-para-clinicas'],
+      ['Site para Estética', '/criacao-de-sites-para-estetica'],
+      ['Site para Imobiliária', '/criacao-de-sites-para-imobiliarias'],
+      ['Site para Restaurantes', '/criacao-de-sites-para-restaurantes'],
       ['Sistemas Personalizados', '/servicos/sistemas-sob-medida'],
       ['SEO Local', '/servicos/seo-google-meu-negocio'],
       ['Google Meu Negócio', '/servicos/seo-google-meu-negocio'],
     ],
     rights: 'Todos os direitos reservados.',
-    made: 'feito com código próprio',
     card: 'Cartão digital',
+    about: 'Sobre a JB DEV', privacy: 'Política de privacidade',
   },
   servicesPage: {
     eyebrow: '// serviços', title1: 'O que a gente', title2: 'constrói.',
@@ -182,7 +182,7 @@ const pt: Dict = {
   },
   servicePage: {
     eyebrow: '// serviço', includes: 'O que inclui', process: 'Como funciona', faq: 'Perguntas frequentes',
-    related: 'Projetos relacionados', relatedEmpty: '[Cases desta categoria em breve — ainda não há projeto publicado.]',
+    related: 'Projetos relacionados', relatedEmpty: 'Cases desta categoria em breve.',
     cta: 'Pedir orçamento →', idealFor: 'Ideal para', breadcrumbServices: 'Serviços',
   },
   portfolioPage: {
@@ -192,15 +192,13 @@ const pt: Dict = {
     filtersLabel: 'Filtrar portfólio',
     filters: [['all', 'Todos'], ['sites', 'Sites'], ['sistemas', 'Sistemas'], ['auto', 'Automação'], ['apps', 'Apps']],
     featured: 'Case em destaque', viewFull: 'Ver case completo →', visit: 'Visitar site ↗', viewCase: 'Ver case →',
-    logos: 'Marcas que confiam na JB DEV', logoPlaceholder: '[Logo cliente]',
-    empty: '[Ainda não há case publicado nesta categoria.]',
+    empty: 'Ainda não há case publicado nesta categoria.',
     testimonials: 'Quem já trabalhou com a gente',
   },
   casePage: {
     back: '← Voltar ao portfólio', client: 'CLIENTE', segment: 'SEGMENTO', deliveries: 'ENTREGAS', year: 'ANO',
     challenge: 'O desafio', solution: 'A solução', result: 'O resultado', next: 'Próximo case', visit: 'Visitar',
-    testimonialPlaceholder: '[Depoimento do cliente contando como o projeto mudou o dia a dia do negócio.]',
-    testimonialName: '[Nome do cliente]', testimonialRole: '[Cargo]',
+    ownProject: 'Projeto próprio',
   },
   blogPage: {
     eyebrow: '// blog', title1: 'Blog da', title2: 'JB DEV.',
@@ -219,18 +217,19 @@ const pt: Dict = {
   },
   contact: {
     eyebrow: '// briefing', title1: 'Vamos tirar sua ideia', title2: 'do papel.',
-    lead: 'Conta o que você precisa. Em até [24h] a gente responde com os próximos passos — sem compromisso.',
+    lead: 'Conta o que você precisa. Em até 24 horas a gente responde com os próximos passos — sem compromisso.',
     name: 'Nome', namePh: 'Como podemos te chamar?', company: 'Empresa', optional: '(opcional)', companyPh: 'Nome do negócio',
     email: 'E-mail', emailPh: 'voce@empresa.com.br', whatsapp: 'WhatsApp', whatsappPh: '(00) 00000-0000',
     needs: 'O que você precisa?', needOptions: ['Site', 'Landing page', 'Loja virtual', 'Sistema', 'Automação / IA', 'App'],
-    invest: 'Investimento previsto', investOptions: ['Ainda não sei', 'Até [R$ 0.000]', '[R$ 0.000] a [R$ 00.000]', 'Acima de [R$ 00.000]'],
+    invest: 'Investimento previsto', investOptions: ['Ainda não sei', 'Quero começar enxuto', 'Projeto completo', 'Projeto maior (sistema ou app)'],
     message: 'Conte um pouco sobre o projeto', messagePh: 'Qual problema você quer resolver? Tem prazo?',
     consent: 'Concordo em ser contatado pela JB DEV sobre este projeto.',
     submit: 'Enviar briefing →', sending: 'Enviando…',
-    successTitle: 'Briefing recebido!', successText: 'Em até [24h] a gente te chama com os próximos passos.', again: 'Enviar outro',
+    privacyNote: 'Seus dados são usados só para responder este briefing. Saiba mais na', privacyLink: 'Política de Privacidade',
+    successTitle: 'Briefing recebido!', successText: 'Em até 24 horas a gente te chama com os próximos passos.', again: 'Enviar outro',
     error: 'Não conseguimos enviar agora. Tente de novo ou chame no WhatsApp.',
     whatsappCard: 'WhatsApp', emailCard: 'E-mail', nextTitle: 'O QUE ACONTECE DEPOIS',
-    nextSteps: ['A gente lê seu briefing e responde em até [24h].', 'Uma conversa rápida pra entender o negócio.', 'Você recebe uma proposta fechada, com prazo.'],
+    nextSteps: ['A gente lê seu briefing e responde em até 24 horas.', 'Uma conversa rápida pra entender o negócio.', 'Você recebe uma proposta fechada, com prazo.'],
   },
   common: {
     whatsappMessage: 'Olá, JB DEV! Quero conversar sobre um projeto digital para o meu negócio.',

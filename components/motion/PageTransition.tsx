@@ -17,6 +17,7 @@ function labelFor(pathname: string, labels: Labels) {
   if (first === 'portfolio') return second ? labels.case : labels.portfolio;
   if (first === 'blog') return second ? labels.artigo : labels.blog;
   if (first === 'contato') return labels.contato;
+  if (first === 'sobre') return labels.sobre;
   return '';
 }
 
@@ -56,7 +57,7 @@ export default function PageTransition({ labels }: { labels: Labels }) {
       if ((a.target && a.target !== '_self') || a.hasAttribute('download') || a.hasAttribute('data-no-transition')) return;
       const url = new URL(a.href, window.location.href);
       if (url.origin !== window.location.origin) return;
-      if (/^\/(cartao|api|assents|js)(\/|$)/.test(url.pathname)) return;
+      if (/^\/(cartao|api|assets|js)(\/|$)/.test(url.pathname)) return;
       if (url.pathname === window.location.pathname) {
         if (url.hash) return;
         e.preventDefault();

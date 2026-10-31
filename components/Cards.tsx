@@ -28,7 +28,7 @@ export function ProjectCard({ p, locale, viewCase, index = 0 }: { p: Project; lo
       <span className="glow" aria-hidden="true" />
       <BrowserFrame p={p} locale={locale} sizes="(max-width: 699px) 92vw, (max-width: 1099px) 46vw, 430px" />
       <div className="proj-body">
-        <div className="proj-meta"><span>{p.cat[locale]}</span><span>{p.year}</span></div>
+        <div className="proj-meta"><span>{p.cat[locale]}</span>{p.year && <span>{p.year}</span>}</div>
         <h3 style={{ margin: '6px 0 0', fontSize: 22, fontWeight: 600, letterSpacing: '-0.02em' }}>{p.name}</h3>
         <p className="muted" style={{ fontSize: 14 }}>{p.segment[locale]}</p>
         <span className="mono accent" style={{ marginTop: 8, fontSize: 13 }}>{viewCase}</span>
@@ -38,13 +38,13 @@ export function ProjectCard({ p, locale, viewCase, index = 0 }: { p: Project; lo
   );
 }
 
-export function Cover({ post, size, style, priority, sizes = '(max-width: 699px) 92vw, 420px', alt = '' }: {
+export function Cover({ post, size, style, priority, sizes = '(max-width: 699px) 92vw, 420px', alt }: {
   post: Pick<PostMeta, 'cover' | 'glyph' | 'image'>; size?: string; style?: React.CSSProperties; priority?: boolean; sizes?: string; alt?: string;
 }) {
   if (post.image) {
     return (
-      <div className="cover cover-photo" aria-hidden={alt ? undefined : true} style={style}>
-        <Image src={post.image.src} alt={alt} fill sizes={sizes} priority={priority} />
+      <div className="cover cover-photo" style={style}>
+        <Image src={post.image.src} alt={alt ?? post.image.alt} fill sizes={sizes} priority={priority} />
       </div>
     );
   }

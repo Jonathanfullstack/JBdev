@@ -7,7 +7,7 @@ import Link from 'next/link';
 export type CardProject = {
   slug: string; name: string; key: string; host: string; href: string; caseHref: string;
   image: { src: string; width: number; height: number; alt: string };
-  cat: string; segment: string; year: string; desc: string; tags: string[];
+  cat: string; segment: string; year?: string; desc: string; tags: string[];
   palette: { bg: string; fg: string; acc: string }; metrics: [string, string][];
 };
 
@@ -56,7 +56,7 @@ export default function PortfolioBrowser({ projects, labels }: { projects: CardP
               </div>
               <div className="feat-body">
                 <p className="mono muted" style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 10, fontSize: 12 }}>
-                  <span className="soft-badge">{labels.featured}</span><span>{featured.cat} · {featured.year}</span>
+                  <span className="soft-badge">{labels.featured}</span><span>{featured.cat}{featured.year && ` · ${featured.year}`}</span>
                 </p>
                 <h2 style={{ margin: '6px 0 0', fontSize: 'clamp(28px, 3vw, 44px)', lineHeight: 1.05, letterSpacing: '-0.035em', fontWeight: 600 }}>{featured.name}</h2>
                 <p className="muted" style={{ fontSize: 14 }}>{featured.segment}</p>
@@ -85,7 +85,7 @@ export default function PortfolioBrowser({ projects, labels }: { projects: CardP
                     <span className="glow" aria-hidden="true" />
                     <Frame p={p} sizes="(max-width: 699px) 92vw, 640px" />
                     <div className="proj-body" style={{ padding: '26px 28px 28px', gap: 10 }}>
-                      <div className="proj-meta"><span>{p.cat}</span><span>{p.year}</span></div>
+                      <div className="proj-meta"><span>{p.cat}</span>{p.year && <span>{p.year}</span>}</div>
                       <h2 style={{ margin: '4px 0 0', fontSize: 28, fontWeight: 600, letterSpacing: '-0.025em' }}>{p.name}</h2>
                       <p className="muted" style={{ fontSize: 14 }}>{p.segment}</p>
                       <p style={{ margin: '6px 0 0', fontSize: 16, lineHeight: 1.55, color: 'var(--ink2)' }}>{p.desc}</p>

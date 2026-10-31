@@ -10,7 +10,7 @@ key: apps
 service: /servicos/aplicativos
 date: 2026-10-07
 glyph: app.tsx
-image: /assents/img/service-aplicativos.webp
+image: /assets/img/service-aplicativos.webp
 imageAlt: 'Dois smartphones com um app de agenda mostrando consultas do dia e o botão de novo agendamento'
 cover: soft
 ---
@@ -63,7 +63,7 @@ O prazo e o investimento dependem principalmente de:
 - **Formato escolhido:** nativo, híbrido ou PWA.
 - **Publicação e manutenção:** contas de desenvolvedor, atualizações para novas versões do iOS e do Android, correções.
 
-Projetos de app começam a partir de [R$ 0.000], com proposta fechada depois do briefing.
+Valor conforme o escopo, com proposta fechada após o briefing.
 
 ## Como fazer o cliente instalar e usar?
 

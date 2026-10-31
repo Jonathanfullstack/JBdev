@@ -9,7 +9,7 @@ export const SITE = {
     name: 'Jonathan Vinicius Balieiro de Oliveira',
     shortName: 'Jonathan Balieiro',
     jobTitle: 'Desenvolvedor Web Full Stack',
-    image: '/assents/img/1716911104056.jpeg',
+    image: '/assets/img/1716911104056.jpeg',
   },
   contact: {
     phoneDisplay: '(19) 99749-5985',
@@ -18,18 +18,22 @@ export const SITE = {
     email: 'jonathantotini@gmail.com',
   },
   address: {
-    street: '[Endereço, número]',
+    // igual ao Perfil da Empresa no Google
+    display: 'Av. Eng. Fábio Roberto Barnabé, 215 - Vila Nossa Sra. Aparecida, Indaiatuba - SP, 13330-565',
+    street: 'Av. Eng. Fábio Roberto Barnabé, 215',
+    neighborhood: 'Vila Nossa Sra. Aparecida',
     locality: 'Indaiatuba',
     region: 'SP',
+    postalCode: '13330-565',
     country: 'BR',
   },
-  areaServed: ['Indaiatuba', 'Campinas', 'Itu', 'Salto', 'Sorocaba', 'São Paulo'],
+  areaServed: ['Indaiatuba', 'Salto', 'Itu', 'Campinas', 'Sorocaba', 'São Paulo'],
   social: {
     instagram: 'https://www.instagram.com/jonathan_desenvolvedor/',
     linkedin: 'https://www.linkedin.com/in/jonathan-balieiro-b83230298/',
     github: 'https://github.com/Jonathanfullstack',
   },
-  responseTime: '[24h]',
+  responseTime: '24 horas',
 } as const;
 
 export function whatsappUrl(message: string) {

@@ -2,14 +2,14 @@ import type { Dict } from './types';
 
 const en: Dict = {
   nav: {
-    home: 'Home', services: 'Services', portfolio: 'Portfolio', blog: 'Blog', contact: 'Contact',
+    home: 'Home', services: 'Services', portfolio: 'Portfolio', about: 'About', blog: 'Blog', contact: 'Contact',
     start: 'Start a project', openMenu: 'Open menu', closeMenu: 'Close menu', menuEyebrow: '// menu',
     toggleTheme: 'Toggle light and dark mode', language: 'Language', skip: 'Skip to content',
     homeAria: 'JB DEV — home', primary: 'Main',
   },
   curtain: {
     home: 'Home', servicos: 'Services', portfolio: 'Portfolio', case: 'Case', blog: 'Blog',
-    artigo: 'Article', contato: 'Contact', servico: 'Service',
+    artigo: 'Article', contato: 'Contact', servico: 'Service', sobre: 'About',
   },
   meta: {
     home: {
@@ -72,7 +72,7 @@ const en: Dict = {
       long: 'Business websites, landing pages and online stores that are fast, search-optimized and built to generate contacts — not just to sit there.',
       tags: ['SEO', 'Performance', 'Copy'], ideal: 'businesses that need to be found and contacted.',
       includes: ['Custom design with light and dark mode', 'Search optimization (SEO) and local SEO', 'WhatsApp and form integration', 'Online store with catalog, when it makes sense', 'Hosting and domain set up'],
-      image: { src: '/assents/img/service-sites.webp', width: 1402, height: 1122, alt: 'Architecture website open on a laptop and a phone, with the same page adapted to both screens' },
+      image: { src: '/assets/img/service-sites.webp', width: 1402, height: 1122, alt: 'Architecture website open on a laptop and a phone, with the same page adapted to both screens' },
 
     },
     {
@@ -81,7 +81,7 @@ const en: Dict = {
       long: 'A dashboard with your business rules: customers, sales, stock, schedule and finance in one place, accessible from anywhere.',
       tags: ['Dashboards', 'Web apps', 'APIs'], ideal: 'teams living between spreadsheets and notebooks.',
       includes: ['Customer records and history', 'Sales, quotes and inventory', 'Scheduling and team control', 'Reports and metrics', 'Role-based access and permissions'],
-      image: { src: '/assents/img/service-sistemas.webp', width: 1402, height: 1122, alt: 'Monitor with a sales dashboard showing revenue, customers, stock, a monthly chart and latest sales' },
+      image: { src: '/assets/img/service-sistemas.webp', width: 1402, height: 1122, alt: 'Monitor with a sales dashboard showing revenue, customers, stock, a monthly chart and latest sales' },
     },
     {
       slug: 'automacao-e-ia', key: 'auto', n: '03', icon: 'ai()', title: 'Automation and AI',
@@ -89,7 +89,7 @@ const en: Dict = {
       long: 'AI support on WhatsApp, reminders, billing and integrations that work while you focus on what matters.',
       tags: ['WhatsApp', 'AI', 'Integrations'], ideal: 'teams losing hours on repetitive tasks.',
       includes: ['AI assistant on WhatsApp', 'Automatic booking', 'Reminders and billing', 'Integration between systems', 'Hand-off to a human agent'],
-      image: { src: '/assents/img/service-automacao.webp', width: 1586, height: 992, alt: 'Phone with an automated support chat confirming a booking, connected to calendar, clock and confirmation icons' },
+      image: { src: '/assets/img/service-automacao.webp', width: 1586, height: 992, alt: 'Phone with an automated support chat confirming a booking, connected to calendar, clock and confirmation icons' },
     },
     {
       slug: 'aplicativos', key: 'apps', n: '04', icon: 'app', title: 'Mobile apps',
@@ -97,7 +97,7 @@ const en: Dict = {
       long: 'iOS and Android apps — or PWAs — with your brand, to build loyalty and sell more.',
       tags: ['iOS', 'Android', 'PWA'], ideal: 'brands that want to be in the customer’s pocket.',
       includes: ['Mobile interface design', 'iOS and Android app or PWA', 'Push notifications', 'Login, payments and integrations', 'App store publishing'],
-      image: { src: '/assents/img/service-aplicativos.webp', width: 1402, height: 1122, alt: 'Two smartphones with a booking app showing the day’s appointments and the new booking button' },
+      image: { src: '/assets/img/service-aplicativos.webp', width: 1402, height: 1122, alt: 'Two smartphones with a booking app showing the day’s appointments and the new booking button' },
     },
     {
       slug: 'seo-google-meu-negocio', key: 'seo', n: '05', icon: 'seo', title: 'SEO & Google Business Profile',
@@ -105,7 +105,7 @@ const en: Dict = {
       long: 'Technical SEO, on-page SEO and an optimized Google Business Profile so you get found in search results and on Google Maps.',
       tags: ['Local SEO', 'Google Maps', 'Search Console'], ideal: 'businesses that need local customers to find them.',
       includes: ['Technical SEO: speed, mobile and structured data', 'On-page SEO with local keywords', 'Google Business Profile creation or optimization', 'Search Console and Analytics set up', 'Before-and-after report'],
-      image: { src: '/assents/img/service-seo-google.webp', width: 1536, height: 1024, alt: 'Laptop and phone showing a Google search with the business highlighted, website and directions buttons and a map with its location' },
+      image: { src: '/assets/img/service-seo-google.webp', width: 1536, height: 1024, alt: 'Laptop and phone showing a Google search with the business highlighted, website and directions buttons and a map with its location' },
     },
   ],
   portfolioHome: { eyebrow: '// portfolio', title: 'Made by JB DEV.', link: 'See full portfolio →', viewCase: 'View case →' },
@@ -128,13 +128,13 @@ const en: Dict = {
   faq: {
     eyebrow: '// questions',
     title: 'Questions we always get.',
-    text: 'Didn’t find yours? We reply within [24h].',
+    text: 'Didn’t find yours? We reply within 24 hours.',
     cta: 'Start a project', whatsapp: 'Message on WhatsApp',
     items: [
       ['Do you work with small businesses?', 'Yes. The project is sized for where your business is today — from freelancers to companies with several locations.'],
       ['Do I need to know exactly what I want?', 'No. In the brief we understand the problem and propose the simplest path to solve it.'],
-      ['How much does it cost?', 'It depends on scope. After the brief you get a fixed proposal, no surprises. Projects from [R$ 0.000].'],
-      ['How long does it take?', 'Websites in about [X] weeks. Software and apps depend on scope, with frequent deliveries so you can follow along.'],
+      ['How much does it cost?', 'Pricing depends on scope, with a fixed proposal after the brief, no surprises.'],
+      ['How long does it take?', 'Websites in a few weeks, depending on scope. Software and apps also depend on scope, with frequent deliveries so you can follow along.'],
       ['Do you only work in Indaiatuba?', 'No. We meet in person in Indaiatuba/SP and the surrounding region, and work remotely anywhere, with online meetings at every step.'],
       ['Do you take over existing projects?', 'Yes. We can review optimizations, fixes, new features and technical evolution based on the project’s current state.'],
       ['Do I own the code?', 'Yes. Code, domain and access are yours at the end of the project.'],
@@ -144,7 +144,7 @@ const en: Dict = {
   cta: {
     eyebrow: '// next step',
     title: 'Ready to get your idea off the ground?',
-    text: 'Tell us what you need. Within [24h] we reply with the next steps.',
+    text: 'Tell us what you need. Within 24 hours we reply with the next steps.',
     button: 'Start a project',
   },
   footer: {
@@ -172,8 +172,8 @@ const en: Dict = {
       ['Google Business Profile', '/servicos/seo-google-meu-negocio'],
     ],
     rights: 'All rights reserved.',
-    made: 'made with our own code',
     card: 'Digital card',
+    about: 'About JB DEV', privacy: 'Privacy policy',
   },
   servicesPage: {
     eyebrow: '// services', title1: 'What we', title2: 'build.',
@@ -182,7 +182,7 @@ const en: Dict = {
   },
   servicePage: {
     eyebrow: '// service', includes: 'What’s included', process: 'How it works', faq: 'Frequently asked questions',
-    related: 'Related projects', relatedEmpty: '[Cases in this category coming soon — no project published yet.]',
+    related: 'Related projects', relatedEmpty: 'Cases in this category coming soon.',
     cta: 'Get a quote →', idealFor: 'Ideal for', breadcrumbServices: 'Services',
   },
   portfolioPage: {
@@ -192,15 +192,13 @@ const en: Dict = {
     filtersLabel: 'Filter portfolio',
     filters: [['all', 'All'], ['sites', 'Websites'], ['sistemas', 'Software'], ['auto', 'Automation'], ['apps', 'Apps']],
     featured: 'Featured case', viewFull: 'View full case →', visit: 'Visit site ↗', viewCase: 'View case →',
-    logos: 'Brands that trust JB DEV', logoPlaceholder: '[Client logo]',
-    empty: '[No case published in this category yet.]',
+    empty: 'No case published in this category yet.',
     testimonials: 'What clients say',
   },
   casePage: {
     back: '← Back to portfolio', client: 'CLIENT', segment: 'INDUSTRY', deliveries: 'DELIVERABLES', year: 'YEAR',
     challenge: 'The challenge', solution: 'The solution', result: 'The result', next: 'Next case', visit: 'Visit',
-    testimonialPlaceholder: '[Client testimonial on how the project changed day-to-day operations.]',
-    testimonialName: '[Client name]', testimonialRole: '[Role]',
+    ownProject: 'Own product',
   },
   blogPage: {
     eyebrow: '// blog', title1: 'The JB DEV', title2: 'blog.',
@@ -220,18 +218,19 @@ const en: Dict = {
   },
   contact: {
     eyebrow: '// brief', title1: 'Let’s get your idea', title2: 'off the ground.',
-    lead: 'Tell us what you need. Within [24h] we reply with the next steps — no commitment.',
+    lead: 'Tell us what you need. Within 24 hours we reply with the next steps — no commitment.',
     name: 'Name', namePh: 'What should we call you?', company: 'Company', optional: '(optional)', companyPh: 'Business name',
     email: 'Email', emailPh: 'you@company.com', whatsapp: 'WhatsApp', whatsappPh: '+00 00 00000-0000',
     needs: 'What do you need?', needOptions: ['Website', 'Landing page', 'Online store', 'Software', 'Automation / AI', 'App'],
-    invest: 'Planned budget', investOptions: ['Not sure yet', 'Up to [R$ 0.000]', '[R$ 0.000] to [R$ 00.000]', 'Over [R$ 00.000]'],
+    invest: 'Planned budget', investOptions: ['Not sure yet', 'I want to start lean', 'Complete project', 'Larger project (software or app)'],
     message: 'Tell us a bit about the project', messagePh: 'What problem do you want to solve? Any deadline?',
     consent: 'I agree to be contacted by JB DEV about this project.',
     submit: 'Send brief →', sending: 'Sending…',
-    successTitle: 'Brief received!', successText: 'Within [24h] we’ll reach out with the next steps.', again: 'Send another',
+    privacyNote: 'Your data is only used to reply to this brief. Learn more in our', privacyLink: 'Privacy Policy',
+    successTitle: 'Brief received!', successText: 'Within 24 hours we’ll reach out with the next steps.', again: 'Send another',
     error: 'We couldn’t send it right now. Try again or message us on WhatsApp.',
     whatsappCard: 'WhatsApp', emailCard: 'Email', nextTitle: 'WHAT HAPPENS NEXT',
-    nextSteps: ['We read your brief and reply within [24h].', 'A quick call to understand the business.', 'You get a fixed proposal with a timeline.'],
+    nextSteps: ['We read your brief and reply within 24 hours.', 'A quick call to understand the business.', 'You get a fixed proposal with a timeline.'],
   },
   common: {
     whatsappMessage: 'Hi, JB DEV! I’d like to talk about a digital project for my business.',

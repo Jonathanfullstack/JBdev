@@ -33,7 +33,7 @@ O LCP continua sendo o parágrafo `.hero__lead`. A sequência de abertura o reve
 - Transição do canvas refeita com FLIP e `transform`, mantendo o visual e o tempo da abertura sem provocar relayout.
 - Font Awesome substituído pelos mesmos vetores SVG diretamente no HTML.
 - Fontes Sora e Plus Jakarta Sans hospedadas localmente em WOFF2 variável, com preload e `font-display: swap`.
-- CSS consolidado em `assents/site.css`; o script `scripts/build-styles.mjs` mantém o arquivo gerado sincronizado.
+- CSS consolidado em `assets/site.css`; o script `scripts/build-styles.mjs` mantém o arquivo gerado sincronizado.
 - GSAP e Three.js mantidos nas mesmas versões e hospedados localmente.
 - ScrollTrigger e cenas abaixo da dobra carregados apenas perto da seção de tecnologias; Lenis é carregado somente em desktop com ponteiro preciso.
 - EmailJS carregado quando o formulário se aproxima da viewport ou recebe foco.
